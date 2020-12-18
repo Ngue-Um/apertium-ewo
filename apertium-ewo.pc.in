@@ -1,0 +1,8 @@
+prefix=@prefix@
+exec_prefix=${prefix}
+srcdir=@datarootdir@/apertium/apertium-ewo
+
+Name: apertium-ewo
+Description: Finite-state morphological transducer and constraint grammar for Ewondo
+Version: @VERSION@
+
