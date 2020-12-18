@@ -34,7 +34,9 @@ LEXICON RegNounInfl
 
 LEXICON NounRoot
 
-ndá:nda¹  RegNounInfl ; ! A noun
+ndá:nda¹  N ; ! "maison; house"
+wò:wo² N ; ! "main; hand"
+nlô:nlo³ N ; ! "tête; head"
 
 
 ! Resources:
