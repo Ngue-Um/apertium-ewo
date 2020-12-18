@@ -38,11 +38,14 @@ TARGETS_COMMON =			\
 .deps/$(LANG1).LR.lexc.hfst: .deps/$(LANG1).LR.lexc
 	hfst-lexc $< -o $@ -v --Werror
 
+.deps/$(LANG1).spellrelax.hfst: $(BASENAME).$(LANG1).spellrelax
+	hfst-regexp2fst -S < $< -o $@
+
 .deps/$(LANG1).RL.hfst: .deps/$(LANG1).RL.lexc.hfst .deps/$(LANG1).twol.hfst
 	hfst-compose-intersect -1 .deps/$(LANG1).RL.lexc.hfst -2 .deps/$(LANG1).twol.hfst -o $@
 
-.deps/$(LANG1).LR.hfst: .deps/$(LANG1).LR.lexc.hfst .deps/$(LANG1).twol.hfst
-	hfst-compose-intersect -1 .deps/$(LANG1).LR.lexc.hfst -2 .deps/$(LANG1).twol.hfst -o $@
+.deps/$(LANG1).LR.hfst: .deps/$(LANG1).LR.lexc.hfst .deps/$(LANG1).twol.hfst .deps/$(LANG1).spellrelax.hfst
+	hfst-compose-intersect -1 .deps/$(LANG1).LR.lexc.hfst -2 .deps/$(LANG1).twol.hfst | hfst-compose -1 - -2 .deps/$(LANG1).spellrelax.hfst  -o $@
 
 $(LANG1).autogen.hfst: .deps/$(LANG1).RL.hfst
 	hfst-fst2fst -O $< -o $@
