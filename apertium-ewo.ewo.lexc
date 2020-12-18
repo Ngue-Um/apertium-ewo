@@ -22,7 +22,7 @@ LEXICON Root
 NounRoot ;
 
 
-LEXICON RegNounInfl
+LEXICON N 
 
 %<n%>%<sg%>: # ;
 !%<n%>%<pl%>:%>s # ;
