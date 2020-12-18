@@ -25,7 +25,7 @@ NounRoot ;
 LEXICON RegNounInfl
 
 %<n%>%<sg%>: # ;
-%<n%>%<pl%>:%>s # ;
+!%<n%>%<pl%>:%>s # ;
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -34,8 +34,7 @@ LEXICON RegNounInfl
 
 LEXICON NounRoot
 
-house:house RegNounInfl ; ! A noun
-
+ndá:nda¹  RegNounInfl ; ! A noun
 
 
 ! Resources:
