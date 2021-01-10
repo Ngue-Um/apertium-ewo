@@ -6,11 +6,9 @@ Multichar_Symbols
 %<n%>   ! Noun
 %<v%> ! Verb
 
-! Number morphology
-%<pl%>  ! Plural
-%<sg%>  ! Singular
 
 ! Noun class morphology
+%<cl0%> ! Noun class 0 ; classe nominale 0
 %<cl1%> ! Noun class 1 ; classe nominale 1
 %<cl2%> ! Noun class 2 ; classe nominale 2
 %<cl3%> ! Noun class 3 ; classe nominale 3
@@ -22,18 +20,19 @@ Multichar_Symbols
 %<cl9%> ! Noun class 9 ; classe nominale 9
 %<cl10%> ! Noun class 10 ; classe nominale 10
 %<cl11%> ! Noun class 11 ; classe nominale 11
-%<cl12%> ! Noun class 12 ; classe nominale 12
-%<cl13%> ! Noun class 13 ; classe nominale 13
-%<cl14%> ! Noun class 14 ; classe nominale 14
+
+! Number morphology
+%<pl%>%  ! Plural
+%<sg%>  ! Singular
 
 ! Verb inflection
 %<inf%> ! Infinitive; infinitif
-%<p1%> ! Immediate past ; passé immédiat
-%<p2%> ! Recent past ; passé récent
-%<p3%> ! Remote past ; passé lointain
-%<f1%> ! Immediate future ; futur immédiat
-%<f2%> ! Near future ; futur récent
-%<p3%> ! Distant future ; futur lointain
+! %<p1%> ! Immediate past ; passé immédiat
+! %<p2%> ! Recent past ; passé récent
+! %<p3%> ! Remote past ; passé lointain
+! %<f1%> ! Immediate future ; futur immédiat
+! %<f2%> ! Near future ; futur récent
+! %<p3%> ! Distant future ; futur lointain
 
 ! Other symbols
 %>      ! Morpheme boundary
@@ -47,35 +46,67 @@ LEXICON Root
 
 NounRoot ;
 
+LEXICON CL0 ! Lexicon for noun class 0 ; those are nouns for which noun class numbering is yet to be determined 
 
-LEXICON N 
+%<n%>%<cl0%>: # ;
+
+LEXICON CL1 ! Lexicon for noun class 1 
 
 %<n%>%<cl1%>: # ;
+
+LEXICON CL2 ! Lexicon for noun class 2 
+
 %<n%>%<cl2%>: # ;
+
+LEXICON CL3 ! Lexicon for noun class 3
+ 
 %<n%>%<cl3%>: # ;
-%<n%>%<cl4%>: # ;
+
+ ! LEXICON CL4 ! Lexicon for noun class 4 
+
+! %<n%>%<cl4%>: # ;
+
+LEXICON CL5 ! Lexicon for noun class 5
+ 
 %<n%>%<cl5%>: # ;
+
+LEXICON CL6 ! Lexicon for noun class 6
+ 
 %<n%>%<cl6%>: # ;
+
+LEXICON CL7 ! Lexicon for noun class 7
+ 
 %<n%>%<cl7%>: # ;
+
+LEXICON CL8 ! Lexicon for noun class 8
+ 
 %<n%>%<cl8%>: # ;
+
+LEXICON CL9 ! Lexicon for noun class 9
+ 
 %<n%>%<cl9%>: # ;
-%<n%>%<cl10%>: # ;
+
+! LEXICON CL10 ! Lexicon for noun class 10
+ 
+! %<n%>%<cl10%>: # ;
+
+LEXICON CL11 ! Lexicon for noun class 11
+ 
 %<n%>%<cl11%>: # ;
-%<n%>%<cl12%>: # ;
-%<n%>%<cl13%>: # ;
-%<n%>%<cl14%>: # ;
+
+
 !%<n%>%<sg%>: # ;
 !%<n%>%<pl%>:%>s # ;
 
 LEXICON V
 
-%<vblex%>%<inf%>: # ;
-%<vblex%>%<p1%>: # ;
-%<vblex%>%<p2%>: # ;
-%<vblex%>%<p3%>: # ;
-%<vblex%>%<f1%>: # ;
-%<vblex%>%<f2%>: # ;
-%<vblex%>%<f3%>: # ;
+%<v%>%<inf%>: # ;
+!%<v%>:%<p1%>: # ;
+!%<v%>%<p2%>: # ;
+!%<v%>%<p3%>: # ;
+!%<v%>%<f1%>: # ;
+!%<v%>%<f2%>: # ;
+!%<v%>%<f3%>: # ;
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -84,116 +115,111 @@ LEXICON V
 
 LEXICON NounRoot
 
-ndá:nda¹  N ; ! "maison; house"
-nló:nlo¹ N ; ! "tête; head"
-sí:si¹ N ; ! "terre; earth"
-wɔ́:wɔ¹ N ; ! "main; hand"
-yóp:yo¹p N ; ! "ciel; heaven"
-ŋgogé:ŋgoge¹ N ; ! "soir"; evening"
-məndím:məndi¹m N ; ! "eau; water"
-kídí:ki¹di¹ N ; ! "matin; morning"
-Zambá:Zamba¹ N ; ! "Dieu; God"
-zǎm:za⁴m N ; ! "lèpre; leprosy"
-ekie:ekie N ; ! "fer; iron"
-dulu:dulu N ; ! "marche; treck"
-esalag:esalag N ; ! "caniveau"
-tin:tin N ; ! "souche; stump"
-nsis:nsis N ; !"nerf; nerve"
-meki:meki N ; ! "sang; blood"
-bezimbi:bezimbi N ; !"soldat; soldier"
-abum:abum N ; ! "ventre; belly"
-zie:zie N ; ! "faim; hunger"
-ngul:ngul N ; ! "force; strength"
-ndi:ndi N ; ! "espoir; hope"
-ekob:ekob N ; ! "peau; skin"
-osanga:osanga N ; ! "tisane; herbal tea" 
-avus:avus N ; ! "camaraderie; fellowship"
-edzidzin:edzidzin N ; ! "dignité;  dignity"
-afola:afola N ; ! "place ; place"
-eyɔŋ:eyɔŋ N ; ! "temps ; period"
-fəg:fəg N ; ! "sagesse ; wise"
-okɔ̌n:okɔ⁴n N ; ! "maladie; illness"
-abɔ:abɔ N ; ! "pied; foot"
-abɔ́d:abɔ¹d N ; ! " petitesse; compactness"
-abǐg:abi⁴g N ; ! " urticaire; hives"
-abú:abu¹ N ; ! "touffe; clump"
-abui:abui N ; ! " plusieurs; many"
-afə́:afə¹ N ; ! "autre: other"
-afə́b:afə¹b N ; ! " papier; paper"
-angós:ango¹s N ; ! "groupe de personne; group of people"
-akə́ŋ:akə¹ŋ N ; ! "intelligence; intelligence"
-akə̌ŋ:akə⁴ŋ N ; ! "technique; know-how"
-alɛ̌ná:alɛ⁴na¹ N ; ! "infection due à une morsure d'araignée; infection cause by a spider bite"
-alɛ̌d:alɛ⁴d N ; ! "dureté: hardness" 
-amǒs:amo⁴s N ; ! "journée; daytime"
-angə́ngɛ́:angə¹ngɛ¹ N ; ! "insecte; insect"
-ángondó:a¹ngondo¹ N ; ! "horreur; atrocity"
+ndá:nda¹  CL5 ; ! "maison; house"
+nló:nlo¹ CL3 ; ! "tête; head"
+sí:si¹ CL0 ; ! "terre; earth"
+wɔ́:wɔ¹ CL3 ; ! "main; hand"
+yóp:yo¹p CL0; ! "ciel; heaven"
+ŋgogé:ŋgoge¹ CL0 ; ! soir"; evening"
+məndím:məndi¹m CL6 ; ! "eau; water"
+kídí:ki¹di¹ CL0 ; ! "matin; morning"
+Zambá:Zamba¹ CL1 ; ! "Dieu; God"
+zǎm:za⁴m CL0 ; ! "lèpre; leprosy"
+ekie:ekie CL7 ; ! "fer; iron"
+dulu:dulu CL0 ; ! "marche; treck"
+esalag:esalag CL7 ; ! "caniveau"
+tin:tin CL0 ; ! "souche; stump"
+nsis:nsis CL3 ; !"nerf; nerve"
+meki:meki CL6 ; ! "sang; blood"
+bezimbi:bezimbi CL2 ; !"soldat; soldier"
+abum:abum CL5 ; ! "ventre; belly"
+zie:zie CL0 ; ! "faim; hunger"
+ngul:ngul CL9 ; ! "force; strength"
+ndi:ndi CL0 ; ! "espoir; hope"
+ekob:ekob CL7 ; ! "peau; skin"
+osanga:osanga CL11 ; ! "tisane; herbal tea" 
+avus:avus CL5; ! "camaraderie; fellowship"
+edzidzin:edzidzin CL7 ; ! "dignité;  dignity"
+afola:afola CL5 ; ! "place ; place"
+eyɔŋ:eyɔŋ CL7 ; ! "temps ; period"
+fəg:fəg CL0 ; ! "sagesse ; wise"
+okɔ̌n:okɔ⁴n CL11 ; ! "maladie; illness"
+abɔ:abɔ CL5 ; ! "pied; foot"
+abɔ́d:abɔ¹d CL5 ; ! " petitesse; compactness"
+abǐg:abi⁴g CL5 ; ! " urticaire; hives"
+abú:abu¹ CL5 ; ! "touffe; clump"
+abui:abui CL0 ; ! " plusieurs; many"
+afə́:afə¹ CL5 ; ! "autre: other"
+afə́b:afə¹b CL5 ; ! " papier; paper"
+angós:ango¹s CL5 ; ! "groupe de personne; group of people"
+akə́ŋ:akə¹ŋ CL5 ; ! "intelligence; intelligence"
+akə̌ŋ:akə⁴ŋ CL5 ; ! "technique; know-how"
+alɛ̌ná:alɛ⁴na¹ CL5 ; ! "infection due à une morsure d'araignée; infection cause by a spider bite"
+alɛ̌d:alɛ⁴d CL5 ; ! "dureté: hardness" 
+amǒs:amo⁴s CL5 ; ! "journée; daytime"
+angə́ngɛ́:angə¹ngɛ¹ CL5 ; ! "insecte; insect"
+ángondó:a¹ngondo¹ CL5 ; ! "horreur; atrocity"
 ! anə́:anə¹ ADV ; ! " comme; like"
-atə̌g:atə⁴g N ; ! "faiblesse; weakness"
-atólóg:ato¹lo¹g N ; ! "papule; blister"
-atɔ̌m:atɔ⁴m N ; ! "ulcère de Buruli; Buruli ulcer"
-avól:avo¹l N ; ! "rapidité; speed"
-avɔ́ŋ:avɔ¹ŋ N ; ! "graisse; fat"
-avə́ŋ:avə¹ŋ N ; ! "plaie; wound"
-ayǎb:aya⁴b N ; ! "longueur; length"
-ayié:ayie¹ N ; ! "difficulté; difficulty"
-ayəgɛ́:ayəgɛ¹ N ; ! "apprentissage; course"
-ayǒm:ayo⁴m N ; ! "vieillesse; old age"
-áyóŋ:a¹yo¹ŋ N ; ! " chaleur; heat"
-ayóŋ:ayo¹ŋ N ; ! " chaleur; heat"
-azúé:azu¹e¹ N ; ! "pauvreté; poverty"
+atə̌g:atə⁴g CL5 ; ! "faiblesse; weakness"
+atólóg:ato¹lo¹g CL5 ; ! "plaie; wound"
+ayǎb:aya⁴b CL5 ; ! "longueur; length"
+ayié:ayie¹ CL5 ; ! "difficulté; difficulty"
+ayəgɛ́:ayəgɛ¹ CL5 ; ! "apprentissage; course"
+ayǒm:ayo⁴m CL5 ; ! "vieillesse; old age"
+áyóŋ:a¹yo¹ŋ CL5 ; ! " chaleur; heat"
+ayóŋ:ayo¹ŋ CL5 ; ! " chaleur; heat"
+azúé:azu¹e¹ CL5 ; ! "pauvreté; poverty"
 baala:baala V ; ! "garder; keep"
 badə́:badə¹ V ; ! "encore; again"
 bám:ba¹m V ; ! "gronder; shout at"
 bán:ba¹n V ; ! "appuyer sur; press on"
 bíáli:bi¹a¹li V ; ! "naître; born"
-biaŋ:biaŋ N ; ! "médicament; drug"
-bidzo:bidzo N ; ! "membre du corps; body limb"
-biaŋ:biaŋ N ; ! "médicament; drug"
+bidzo:bidzo CL8 ; ! "membre du corps; body limb"
+biaŋ:biaŋ CL8 ; ! "médicament; drug"
 big:big V ; ! "dépister; screen"
 bwala:bwala V ; ! "soutenir (un témoignage); support"
-edzo:edzo N ; ! "membre du corps; body limb"
-bifə́fɛ̂:bifə¹fɛ³ N ; ! "végétation anarchique; wild growth"
-bilamvomba:bilamvomba N ; !"désordre excessif; lot of disorder"
-bíləmbə:bi¹ləmbə N ; ! "microscope; microscope"
+edzo:edzo CL7 ; ! "membre du corps; body limb"
+bifə́fɛ̂:bifə¹fɛ³ CL8 ; ! "végétation anarchique; wild growth"
+bilamvomba:bilamvomba CL8 ; !"désordre excessif; lot of disorder"
+bíləmbə:bi¹ləmbə CL8 ; ! "microscope; microscope"
 bɔ:bɔ V ; ! "faire; do"
 bɔban:bɔban V ; ! "se faire; happen"
-bə́bə́lá:bə¹bə¹la¹ N ; ! "vérité; true"
+bə́bə́lá:bə¹bə¹la¹ CL0 ; ! "vérité; true"
 bə́de:bə¹de V ; ! "élever; raise up"
 bəgə:bəgə V ; ! "porter; carry"
 bəlan:bəlan V ; ! "utiliser; use"
 bələ́:bələ¹ V ; ! "dire vrai; say the thruth"
 bə́nde:bə¹nde V ; ! "recommander; recommand"
 bɛ:bɛ V ; ! "dépecer; butcher"
-efas:efas N ; ! "analyse; screening" 
-efəl:efəl N ; ! "cicatrice; scare"
-ekóán:eko¹a¹n N ; ! "réunion; meeting"
-elɔbí:elɔbi¹ N ; ! "marécage; swamp"
-elɔ́g:elɔ¹g N ; ! "herbe; grass"
-elunga:elunga N ; ! "association; association"
-emvúm:emvu¹m N ; ! "particule; particle"
-enam:enam N ; ! "membre supérieur du corps; upper limb"
-engas:engas N ; ! "marais; marsh"
-esédəga:ese¹dəga N ; ! "échantillon; sample"
-etam:etam N ; ! "puit; well"
-evɛ̌s:evɛ⁴s N ; ! "os; bone"
-evəga:evəga N ; ! "exemple; example"
-eweməga:eweməga N ; ! "nécrose; necrosis"
-eyalga:eyalga N ; ! "enveloppe; envelope"
+efas:efas CL7 ; ! "analyse; screening" 
+efəl:efəl CL7 ; ! "cicatrice; scare"
+ekóán:eko¹a¹n CL7 ; ! "réunion; meeting"
+elɔbí:elɔbi¹ CL7 ; ! "marécage; swamp"
+elɔ́g:elɔ¹g CL7 ; ! "herbe; grass"
+elunga:elunga CL7 ; ! "association; association"
+emvúm:emvu¹m CL7 ; ! "particule; particle"
+enam:enam CL7 ; ! "membre supérieur du corps; upper limb"
+engas:engas CL7 ; ! "marais; marsh"
+esédəga:ese¹dəga CL7 ; ! "échantillon; sample"
+etam:etam CL7 ; ! "puit; well"
+evɛ̌s:evɛ⁴s CL7 ; ! "os; bone"
+evəga:evəga CL7 ; ! "exemple; example"
+eweməga:eweməga CL7 ; ! "nécrose; necrosis"
+eyalga:eyalga CL7 ; ! "enveloppe; envelope"
 fíd:fi¹d V ; ! "écraser; crush"
-fə́b:fə¹b N ; ! "sonder; test"
+fə́b:fə¹b V ; ! "sonder; test"
 kalan:kalan V ; ! "transmettre; transmit"
 kə́:kə¹ V ; ! " partir; go"
 ki:ki V ; ! "s'abstenir; (de)refrain (from)" 
 kili:kili V ; ! " interdir à; forbidden"
 lod:lod V ; ! "dépasser; pass"
 manə:manə V ; ! "terminer; complete"
-miníngá:mini¹nga¹ N ; ! "femme; woman"
-mɔ́n:mɔ¹n N ; ! "bébé; baby"
-mɔ́ngɔ́:mɔ¹ngɔ¹ N ; ! "enfant; child"
-kpələ́mvě:kpələ¹mve⁴ N ; ! "cellulite; stretch mark"
+miníngá:mini¹nga¹ CL1 ; ! "femme; woman"
+mɔ́n:mɔ¹n CL1 ; ! "bébé; baby"
+mɔ́ngɔ́:mɔ¹ngɔ¹ CL1 ; ! "enfant; child"
+kpələ́mvě:kpələ¹mve⁴ CL0 ; ! "cellulite; stretch mark"
 tɛ́:tɛ¹ V ; !"être douloureux; to be painful"
-ongə́ngə́mə:ongə¹ngə¹mə N ; ! "microbe; germ"
+ongə́ngə́mə:ongə¹ngə¹mə CL11 ; ! "microbe; germ"
 yá:ya¹ V ; ! "grandir; grow up"
 yi:yi V ; ! "vouloir; will"
 yóməló:yo¹məlo¹ V ; ! "raviver; revive"
