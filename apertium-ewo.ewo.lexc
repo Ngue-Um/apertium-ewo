@@ -4,7 +4,7 @@ Multichar_Symbols
 
 ! Part of speech categories
 %<n%>   ! Noun
-%<v%> ! Verb
+%<vblex%> ! Verb
 
 
 ! Noun class morphology
@@ -52,47 +52,47 @@ LEXICON CL0 ! Lexicon for noun class 0 ; those are nouns for which noun class nu
 
 LEXICON CL1 ! Lexicon for noun class 1 
 
-%<n%>%<cl1%>: # ;
+%<n%>%<cl1%>%<sg%>: # ;
 
 LEXICON CL2 ! Lexicon for noun class 2 
 
-%<n%>%<cl2%>: # ;
+%<n%>%<cl2%>%<pl%>: # ;
 
 LEXICON CL3 ! Lexicon for noun class 3
  
-%<n%>%<cl3%>: # ;
+%<n%>%<cl3%>%<sg%>: # ;
 
  ! LEXICON CL4 ! Lexicon for noun class 4 
 
-! %<n%>%<cl4%>: # ;
+! %<n%>%<cl4%>%<pl%>: # ;
 
 LEXICON CL5 ! Lexicon for noun class 5
  
-%<n%>%<cl5%>: # ;
+%<n%>%<cl5%>%<sg%>: # ;
 
 LEXICON CL6 ! Lexicon for noun class 6
  
-%<n%>%<cl6%>: # ;
+%<n%>%<cl6%>%<pl%>: # ;
 
 LEXICON CL7 ! Lexicon for noun class 7
  
-%<n%>%<cl7%>: # ;
+%<n%>%<cl7%>%<sg%>: # ;
 
 LEXICON CL8 ! Lexicon for noun class 8
  
-%<n%>%<cl8%>: # ;
+%<n%>%<cl8%>%<pl%>: # ;
 
 LEXICON CL9 ! Lexicon for noun class 9
  
-%<n%>%<cl9%>: # ;
+%<n%>%<cl9%>%<sg%>: # ;
 
 ! LEXICON CL10 ! Lexicon for noun class 10
  
-! %<n%>%<cl10%>: # ;
+! %<n%>%<cl10%>%<pl%>: # ;
 
 LEXICON CL11 ! Lexicon for noun class 11
  
-%<n%>%<cl11%>: # ;
+%<n%>%<cl11%>%<sg%>: # ;
 
 
 !%<n%>%<sg%>: # ;
@@ -100,13 +100,13 @@ LEXICON CL11 ! Lexicon for noun class 11
 
 LEXICON V
 
-%<v%>%<inf%>: # ;
-!%<v%>:%<p1%>: # ;
-!%<v%>%<p2%>: # ;
-!%<v%>%<p3%>: # ;
-!%<v%>%<f1%>: # ;
-!%<v%>%<f2%>: # ;
-!%<v%>%<f3%>: # ;
+%<vblex%>%<inf%>: # ;
+!%<vblex%>:%<p1%>: # ;
+!%<vblex%>%<p2%>: # ;
+!%<vblex%>%<p3%>: # ;
+!%<vblex%>%<f1%>: # ;
+!%<vblex%>%<f2%>: # ;
+!%<vblex%>%<f3%>: # ;
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
