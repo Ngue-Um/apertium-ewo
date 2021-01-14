@@ -6,6 +6,10 @@ Multichar_Symbols
 %<n%>   ! Noun
 %<vblex%> ! Verb
 
+! Number morphology
+%<pl%>  ! Plural
+%<sg%>  ! Singular
+
 
 ! Noun class morphology
 %<cl0%> ! Noun class 0 ; classe nominale 0
@@ -21,9 +25,6 @@ Multichar_Symbols
 %<cl10%> ! Noun class 10 ; classe nominale 10
 %<cl11%> ! Noun class 11 ; classe nominale 11
 
-! Number morphology
-%<pl%>%  ! Plural
-%<sg%>  ! Singular
 
 ! Verb inflection
 %<inf%> ! Infinitive; infinitif
@@ -37,66 +38,203 @@ Multichar_Symbols
 ! Other symbols
 %>      ! Morpheme boundary
 
+! Flags for Number
+@P.Number.Sg@
+@P.NUmber.Pl@
+@R.Number.Sg@
+@R.Number.Pl@
+
+! Flags for Noun classes
+@P.Class.0@
+@P.Class.1@
+@P.Class.2@
+@P.Class.3@
+@P.Class.4@
+@P.Class.5@
+@P.Class.6@
+@P.Class.7@
+@P.Class.8@
+@P.Class.9@
+@P.Class.10@
+@P.Class.11@
+@P.Class.16@
+@R.Class.1@
+@R.Class.2@
+@R.Class.3@
+@R.Class.4@
+@R.Class.5@
+@R.Class.6@
+@R.Class.7@
+@R.Class.8@
+@R.Class.9@
+@R.Class.10@
+@R.Class.11@
+@R.Class.16@
+
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!                       M O R P H O T A C T I C S                         !!!
+!!!                     	 PREFIXES        	                    !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 LEXICON Root
 
-NounRoot ;
+Number ;
 
-LEXICON CL0 ! Lexicon for noun class 0 ; those are nouns for which noun class numbering is yet to be determined 
+LEXICON Number
 
-%<n%>%<cl0%>: # ;
+@P.Number.Sg@:@P.Number.Sg@m%> StemsCl0 ;
+@P.Number.Sg@:@P.Number.Sg@m%> StemsCl1 ;
+@P.Number.Pl@:@P.Number.Pl@b%> StemsCl2 ;
+@P.Number.Sg@:@P.Number.Sg@n%> StemsCl3 ;
+@P.Number.PL@:@P.Number.Pl@min%> StemsCl4 ;
+@P.Number.Sg@:@P.Number.Sg@a%> StemsCl5 ;
+@P.Number.Pl@:@P.Number.Pl@mə%> StemsCl6 ;
+@P.Number.Sg@:@P.Number.Sg@e%> StemsCl7 ;
+@P.Number.Pl@:@P.Number.Pl@bi%> StemsCl8 ;
+@P.Number.Sg@:@P.Number.Sg@ StemsCl9 ;
+@P.Number.Pl@:@P.Number.Pl@ StemsCl10 ;
+@P.Number.Sg@:@P.Number.Sg@o%> StemsCl11 ;
+@P.Number.Sg@:@P.Number.Sg@ StemsCl16 ;
 
-LEXICON CL1 ! Lexicon for noun class 1 
 
-%<n%>%<cl1%>%<sg%>: # ;
+LEXICON StemsCl0 !  Stems in Noun class 0
 
-LEXICON CL2 ! Lexicon for noun class 2 
+@P.Class.0@:@P.Class.0@ Stems ;
 
-%<n%>%<cl2%>%<pl%>: # ;
+LEXICON StemsCl1 !  Stems in Noun class 1
 
-LEXICON CL3 ! Lexicon for noun class 3
+@P.Class.1@:@P.Class.1@ Stems ;
+
+LEXICON StemsCl2 ! Stems in Noun class 2
+
+@P.Class.2@:@P.Class.2@ Stems ;
+
+LEXICON StemsCl3 ! Stems in Noun class 3
  
-%<n%>%<cl3%>%<sg%>: # ;
+@P.Class.3@:@P.Class.3@ Stems ;
 
- ! LEXICON CL4 ! Lexicon for noun class 4 
+LEXICON StemsCl4 ! Stems in Noun class 4
 
-! %<n%>%<cl4%>%<pl%>: # ;
+@P.Class.4@:@P.Class.4@ Stems ;
 
-LEXICON CL5 ! Lexicon for noun class 5
+LEXICON StemsCl5 ! Stems in Noun class 5
  
-%<n%>%<cl5%>%<sg%>: # ;
+@P.Class.5@:@P.Class.5@ Stems ;
 
-LEXICON CL6 ! Lexicon for noun class 6
+LEXICON StemsCl6 ! Stems in Noun class 6
  
-%<n%>%<cl6%>%<pl%>: # ;
+@P.Class.6@:@P.Class.6@ Stems ;
 
-LEXICON CL7 ! Lexicon for noun class 7
+LEXICON StemsCl7 ! Stems in Noun class 7
  
-%<n%>%<cl7%>%<sg%>: # ;
+@P.Class.7@:@P.Class.7@ Stems ;
 
-LEXICON CL8 ! Lexicon for noun class 8
+LEXICON StemsCl8 ! Stems in Noun class 8
  
-%<n%>%<cl8%>%<pl%>: # ;
+@P.Class.8@:@P.Class.8@ Stems ;
 
-LEXICON CL9 ! Lexicon for noun class 9
+LEXICON StemsCl9 ! Stems in Noun class 9
  
-%<n%>%<cl9%>%<sg%>: # ;
+@P.Class.9@:@P.Class.9@ Stems ;
 
-! LEXICON CL10 ! Lexicon for noun class 10
+LEXICON StemsCl10 ! Stems in Noun class 10
  
-! %<n%>%<cl10%>%<pl%>: # ;
+@P.Class.10@:@P.Class.10@ Stems ;
 
-LEXICON CL11 ! Lexicon for noun class 11
+LEXICON StemsCl11 ! Stems in Noun class 11
  
-%<n%>%<cl11%>%<sg%>: # ;
+@P.Class.11@:@P.Class.11@ Stems ;
 
+LEXICON StemsCl16 ! Stems in Noun class 16
+ 
+@P.Class.16@:@P.Class.16@ Stems ;
 
-!%<n%>%<sg%>: # ;
-!%<n%>%<pl%>:%>s # ;
+LEXICON SuffCl0
+
+@R.Class.0@:@R.Class.0@	# ;
+
+LEXICON SuffCl1
+
+@R.Class.1@:@R.Class.1@	# ;
+
+LEXICON SuffCl2
+
+@R.Class.2@:@R.Class.2@ # ;
+
+LEXICON SuffCl3
+
+@R.Class.3@:@R.Class.3@ # ;
+
+LEXICON SuffCl4
+
+@R.Class.4@:@R.Class.4@ # ;
+
+LEXICON SuffCl5
+
+@R.Class.5@:@R.Class.5@ # ;
+
+LEXICON SuffCl6
+
+@R.Class.6@:@R.Class.6@ # ;
+
+LEXICON SuffCl7
+
+@R.Class.7@:@R.Class.7@ # ;
+
+LEXICON SuffCl8
+
+@R.Class.8@:@R.Class.8@ # ;
+
+LEXICON SuffCl9
+
+@R.Class.9@:@R.Class.9@	# ;
+
+LEXICON SuffCl10
+
+@R.Class.10@:@R.Class.10@ # ;
+
+LEXICON SuffCl11
+
+@R.Class.11@:@R.Class.11@ # ;
+
+LEXICON SuffCl16
+
+@R.Class.16@:@R.Class.16@ # ;
+
+LEXICON Gender-0 ! singleton
+
+@R.Number.Sg@%<n%>%<cl0%>%<sg%>:@R.Number.Sg@ SuffCl0 ;
+
+LEXICON Gender-1 ! cl1-cl2 pairing 
+
+@R.Number.Sg@%<n%>%<cl1%>%<sg%>:@R.Number.Sg@ SuffCl1 ;
+@R.Number.Pl@%<n%>%<cl2%>%<pl%>:@R.Number.Pl@ SuffCl2 ;
+
+LEXICON Gender-2 ! cl3-cl4 pairing
+
+@R.Number.Sg@%<n%>%<cl3%>%<sg%>:@R.Number.Sg@ SuffCl3 ;
+@R.Number.Pl@%<n%>%<cl4%>%<pl%>:@R.Number.Pl@ SuffCl4 ;
+
+LEXICON Gender-3 ! cl5-cl6 pairing
+
+@R.Number.Sg@%<n%>%<cl5%>%<sg%>:@R.Number.Sg@ SuffCl5 ;
+@R.Number.Pl@%<n%>%<cl6%>%<pl%>:@R.Number.Pl@ SuffCl6 ;
+
+LEXICON Gender-4 ! cl7-cl8 pairing
+
+@R.Number.Sg@%<n%>%<cl7%>%<sg%>:@R.Number.Sg@ SuffCl7 ;
+@R.Number.Pl@%<n%>%<cl8%>%<pl%>:@R.Number.Pl@ SuffCl8 ;
+
+LEXICON Gender-5 ! cl9-cl10 pairing
+
+@R.Number.Sg@%<n%>%<cl9%>%<sg%>:@R.Number.Sg@ SuffCl9 ;
+@R.Number.Pl@%<n%>%<cl10%>%<pl%>:@R.Number.Pl@ SuffCl10 ;
+
+LEXICON Gender-6 ! cl11-cl16 pairing
+
+@R.Number.Sg@%<n%>%<cl11%>%<sg%>:@R.Number.Sg@ SuffCl11 ;
+@R.Number.Pl@%<n%>%<cl16%>%<pl%>:@R.Number.Pl@ SuffCl16 ;
+
 
 LEXICON V
 
@@ -110,102 +248,102 @@ LEXICON V
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!                          L E X I C O N                                  !!!
+!!!                           STEMS                                         !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-LEXICON NounRoot
+LEXICON Stems
 
-ndá:nda¹  CL5 ; ! "maison; house"
-nló:nlo¹ CL3 ; ! "tête; head"
-sí:si¹ CL0 ; ! "terre; earth"
-wɔ́:wɔ¹ CL3 ; ! "main; hand"
-yóp:yo¹p CL0; ! "ciel; heaven"
-ŋgogé:ŋgoge¹ CL0 ; ! soir"; evening"
-məndím:məndi¹m CL6 ; ! "eau; water"
-kídí:ki¹di¹ CL0 ; ! "matin; morning"
-Zambá:Zamba¹ CL1 ; ! "Dieu; God"
-zǎm:za⁴m CL0 ; ! "lèpre; leprosy"
-ekie:ekie CL7 ; ! "fer; iron"
-dulu:dulu CL0 ; ! "marche; treck"
-esalag:esalag CL7 ; ! "caniveau"
-tin:tin CL0 ; ! "souche; stump"
-nsis:nsis CL3 ; !"nerf; nerve"
-meki:meki CL6 ; ! "sang; blood"
-bezimbi:bezimbi CL2 ; !"soldat; soldier"
-abum:abum CL5 ; ! "ventre; belly"
-zie:zie CL0 ; ! "faim; hunger"
-ngul:ngul CL9 ; ! "force; strength"
-ndi:ndi CL0 ; ! "espoir; hope"
-ekob:ekob CL7 ; ! "peau; skin"
-osanga:osanga CL11 ; ! "tisane; herbal tea" 
-avus:avus CL5; ! "camaraderie; fellowship"
-edzidzin:edzidzin CL7 ; ! "dignité;  dignity"
-afola:afola CL5 ; ! "place ; place"
-eyɔŋ:eyɔŋ CL7 ; ! "temps ; period"
-fəg:fəg CL0 ; ! "sagesse ; wise"
-okɔ̌n:okɔ⁴n CL11 ; ! "maladie; illness"
-abɔ:abɔ CL5 ; ! "pied; foot"
-abɔ́d:abɔ¹d CL5 ; ! " petitesse; compactness"
-abǐg:abi⁴g CL5 ; ! " urticaire; hives"
-abú:abu¹ CL5 ; ! "touffe; clump"
-abui:abui CL0 ; ! " plusieurs; many"
-afə́:afə¹ CL5 ; ! "autre: other"
-afə́b:afə¹b CL5 ; ! " papier; paper"
-angós:ango¹s CL5 ; ! "groupe de personne; group of people"
-akə́ŋ:akə¹ŋ CL5 ; ! "intelligence; intelligence"
-akə̌ŋ:akə⁴ŋ CL5 ; ! "technique; know-how"
-alɛ̌ná:alɛ⁴na¹ CL5 ; ! "infection due à une morsure d'araignée; infection cause by a spider bite"
-alɛ̌d:alɛ⁴d CL5 ; ! "dureté: hardness" 
-amǒs:amo⁴s CL5 ; ! "journée; daytime"
-angə́ngɛ́:angə¹ngɛ¹ CL5 ; ! "insecte; insect"
-ángondó:a¹ngondo¹ CL5 ; ! "horreur; atrocity"
-! anə́:anə¹ ADV ; ! " comme; like"
-atə̌g:atə⁴g CL5 ; ! "faiblesse; weakness"
-atólóg:ato¹lo¹g CL5 ; ! "plaie; wound"
-ayǎb:aya⁴b CL5 ; ! "longueur; length"
-ayié:ayie¹ CL5 ; ! "difficulté; difficulty"
-ayəgɛ́:ayəgɛ¹ CL5 ; ! "apprentissage; course"
-ayǒm:ayo⁴m CL5 ; ! "vieillesse; old age"
-áyóŋ:a¹yo¹ŋ CL5 ; ! " chaleur; heat"
-ayóŋ:ayo¹ŋ CL5 ; ! " chaleur; heat"
-azúé:azu¹e¹ CL5 ; ! "pauvreté; poverty"
+ndá:nda¹  Gender-3 ; ! "maison; house"
+ló:lo¹ Gender-2 ; ! "tête; head"
+sí:si¹ Gender-0 ; ! "terre; earth"
+wɔ́:wɔ¹ Gender-0 ; ! "main; hand"
+yóp:yo¹p Gender-0 ; ! "ciel; heaven"
+ŋgogé:ŋgoge¹ Gender-5 ; ! soir"; evening"
+ndím:ndi¹m Gender-3 ; ! "eau; water"
+kídí:ki¹di¹ Gender-5 ; ! "matin; morning"
+Zambá:Zamba¹ Gender-0 ; ! "Dieu; God"
+zǎm:za⁴m Gender-5 ; ! "lèpre; leprosy"
+kie:kie Gender-4 ; ! "fer; iron"
+dulu:dulu Gender-5 ; ! "marche; treck"
+salag:salag Gender-4 ; ! "caniveau"
+tin:tin Gender-5 ; ! "souche; stump"
+nsis:nsis Gender-5 ; !"nerf; nerve"
+ki:ki Gender-3 ; ! "sang; blood"
+zimbi:zimbi Gender-1 ; !"soldat; soldier"
+bum:bum Gender-3 ; ! "ventre; belly"
+zie:zie Gender-5 ; ! "faim; hunger"
+ngul:ngul Gender-5 ; ! "force; strength"
+ndi:ndi Gender-5 ; ! "espoir; hope"
+kob:kob Gender-4 ; ! "peau; skin"
+sanga:sanga Gender-6 ; ! "tisane; herbal tea" 
+vus:vus Gender-5 ; ! "camaraderie; fellowship"
+dzidzin:dzidzin Gender-4 ; ! "dignité;  dignity"
+fola:fola Gender-3 ; ! "place ; place"
+yɔŋ:yɔŋ Gender-4 ; ! "temps ; period"
+fəg:fəg Gender-5 ; ! "sagesse ; wise"
+kɔ̌n:kɔ⁴n Gender-6 ; ! "maladie; illness"
+bɔ:bɔ Gender-3 ; ! "pied; foot"
+bɔ́d:bɔ¹d Gender-3 ; ! " petitesse; compactness"
+bǐg:bi⁴g Gender-3 ; ! " urticaire; hives"
+bú:bu¹ Gender-3 ; ! "touffe; clump"
+abui:abui Gender-0 ; ! " plusieurs; many"
+fə́:fə¹ Gender-3 ; ! "autre: other"
+fə́b:fə¹b Gender-3 ; ! " papier; paper"
+ngós:ngo¹s Gender-3 ; ! "groupe de personne; group of people"
+kə́ŋ:kə¹ŋ Gender-3 ; ! "intelligence; intelligence"
+kə̌ŋ:kə⁴ŋ Gender-3 ; ! "technique; know-how"
+lɛ̌ná:lɛ⁴na¹ Gender-3 ; ! "infection due à une morsure d'araignée; infection cause by a spider bite"
+lɛ̌d:lɛ⁴d Gender-3 ; ! "dureté: hardness" 
+mǒs:mo⁴s Gender-3 ; ! "journée; daytime"
+ngə́ngɛ́:ngə¹ngɛ¹ Gender-3 ; ! "insecte; insect"
+ángondó:a¹ngondo¹ Gender-5 ; ! "horreur; atrocity"
+! anə́:anə¹ ADV ; ! "comme; like"
+tə̌g:tə⁴g Gender-3 ; ! "faiblesse; weakness"
+tólóg:to¹lo¹g Gender-3 ; ! "plaie; wound"
+yǎb:ya⁴b Gender-3 ; ! "longueur; length"
+yié:yie¹ Gender-3 ; ! "difficulté; difficulty"
+yəgɛ́:yəgɛ¹ Gender-3 ; ! "apprentissage; course"
+yǒm:yo⁴m Gender-3 ; ! "vieillesse; old age"
+áyóŋ:a¹yo¹ŋ Gender-5 ; ! " chaleur; heat"
+yóŋ:yo¹ŋ Gender-3 ; ! " chaleur; heat"
+zúé:zu¹e¹ Gender-3 ; ! "pauvreté; poverty"
 baala:baala V ; ! "garder; keep"
 badə́:badə¹ V ; ! "encore; again"
 bám:ba¹m V ; ! "gronder; shout at"
 bán:ba¹n V ; ! "appuyer sur; press on"
 bíáli:bi¹a¹li V ; ! "naître; born"
-bidzo:bidzo CL8 ; ! "membre du corps; body limb"
-biaŋ:biaŋ CL8 ; ! "médicament; drug"
+dzo:dzo Gender-4 ; ! "membre du corps; body limb"
+aŋ:aŋ Gender-4 ; ! "médicament; drug"
 big:big V ; ! "dépister; screen"
 bwala:bwala V ; ! "soutenir (un témoignage); support"
-edzo:edzo CL7 ; ! "membre du corps; body limb"
-bifə́fɛ̂:bifə¹fɛ³ CL8 ; ! "végétation anarchique; wild growth"
-bilamvomba:bilamvomba CL8 ; !"désordre excessif; lot of disorder"
-bíləmbə:bi¹ləmbə CL8 ; ! "microscope; microscope"
-bɔ:bɔ V ; ! "faire; do"
+dzo:dzo Gender-4 ; ! "membre du corps; body limb"
+fə́fɛ̂:fə¹fɛ³ Gender-4 ; ! "végétation anarchique; wild growth"
+bilamvomba:bilamvomba Gender-5 ; !"désordre excessif; lot of disorder"
+bíləmbə:bi¹ləmbə Gender-5 ; ! "microscope; microscope"
+bɔ:bɔ V ; ! "faire ; do"
 bɔban:bɔban V ; ! "se faire; happen"
-bə́bə́lá:bə¹bə¹la¹ CL0 ; ! "vérité; true"
+bə́bə́lá:bə¹bə¹la¹ Gender-5 ; ! "vérité; true"
 bə́de:bə¹de V ; ! "élever; raise up"
 bəgə:bəgə V ; ! "porter; carry"
 bəlan:bəlan V ; ! "utiliser; use"
 bələ́:bələ¹ V ; ! "dire vrai; say the thruth"
 bə́nde:bə¹nde V ; ! "recommander; recommand"
 bɛ:bɛ V ; ! "dépecer; butcher"
-efas:efas CL7 ; ! "analyse; screening" 
-efəl:efəl CL7 ; ! "cicatrice; scare"
-ekóán:eko¹a¹n CL7 ; ! "réunion; meeting"
-elɔbí:elɔbi¹ CL7 ; ! "marécage; swamp"
-elɔ́g:elɔ¹g CL7 ; ! "herbe; grass"
-elunga:elunga CL7 ; ! "association; association"
-emvúm:emvu¹m CL7 ; ! "particule; particle"
-enam:enam CL7 ; ! "membre supérieur du corps; upper limb"
-engas:engas CL7 ; ! "marais; marsh"
-esédəga:ese¹dəga CL7 ; ! "échantillon; sample"
-etam:etam CL7 ; ! "puit; well"
-evɛ̌s:evɛ⁴s CL7 ; ! "os; bone"
-evəga:evəga CL7 ; ! "exemple; example"
-eweməga:eweməga CL7 ; ! "nécrose; necrosis"
-eyalga:eyalga CL7 ; ! "enveloppe; envelope"
+fas:fas Gender-4 ; ! "analyse; screening" 
+fəl:fəl Gender-4 ; ! "cicatrice; scare"
+kóán:ko¹a¹n Gender-4 ; ! "réunion; meeting"
+lɔbí:lɔbi¹ Gender-4 ; ! "marécage; swamp"
+lɔ́g:lɔ¹g Gender-4 ; ! "herbe; grass"
+lunga:lunga Gender-4 ; ! "association; association"
+mvúm:mvu¹m Gender-4 ; ! "particule; particle"
+nam:nam Gender-4 ; ! "membre supérieur du corps; upper limb"
+ngas:ngas Gender-4 ; ! "marais; marsh"
+sédəga:se¹dəga Gender-4 ; ! "échantillon; sample"
+tam:tam Gender-4 ; ! "puit; well"
+vɛ̌s:vɛ⁴s Gender-4 ; ! "os; bone"
+vəga:vəga Gender-4 ; ! "exemple; example"
+weməga:weməga Gender-4 ; ! "nécrose; necrosis"
+yalga:yalga Gender-4 ; ! "enveloppe; envelope"
 fíd:fi¹d V ; ! "écraser; crush"
 fə́b:fə¹b V ; ! "sonder; test"
 kalan:kalan V ; ! "transmettre; transmit"
@@ -214,12 +352,12 @@ ki:ki V ; ! "s'abstenir; (de)refrain (from)"
 kili:kili V ; ! " interdir à; forbidden"
 lod:lod V ; ! "dépasser; pass"
 manə:manə V ; ! "terminer; complete"
-miníngá:mini¹nga¹ CL1 ; ! "femme; woman"
-mɔ́n:mɔ¹n CL1 ; ! "bébé; baby"
-mɔ́ngɔ́:mɔ¹ngɔ¹ CL1 ; ! "enfant; child"
-kpələ́mvě:kpələ¹mve⁴ CL0 ; ! "cellulite; stretch mark"
+iníngá:ini¹nga¹ Gender-1 ; ! "femme; woman"
+ɔ́n:ɔ¹n Gender-1 ; ! "bébé; baby"
+ɔ́ngɔ́:ɔ¹ngɔ¹ Gender-1 ; ! "enfant; child"
+kpələ́mvě:kpələ¹mve⁴ Gender-5 ; ! "cellulite; stretch mark"
 tɛ́:tɛ¹ V ; !"être douloureux; to be painful"
-ongə́ngə́mə:ongə¹ngə¹mə CL11 ; ! "microbe; germ"
+ngə́ngə́mə:ngə¹ngə¹mə Gender-5 ; ! "microbe; germ"
 yá:ya¹ V ; ! "grandir; grow up"
 yi:yi V ; ! "vouloir; will"
 yóməló:yo¹məlo¹ V ; ! "raviver; revive"
