@@ -29,8 +29,8 @@
 
   <mode name="ewo-gener" install="yes">
     <pipeline>
-      <program name="lt-proc -g">
-        <file name="ewo.autogen.bin"/>
+      <program name="hfst-proc -g">
+        <file name="ewo.autogen.hfst"/>
       </program>
     </pipeline>
   </mode>
