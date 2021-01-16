@@ -12,52 +12,71 @@ TARGETS_COMMON =			\
 	$(LANG1).autogen.hfst		\
 	$(LANG1).autogen.bin		\
 	$(LANG1).autogen.att.gz		\
-	$(LANG1).autopgen.bin		\
-	$(LANG1).prob                   \
+	$(LANG1).autoseg.hfst		\
+	$(LANG1).autoseg.bin		\
 	$(LANG1).rlx.bin
 
-# This include defines goals for install-modes, .deps/.d, autobil.prefixes and .mode files:
+##	$(LANG1).autophon.hfst		
+##	$(LANG1).prob		
+
+TARGETS_INTERMEDIATE = $(LANG1).mor.hfst $(LANG1).seg.hfst $(LANG1).gen.hfst
+
+# This include defines goals for install-modes, .deps/.d and .mode files:
 @ap_include@
 
 ###############################################################################
-## Ewondo transducer
-###############################################################################
 
-.deps/$(LANG1).twol.hfst: $(BASENAME).$(LANG1).twol .deps/.d
+ewo.automorf.hfst: ewo.mor.hfst ewo.spellrelax.hfst
+	hfst-invert $< |  hfst-compose -F -1 - -2 ewo.spellrelax.hfst  | hfst-invert | hfst-fst2fst -w -o $@
+
+ewo.autogen.hfst: ewo.gen.hfst
+	hfst-fst2fst -w $< -o $@
+
+ewo.autoseg.hfst: ewo.seg.hfst 
+	hfst-fst2fst -w $< -o $@
+
+ewo.mor.hfst: ewo.gen.hfst ewo.mor.twol.hfst
+	hfst-compose-intersect -1 ewo.gen.hfst -2 ewo.mor.twol.hfst | hfst-realign | hfst-invert -o $@
+
+# <impf><o_pl1><s_pl3>tʼis<v><tv>+o<mark>:k>oj>ki>tʼis>o
+ewo.gen.hfst: ewo.lexc.hfst ewo.twol.hfst
+	hfst-compose-intersect -1 ewo.lexc.hfst -2 ewo.twol.hfst | hfst-realign -o $@
+
+ewo.twol.hfst: apertium-ewo.ewo.twol
 	hfst-twolc $< -o $@
 
-.deps/$(LANG1).RL.lexc: $(BASENAME).$(LANG1).lexc .deps/.d
-	cat $< | grep -v 'Dir/LR' > $@
+# <impf><o_pl1><s_pl3>tʼis<v><tv>+o<mark>:k>{o}j>k{i}>tʼis>o
+ewo.lexc.hfst: apertium-ewo.ewo.lexc
+	hfst-lexc -A --Werror $< -o $@
 
-.deps/$(LANG1).LR.lexc: $(BASENAME).$(LANG1).lexc .deps/.d
-	cat $< | grep -v 'Dir/RL' > $@
+ewo.mor.twol.hfst: apertium-ewo.ewo.mor.twol
+	hfst-twolc apertium-ewo.ewo.mor.twol -o ewo.mor.twol.hfst
 
-.deps/$(LANG1).RL.lexc.hfst: .deps/$(LANG1).RL.lexc
-	hfst-lexc $< -o $@ -v --Werror
+# kojkitʼiso:k>oj>ki>tʼis>o
+ewo.seg.hfst: ewo.mor.hfst ewo.gen.hfst
+	hfst-compose -F -1 ewo.mor.hfst -2 ewo.gen.hfst -o ewo.seg.hfst 
 
-.deps/$(LANG1).LR.lexc.hfst: .deps/$(LANG1).LR.lexc
-	hfst-lexc $< -o $@ -v --Werror
+ewo.phon.hfst: apertium-ewo.ewo.phon
+	hfst-regexp2fst -S apertium-ewo.ewo.phon | hfst-repeat -o ewo.phon.hfst
 
-.deps/$(LANG1).spellrelax.hfst: $(BASENAME).$(LANG1).spellrelax
-	hfst-regexp2fst -S < $< -o $@
+ewo.autophon.hfst: ewo.mor.hfst ewo.phon.hfst
+	hfst-fst2fst -w ewo.phon.hfst -o ewo.autophon.hfst
+#	hfst-project -p upper ewo.mor.hfst | hfst-compose -1 - -2 ewo.phon.hfst | hfst-fst2fst -w -o ewo.autophon.hfst
 
-.deps/$(LANG1).RL.hfst: .deps/$(LANG1).RL.lexc.hfst .deps/$(LANG1).twol.hfst
-	hfst-compose-intersect -1 .deps/$(LANG1).RL.lexc.hfst -2 .deps/$(LANG1).twol.hfst -o $@
+ewo.spellrelax.hfst: apertium-ewo.ewo.spellrelax 
+	hfst-regexp2fst -S -o $@ < $<
 
-.deps/$(LANG1).LR.hfst: .deps/$(LANG1).LR.lexc.hfst .deps/$(LANG1).twol.hfst .deps/$(LANG1).spellrelax.hfst
-	hfst-compose-intersect -1 .deps/$(LANG1).LR.lexc.hfst -2 .deps/$(LANG1).twol.hfst | hfst-compose -1 - -2 .deps/$(LANG1).spellrelax.hfst  -o $@
+ewo.rlx.bin: apertium-ewo.ewo.rlx
+	cg-comp $< $@
 
-$(LANG1).autogen.hfst: .deps/$(LANG1).RL.hfst
-	hfst-fst2fst -O $< -o $@
+$(LANG1).autogen.att.gz: $(LANG1).gen.hfst
+	hfst-fst2txt $< | gzip -9 -c > $@
 
-$(LANG1).automorf.hfst: .deps/$(LANG1).LR.hfst
-	hfst-invert $< | hfst-fst2fst -O -o $@
+$(LANG1).automorf.att.gz: $(LANG1).mor.hfst ewo.spellrelax.hfst
+	hfst-invert $< |  hfst-compose -F -1 - -2 ewo.spellrelax.hfst  | hfst-invert | hfst-fst2txt | gzip -9 -c > $@
 
-$(LANG1).autogen.att.gz: $(LANG1).autogen.hfst
-	hfst-fst2txt $< | gzip -9 -c -n > $@
-
-$(LANG1).automorf.att.gz: $(LANG1).automorf.hfst
-	hfst-fst2txt $< | gzip -9 -c -n > $@
+$(LANG1).autoseg.att.gz: $(LANG1).seg.hfst
+	hfst-fst2txt $< | gzip -9 -c > $@
 
 $(LANG1).autogen.bin: $(LANG1).autogen.att.gz .deps/.d
 	zcat < $< > .deps/$(LANG1).autogen.att
@@ -67,65 +86,11 @@ $(LANG1).automorf.bin: $(LANG1).automorf.att.gz .deps/.d
 	zcat < $< > .deps/$(LANG1).automorf.att
 	lt-comp lr .deps/$(LANG1).automorf.att $@
 
-$(LANG1).autopgen.bin: $(BASENAME).post-$(LANG1).dix
-	lt-comp lr $< $@
+$(LANG1).autoseg.bin: $(LANG1).autoseg.att.gz .deps/.d
+	zcat < $< > .deps/$(LANG1).autoseg.att
+	lt-comp lr .deps/$(LANG1).autoseg.att $@
 
-###############################################################################
-## Debugging transducers (for testvoc)
-###############################################################################
-
-debug: .deps/$(LANG1).LR-debug.hfst .deps/$(LANG1).lexc.hfst
-
-.deps/$(LANG1).LR-debug.hfst: $(BASENAME).$(LANG1).lexc .deps/.d
-	cat $< | grep -v 'Dir/RL' | grep -v 'Use/Circ' > .deps/$(LANG1).LR-debug.lexc
-	hfst-lexc .deps/$(LANG1).LR-debug.lexc -o .deps/$(LANG1).LR-debug.lexc.hfst -v
-	hfst-compose-intersect -1 .deps/$(LANG1).LR-debug.lexc.hfst -2 .deps/$(LANG1).twol.hfst -o $@
-
-.deps/$(LANG1).lexc.hfst: .deps/$(LANG1).RL.lexc.hfst
-	hfst-fst2fst -O -i $< -o $@
-
-###############################################################################
-## Disambiguation rules
-###############################################################################
-
-$(LANG1).rlx.bin: $(BASENAME).$(LANG1).rlx
-	cg-comp $< $@
-
-###############################################################################
-## Spell checker
-###############################################################################
-
-$(LANG1).zhfst: .deps/acceptor.default.hfst .deps/errmodel.default.hfst
-	rm -f $@
-	zip -j $@ .deps/acceptor.default.hfst .deps/errmodel.default.hfst speller/index.xml
-
-.deps/errmodel.default.hfst: .deps/words.default.hfst .deps/strings.default.hfst
-	python dev/editdist.py -v -s -d 1 -e '@0@' -i speller/editdist.default.txt -a .deps/acceptor.default.hfst \
-	| hfst-txt2fst  -e '@0@' -o .deps/editdist.default.hfst
-	hfst-disjunct .deps/strings.default.hfst .deps/editdist.default.hfst \
-	| hfst-minimise | hfst-repeat -f 1 -t 2 -o .deps/editstrings.default.hfst
-	hfst-disjunct .deps/words.default.hfst .deps/editstrings.default.hfst \
-	| hfst-fst2fst  -f olw -o $@
-
-.deps/words.default.hfst: speller/words.default.txt
-	grep -v -e "^#" -e "^$$" $< | hfst-strings2fst  -j -o $@
-
-.deps/strings.default.hfst: speller/strings.default.txt .deps/anystar.hfst
-	grep -v -e "^#" -e "^$$" $< | hfst-strings2fst  -j | hfst-concatenate .deps/anystar.hfst - |\
-	hfst-concatenate - .deps/anystar.hfst -o $@
-
-.deps/anystar.hfst:
-	echo "?*;" | hfst-regexp2fst -S -o $@
-
-.deps/acceptor.default.hfst: $(LANG1).autogen.hfst
-	cat $< | hfst-fst2fst -t | hfst-project  --project=lower | hfst-minimise |hfst-fst2fst  -f olw -o $@
-
-
-###############################################################################
-## Unigram tagger
-###############################################################################
-
-$(LANG1).prob: corpus/$(LANG1).tagged
+$(LANG1).prob: $(BASENAME).$(LANG1).tagged
 	apertium-tagger -s 0 -u 2 $@ $<
 
 ###############################################################################
@@ -134,9 +99,8 @@ $(LANG1).prob: corpus/$(LANG1).tagged
 
 EXTRA_DIST=$(BASENAME).$(LANG1).lexc		\
 		$(BASENAME).$(LANG1).twol	\
+		$(BASENAME).$(LANG1).spellrelax \
 		$(BASENAME).$(LANG1).rlx	\
-		$(BASENAME).post-$(LANG1).dix	\
-		$(LANG1).prob			\
 		modes.xml
 
 ###############################################################################
@@ -155,7 +119,7 @@ if HAVE_HFSTOSPELL
 EXTRA_TARGETS += $(LANG1).zhfst
 endif # HAVE_HFSTOSPELL
 
-apertium_ewo_DATA=$(TARGETS_COMMON) $(EXTRA_TARGETS)
+apertium_ewo_DATA=$(TARGETS_COMMON) $(EXTRA_TARGETS) 
 
 pkgconfigdir = $(prefix)/share/pkgconfig
 pkgconfig_DATA = $(BASENAME).pc
@@ -166,22 +130,14 @@ install-data-local: install-modes
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).lexc $(DESTDIR)$(apertium_ewo_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).twol $(DESTDIR)$(apertium_ewo_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).rlx $(DESTDIR)$(apertium_ewo_srcdir)
-	$(INSTALL_DATA) $(BASENAME).post-$(LANG1).dix $(DESTDIR)$(apertium_ewo_srcdir)
+
 
 ###############################################################################
 ## Cleanup
 ###############################################################################
 
-CLEANFILES = $(TARGETS_COMMON)
+CLEANFILES = $(TARGETS_COMMON) $(TARGETS_INTERMEDIATE)
 clean-local:
 	-rm -rf .deps modes
 
 ###############################################################################
-## Test
-###############################################################################
-
-test: all
-	echo "TODO test sentence" | apertium -d . ewo-morph | tee .test-mt
-	@echo "TODO test analysis results" > .test-ref
-	@diff .test-ref .test-mt
-	@rm .test-ref .test-mt

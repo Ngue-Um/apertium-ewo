@@ -40,7 +40,7 @@ Multichar_Symbols
 
 ! Flags for Number
 @P.Number.Sg@
-@P.NUmber.Pl@
+@P.Number.Pl@
 @R.Number.Sg@
 @R.Number.Pl@
 
@@ -86,7 +86,7 @@ LEXICON Number
 @P.Number.Sg@:@P.Number.Sg@m%> StemsCl1 ;
 @P.Number.Pl@:@P.Number.Pl@b%> StemsCl2 ;
 @P.Number.Sg@:@P.Number.Sg@n%> StemsCl3 ;
-@P.Number.PL@:@P.Number.Pl@min%> StemsCl4 ;
+@P.Number.Pl@:@P.Number.Pl@min%> StemsCl4 ;
 @P.Number.Sg@:@P.Number.Sg@a%> StemsCl5 ;
 @P.Number.Pl@:@P.Number.Pl@mə%> StemsCl6 ;
 @P.Number.Sg@:@P.Number.Sg@e%> StemsCl7 ;
