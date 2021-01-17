@@ -36,11 +36,13 @@ ewo.autoseg.hfst: ewo.seg.hfst
 	hfst-fst2fst -w $< -o $@
 
 ewo.mor.hfst: ewo.gen.hfst ewo.mor.twol.hfst
-	hfst-compose-intersect -1 ewo.gen.hfst -2 ewo.mor.twol.hfst | hfst-realign | hfst-invert -o $@
+	hfst-compose-intersect -1 ewo.gen.hfst -2 ewo.mor.twol.hfst | hfst-invert -o $@
+# realign
 
 # <impf><o_pl1><s_pl3>tʼis<v><tv>+o<mark>:k>oj>ki>tʼis>o
 ewo.gen.hfst: ewo.lexc.hfst ewo.twol.hfst
-	hfst-compose-intersect -1 ewo.lexc.hfst -2 ewo.twol.hfst | hfst-realign -o $@
+	hfst-compose-intersect -1 ewo.lexc.hfst -2 ewo.twol.hfst  -o $@
+# realign
 
 ewo.twol.hfst: apertium-ewo.ewo.twol
 	hfst-twolc $< -o $@
