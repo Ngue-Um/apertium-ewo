@@ -14,10 +14,10 @@ TARGETS_COMMON =			\
 	$(LANG1).autogen.att.gz		\
 	$(LANG1).autoseg.hfst		\
 	$(LANG1).autoseg.bin		\
+	$(LANG1).prob		\
 	$(LANG1).rlx.bin
 
 ##	$(LANG1).autophon.hfst		
-##	$(LANG1).prob		
 
 TARGETS_INTERMEDIATE = $(LANG1).mor.hfst $(LANG1).seg.hfst $(LANG1).gen.hfst
 
