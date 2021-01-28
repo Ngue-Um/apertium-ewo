@@ -82,7 +82,7 @@ Number ;
 
 LEXICON Number
 
-@P.Number.Sg@:@P.Number.Sg@m%> StemsCl0 ;
+@P.Number.Sg@:@P.Number.Sg@%> StemsCl0 ;
 @P.Number.Sg@:@P.Number.Sg@m%> StemsCl1 ;
 @P.Number.Pl@:@P.Number.Pl@b%> StemsCl2 ;
 @P.Number.Sg@:@P.Number.Sg@n%> StemsCl3 ;
