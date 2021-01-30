@@ -18,7 +18,12 @@ Multichar_Symbols
 %<cl3%> ! Noun class 3 ; classe nominale 3
 %<cl4%> ! Noun class 4 ; classe nominale 4
 %<cl5%> ! Noun class 5 ; classe nominale 5
+%<cl5a%> ! Noun class 5a ; classe nominale 5a
+%<cl5b%> ! Noun class 5b ; classe nominale 5b
+%<cl5c%> ! Noun class 5c ; classe nominale 5c
+%<cl5d%> ! Noun class 5a ; classe nominale 5d
 %<cl6%> ! Noun class 6 ; classe nominale 6
+%<cl6a%> ! Noun class 6a ; classe nominale 6a
 %<cl7%> ! Noun class 7 ; classe nominale 7
 %<cl8%> ! Noun class 8 ; classe nominale 8
 %<cl9%> ! Noun class 9 ; classe nominale 9
@@ -56,6 +61,7 @@ Multichar_Symbols
 @P.Class.5c@
 @P.Class.5d@
 @P.Class.6@
+@P.Class.6a@
 @P.Class.7@
 @P.Class.8@
 @P.Class.9@
@@ -72,6 +78,7 @@ Multichar_Symbols
 @R.Class.5c@
 @R.Class.5d@
 @R.Class.6@
+@R.Class.6a@
 @R.Class.7@
 @R.Class.8@
 @R.Class.9@
@@ -101,6 +108,7 @@ LEXICON Number
 @P.Number.Sg@:@P.Number.Sg@l%> StemsCl5c ;
 @P.Number.Sg@:@P.Number.Sg@y%> StemsCl5d ;
 @P.Number.Pl@:@P.Number.Pl@mə%> StemsCl6 ;
+@P.Number.Pl@:@P.Number.Pl@mə%> StemsCl6a ;
 @P.Number.Sg@:@P.Number.Sg@e%> StemsCl7 ;
 @P.Number.Pl@:@P.Number.Pl@bi%> StemsCl8 ;
 @P.Number.Sg@:@P.Number.Sg@ StemsCl9 ;
@@ -152,6 +160,10 @@ LEXICON StemsCl5d ! Stems in Noun class 5d
 LEXICON StemsCl6 ! Stems in Noun class 6
  
 @P.Class.6@:@P.Class.6@ Stems ;
+
+LEXICON StemsCl6a ! Stems in Noun class 6a
+ 
+@P.Class.6a@:@P.Class.6a@ Stems ;
 
 LEXICON StemsCl7 ! Stems in Noun class 7
  
@@ -217,10 +229,13 @@ LEXICON SuffCl5d
 
 @R.Class.5d@:@R.Class.5d@ # ;
 
-
 LEXICON SuffCl6
 
 @R.Class.6@:@R.Class.6@ # ;
+
+LEXICON SuffCl6a
+
+@R.Class.6a@:@R.Class.6a@ # ;
 
 LEXICON SuffCl7
 
@@ -278,14 +293,17 @@ LEXICON Gender-3b ! cl5b-cl6 pairing
 LEXICON Gender-3c ! cl5c one-class gender
 
 @R.Number.Sg@%<n%>%<cl5c%>%<sg%>:@R.Number.Sg@ SuffCl5c ;
+@R.Number.Sg@%<n%>%<cl5c%>%<sg%>:@R.Number.Sg@ SuffCl5c ;
 
 LEXICON Gender-3d ! cl5d one-class gender
 
 @R.Number.Sg@%<n%>%<cl5d%>%<sg%>:@R.Number.Sg@ SuffCl5d ;
+@R.Number.Sg@%<n%>%<cl5d%>%<sg%>:@R.Number.Sg@ SuffCl5d ;
 
-LEXICON Gender-3e ! cl6 one-class gender
+LEXICON Gender-3e ! cl6a one-class gender
 
-@R.Number.Sg@%<n%>%<cl6%>%<sg%>:@R.Number.Sg@ SuffCl6 ;
+@R.Number.Pl@%<n%>%<cl6a%>%<pl%>:@R.Number.Pl@ SuffCl6a ;
+@R.Number.Pl@%<n%>%<cl6a%>%<pl%>:@R.Number.Pl@ SuffCl6a ;
 
 LEXICON Gender-4 ! cl7-cl8 pairing
 
@@ -324,18 +342,18 @@ abui:abui Gender-0 ; ! " plusieurs; many"
 ! anə́:anə¹ ADV ; ! "comme; like"
 ǎl:a⁴l Gender-3a ; ! "village; village"
 ángondó:a¹ngondo¹ Gender-5 ; ! "horreur; atrocity"
-aŋ:aŋ Gender-4 ; ! "médicament; drug"ndá:nda¹  Gender-3 ; ! "maison; house"
+aŋ:aŋ Gender-4 ; ! "médicament; drug"
 áyóŋ:a¹yo¹ŋ Gender-5 ; ! " chaleur; heat"
 baala:baala V ; ! "garder; keep"
 badə́:badə¹ V ; ! "encore; again"
 bám:ba¹m V ; ! "gronder; shout at"
 bán:ba¹n V ; ! "appuyer sur; press on"
-bíáli:bi¹a¹li V ; ! "naître; born"
-bǐg:bi⁴g Gender-3 ; ! " urticaire; hives"
+bíáli:bi¹a¹li V ; ! "naître; born"
+bǐɡ:bi⁴ɡ Gender-3 ; ! " urticaire; hives"
 bɛ:bɛ V ; ! "dépecer; butcher"
-bə́bə́lá:bə¹bə¹la¹ Gender-5 ; ! "vérité; true"
+bə́bə́lá:bə¹bə¹la¹ Gender-5 ; ! "vérité; true"
 bə́de:bə¹de V ; ! "élever; raise up"
-bəgə:bəgə V ; ! "porter; carry"
+bəɡə:bəɡə V ; ! "porter; carry"
 bəlan:bəlan V ; ! "utiliser; use"
 bələ́:bələ¹ V ; ! "dire vrai; say the thruth"
 bə́nde:bə¹nde V ; ! "recommander; recommand"
@@ -386,6 +404,7 @@ manə:manə V ; ! "terminer; complete"
 mǒs:mo⁴s Gender-3 ; ! "journée; daytime"
 mvúm:mvu¹m Gender-4 ; ! "particule; particle"
 nam:nam Gender-4 ; ! "membre supérieur du corps; upper limb"
+ndá:nda¹ Gender-3 ; ! "maison; house"
 ndi:ndi Gender-5 ; ! "espoir; hope"
 ndím:ndi¹m Gender-3e ; ! "eau; water"
 ngas:ngas Gender-4 ; ! "marais; marsh"
