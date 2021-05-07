@@ -43,6 +43,8 @@ Multichar_Symbols
 ! Other symbols
 %>      ! Morpheme boundary
 
+%{ə%}
+
 ! Flags for Number
 @P.Number.Sg@
 @P.Number.Pl@
@@ -68,7 +70,7 @@ Multichar_Symbols
 @P.Class.10@
 @P.Class.11@
 @P.Class.16@
-@R.Class.
+!@R.Class.
 @R.Class.1@
 @R.Class.2@
 @R.Class.3@
@@ -108,8 +110,8 @@ LEXICON Number
 @P.Number.Sg@:@P.Number.Sg@d%> StemsCl5b ;
 @P.Number.Sg@:@P.Number.Sg@l%> StemsCl5c ;
 @P.Number.Sg@:@P.Number.Sg@y%> StemsCl5d ;
-@P.Number.Pl@:@P.Number.Pl@mə%> StemsCl6 ;
-@P.Number.Pl@:@P.Number.Pl@mə%> StemsCl6a ;
+@P.Number.Pl@:@P.Number.Pl@m%{ə%}%> StemsCl6 ;
+@P.Number.Pl@:@P.Number.Pl@m%{ə%}%> StemsCl6a ;
 @P.Number.Sg@:@P.Number.Sg@e%> StemsCl7 ;
 @P.Number.Pl@:@P.Number.Pl@bi%> StemsCl8 ;
 @P.Number.Sg@:@P.Number.Sg@ StemsCl9 ;
