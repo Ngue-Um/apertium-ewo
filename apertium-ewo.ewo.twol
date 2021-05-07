@@ -21,6 +21,10 @@ Rules
 "Remove suffix vowel with vowel-ending stem"
 i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
 
+"Delete prefix vowel at morpheme boundary before roots begining in a vowel"
+%{ə%}:0 <=> m _ %>: :Vow ;
+
+
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
 ! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
