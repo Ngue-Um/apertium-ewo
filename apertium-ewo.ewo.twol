@@ -8,6 +8,7 @@ Alphabet
  ⁴:̌   ! Rising tone (Low-High)
  ⁵:̄   ! Mid tone
  
+ %{ə%}:ə %{ə%}:0
 
  %{A%}:a %>:%>  ;
 
@@ -22,7 +23,7 @@ Rules
 i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
 
 "Delete prefix vowel at morpheme boundary before roots begining in a vowel"
-%{ə%}:0 <=> m _ %>: :Vow ;
+%{ə%}:0 <=> m _ %>: :Vowel ;
 
 
 ! Resources:
