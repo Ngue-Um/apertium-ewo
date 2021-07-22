@@ -3,13 +3,12 @@
 Multichar_Symbols
 
 ! Part of speech categories
-%<n%>   ! Noun
-%<vblex%> ! Verb
+%<n%>   ! Nom ; Noun
+%<vblex%> ! Verbe ; Verbe
 
 ! Number morphology
-%<pl%>  ! Plural
-%<sg%>  ! Singular
-
+%<pl%>  ! Pluriel ; Plural
+%<sg%>  ! Singulier ;Singular
 
 ! Noun class morphology
 %<cl0%> ! Noun class 0 ; classe nominale 0
@@ -31,19 +30,21 @@ Multichar_Symbols
 %<cl11%> ! Noun class 11 ; classe nominale 11
 
 
-! Verb inflection
-%<inf%> ! Infinitive; infinitif
-! %<p1%> ! Immediate past ; passé immédiat
-! %<p2%> ! Recent past ; passé récent
-! %<p3%> ! Remote past ; passé lointain
-! %<f1%> ! Immediate future ; futur immédiat
-! %<f2%> ! Near future ; futur récent
-! %<p3%> ! Distant future ; futur lointain
+! Verb morphology
+%<inf%> ! Infinitive ; infinitif
+%<ins%> ! Instrumental ; Instrumental
+%<refl%> ! Reflexif ; Reflexive
+%<p1%> ! Immediate past ; passé immédiat
+%<p2%> ! Recent past ; passé récent
+%<p3%> ! Remote past ; passé lointain
+%<f1%> ! Immediate future ; futur immédiat
+%<f2%> ! Near future ; futur récent
+%<p3%> ! Distant future ; futur lointain
 
 ! Other symbols
 %>      ! Morpheme boundary
 
-%{ə%}
+%{ë%}
 
 ! Flags for Number
 @P.Number.Sg@
@@ -110,8 +111,8 @@ LEXICON Number
 @P.Number.Sg@:@P.Number.Sg@d%> StemsCl5b ;
 @P.Number.Sg@:@P.Number.Sg@l%> StemsCl5c ;
 @P.Number.Sg@:@P.Number.Sg@y%> StemsCl5d ;
-@P.Number.Pl@:@P.Number.Pl@m%{ə%}%> StemsCl6 ;
-@P.Number.Pl@:@P.Number.Pl@m%{ə%}%> StemsCl6a ;
+@P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsCl6 ;
+@P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsCl6a ;
 @P.Number.Sg@:@P.Number.Sg@e%> StemsCl7 ;
 @P.Number.Pl@:@P.Number.Pl@bi%> StemsCl8 ;
 @P.Number.Sg@:@P.Number.Sg@ StemsCl9 ;
@@ -327,12 +328,13 @@ LEXICON Gender-6 ! cl11-cl16 pairing
 LEXICON V
 
 %<vblex%>%<inf%>: # ;
-!%<vblex%>:%<p1%>: # ;
-!%<vblex%>%<p2%>: # ;
-!%<vblex%>%<p3%>: # ;
-!%<vblex%>%<f1%>: # ;
-!%<vblex%>%<f2%>: # ;
-!%<vblex%>%<f3%>: # ;
+%<vblex%>%<refl%>: # ;
+%<vblex%>%<p1%>: # ;
+%<vblex%>%<p2%>: # ;
+%<vblex%>%<p3%>: # ;
+%<vblex%>%<f1%>: # ;
+%<vblex%>%<f2%>: # ;
+%<vblex%>%<f3%>: # ;
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -341,116 +343,204 @@ LEXICON V
 
 LEXICON Stems
 
+! abui:abui Gender-0 ; ! " plusieurs; many"
 abui:abui Gender-0 ; ! " plusieurs; many"
 ! anə́:anə¹ ADV ; ! "comme; like"
-ǎl:a⁴l Gender-3a ; ! "village; village"
-ángondó:a¹ngondo¹ Gender-5 ; ! "horreur; atrocity"
-aŋ:aŋ Gender-4 ; ! "médicament; drug"
-áyóŋ:a¹yo¹ŋ Gender-5 ; ! " chaleur; heat"
+! ǎl:a⁴l Gender-3a ; ! "village; village"
+al:al Gender-3a ; ! "village; village"
+! ángondó:a¹ngondo¹ Gender-5 ; ! "horreur; atrocity"
+angondo:angondo Gender-5 ; ! "horreur; atrocity"
+!aŋ:aŋ Gender-4 ; ! "médicament; drug"
+añ:añ Gender-4 ; ! "médicament; drug"
+! ayóŋ:a¹yo¹ŋ Gender-5 ; ! " chaleur; heat"
+ayoñ:ayoñ Gender-5 ; ! " chaleur; heat"
 baala:baala V ; ! "garder; keep"
-badə́:badə¹ V ; ! "encore; again"
-bám:ba¹m V ; ! "gronder; shout at"
-bán:ba¹n V ; ! "appuyer sur; press on"
-bíáli:bi¹a¹li V ; ! "naître; born"
-bǐɡ:bi⁴ɡ Gender-3 ; ! " urticaire; hives"
-bɛ:bɛ V ; ! "dépecer; butcher"
-bə́bə́lá:bə¹bə¹la¹ Gender-5 ; ! "vérité; true"
-bə́de:bə¹de V ; ! "élever; raise up"
-bəɡə:bəɡə V ; ! "porter; carry"
-bəlan:bəlan V ; ! "utiliser; use"
-bələ́:bələ¹ V ; ! "dire vrai; say the thruth"
-bə́nde:bə¹nde V ; ! "recommander; recommand"
+! badə́:badə¹ V ; ! "encore; again"
+badë:badë V ; ! "encore; again"
+! bám:ba¹m V ; ! "gronder; shout at"
+bam:bam V ; ! "gronder; shout at"
+! bán:ba¹n V ; ! "appuyer sur; press on"
+ban:ban V ; ! "appuyer sur; press on"
+bañ:bañ Gender-3 ; ! "iroko ; Iroko"
+! bíáli:bi¹a¹li V ; ! "naître; born"
+bëm:bëm V ; ! "tarder" ; delay"
+biali:biali V ; ! "naître; born"
+! bǐɡ:bi⁴ɡ Gender-3 ; ! " urticaire; hives"
+big:big Gender-3 ; ! " urticaire; hives"
+! bɛ:bɛ V ; ! "dépecer; butcher"
+be:be Gender-3 ; ! "mal ; wrong"
+bè:bè V ; ! "dépecer; butcher"
+! bə́bə́lá:bə¹bə¹la¹ Gender-5 ; ! "vérité; true"
+bëbëla:bëbëla Gender-5 ; ! "vérité; true"
+! bə́de:bə¹de V ; ! "élever; raise up"
+bëde:bëde V ; ! "élever; raise up"
+! bəɡə:bəɡə V ; ! "porter; carry"
+bëgë:bëgë V ; ! "porter; carry"
+! bəlan:bəlan V ; ! "utiliser; use"
+!bëlan:bëlan V ; ! "utiliser; use"
+! bələ́:bələ¹ V ; ! "dire vrai; say the thruth"
+bëlë:bëlë V ; ! "dire vrai; say the thruth"
+! bə́nde:bə¹nde V ; ! "recommander; recommand"
+bëmba:bëmba Gender-3 ; ! "étable ; stable"
+bëña:bëña Gender-3 ; ! "cloche ; bell"
+bënde:bënde V ; ! "recommander; recommand"
 big:big V ; ! "dépister; screen"
 bilamvomba:bilamvomba Gender-5 ; !"désordre excessif; lot of disorder"
-bíləmbə:bi¹ləmbə Gender-5 ; ! "microscope; microscope"
-bɔ:bɔ V ; ! "faire ; do"
-bɔ:bɔ Gender-3 ; ! "pied; foot"
-bɔban:bɔban V ; ! "se faire; happen"
-bɔ́d:bɔ¹d Gender-3 ; ! " petitesse; compactness"
-bú:bu¹ Gender-3 ; ! "touffe; clump"
+! bíləmbə:bi¹ləmbə Gender-5 ; ! "microscope; microscope"
+bilëmbë:bilëmbë Gender-5 ; ! "microscope; microscope"
+! bɔ:bɔ V ; ! "faire ; do"
+bò:bò V ; ! "faire ; do"
+! bɔ:bɔ Gender-3 ; ! "pied; foot"
+bò:bò Gender-3 ; ! "pied; foot"
+! bɔban:bɔban V ; ! "se faire; happen"
+bò:bòban V ; ! "se faire; happen"
+! bɔ́d:bɔ¹d Gender-3 ; ! " petitesse; compactness"
+bòd:bòd Gender-3 ; ! " petitesse; compactness"
+! bú:bu¹ Gender-3 ; ! "touffe; clump"
+bu:bu Gender-3 ; ! "touffe; clump"
 bum:bum Gender-3 ; ! "ventre; belly"
 bwala:bwala V ; ! "soutenir (un témoignage); support"
+dudug:dudug Gender-4 ; ! "sueur ; sweat"
 dulu:dulu Gender-5 ; ! "marche; treck"
 dzidzin:dzidzin Gender-4 ; ! "dignité;  dignity"
 dzo:dzo Gender-4 ; ! "membre du corps; body limb"
 fas:fas Gender-4 ; ! "analyse; screening" 
-fə́:fə¹ Gender-3 ; ! "autre: other"
-fə́b:fə¹b Gender-3 ; ! " papier; paper"
-fə́b:fə¹b V ; ! "sonder; test"
-fə́fɛ̂:fə¹fɛ³ Gender-4 ; ! "végétation anarchique; wild growth"
-fəg:fəg Gender-5 ; ! "sagesse ; wise"
-fəl:fəl Gender-4 ; ! "cicatrice; scare"
-fíd:fi¹d V ; ! "écraser; crush"
+! fə́:fə¹ Gender-3 ; ! "autre: other"
+fë:fë Gender-3 ; ! "autre: other"
+! fə́b:fə¹b Gender-3 ; ! " papier; paper"
+fëb:fëb Gender-3 ; ! " papier; paper"
+! fə́b:fə¹b V ; ! "sonder; test"
+fëb:fëb V ; ! "sonder; test"
+! fə́fè:fëfè Gender-4 ; ! "végétation anarchique; wild growth"
+fëfè:fëfè Gender-4 ; ! "végétation anarchique; wild growth"
+! fəg:fəg Gender-5 ; ! "sagesse ; wise"
+fëg:fëg Gender-5 ; ! "sagesse ; wise"
+! fəl:fəl Gender-4 ; ! "cicatrice; scare"
+fël:fël Gender-4 ; ! "cicatrice; scare"
+! fíd:fi¹d V ; ! "écraser; crush"
+fid:fid V ; ! "écraser; crush"
 fola:fola Gender-3 ; ! "place ; place"
-iníngá:ini¹nga¹ Gender-1 ; ! "femme; woman"
+gal:gal Gender-1 ; ! female ; female
+! iníngá:ini¹nga¹ Gender-1 ; ! "femme; woman"
+ininga:ininga Gender-1 ; ! "femme; woman"
 kalan:kalan V ; ! "transmettre; transmit"
-kə́:kə¹ V ; ! " partir; go"
-kə́ŋ:kə¹ŋ Gender-3 ; ! "intelligence; intelligence"
-kə̌ŋ:kə⁴ŋ Gender-3 ; ! "technique; know-how"
+! kə́:kə¹ V ; ! " partir; go"
+kë:kë V ; ! " partir; go"
+! kə́ŋ:kə¹ŋ Gender-3 ; ! "intelligence; intelligence"
+këñ:këñ Gender-3 ; ! "intelligence; intelligence"
+!kə̌ŋ:kə⁴ŋ Gender-3 ; ! "technique; know-how"
+këñ:këñ Gender-3 ; ! "technique; know-how"
 ki:ki Gender-3 ; ! "sang; blood"
 ki:ki V ; ! "s'abstenir; (de)refrain (from)" 
 kídí:ki¹di¹ Gender-5 ; ! "matin; morning"
+kidi:kidi Gender-5 ; ! "matin; morning"
 kie:kie Gender-4 ; ! "fer; iron"
 kili:kili V ; ! " interdir à; forbidden"
-kóán:ko¹a¹n Gender-4 ; ! "réunion; meeting"
+! kóán:ko¹a¹n Gender-4 ; ! "réunion; meeting"
+koan:koan Gender-4 ; ! "réunion; meeting"
 kob:kob Gender-4 ; ! "peau; skin"
-kɔ̌n:kɔ⁴n Gender-6 ; ! "maladie; illness"
-kpələ́mvě:kpələ¹mve⁴ Gender-5 ; ! "cellulite; stretch mark"
-lɛ̌d:lɛ⁴d Gender-3 ; ! "dureté: hardness" 
-lɛ̌ná:lɛ⁴na¹ Gender-3 ; ! "infection due à une morsure d'araignée; infection cause by a spider bite"
-ló:lo¹ Gender-2 ; ! "tête; head"
+! kɔ̌n:kɔ⁴n Gender-6 ; ! "maladie; illness"
+kòn:kòn Gender-6 ; ! "maladie; illness"!
+! kpələ́mvě:kpələ¹mve⁴ Gender-5 ; ! "cellulite; stretch mark"
+kpëlëmve:kpëlëmve Gender-5 ; ! "cellulite; stretch mark"
+! lɛ̌d:lɛ⁴d Gender-3 ; ! "dureté: hardness" 
+lèd:lèd Gender-3 ; ! "dureté: hardness" 
+! lɛ̌ná:lɛ⁴na¹ Gender-3 ; ! "infection due à une morsure d'araignée; infection cause by a spider bite"
+lèna:lèna Gender-3 ; ! "infection due à une morsure d'araignée; infection cause by a spider bite"
+lëdë:lëdë V ; ! "montrer ; show"
+lig:lig V ; ! "laisser ; leave"
+lig:ligi V ;  ! "rester en arrière ; stay behind"
+liñ:liñan V ; ! "être couroussé ; be upset"
+! ló:lo¹ Gender-2 ; ! "tête; head"
+lo:lo Gender-2 ; ! "tête; head"
 lod:lod V ; ! "dépasser; pass"
-lɔbí:lɔbi¹ Gender-4 ; ! "marécage; swamp"
-lɔ́g:lɔ¹g Gender-4 ; ! "herbe; grass"
+! lɔbí:lɔbi¹ Gender-4 ; ! "marécage; swamp"
+lòbi:lòbi Gender-4 ; ! "marécage; swamp"
+! lɔ́g:lɔ¹g Gender-4 ; ! "herbe; grass"
+lòg:lòg Gender-4 ; ! "herbe; grass"
+lom:lom V ; ! "envoyer ; send"
 lunga:lunga Gender-4 ; ! "association; association"
-manə:manə V ; ! "terminer; complete"
-mǒs:mo⁴s Gender-3 ; ! "journée; daytime"
-mvúm:mvu¹m Gender-4 ; ! "particule; particle"
+! manə:manə V ; ! "terminer; complete"
+manë:manë V ; ! "terminer; complete"
+! mǒs:mo⁴s Gender-3 ; ! "journée; daytime"
+mos:mos Gender-3 ; ! "journée; daytime"
+! mvúm:mvu¹m Gender-4 ; ! "particule; particle"
+mvum:mvum Gender-4 ; ! "particule; particle"
 nam:nam Gender-4 ; ! "membre supérieur du corps; upper limb"
-ndá:nda¹ Gender-3 ; ! "maison; house"
+! ndá:nda¹ Gender-3 ; ! "maison; house"
+nda:nda Gender-3 ; ! "maison; house"
 ndi:ndi Gender-5 ; ! "espoir; hope"
-ndím:ndi¹m Gender-3e ; ! "eau; water"
+! ndím:ndi¹m Gender-3e ; ! "eau; water"
+ndim:ndim Gender-3e ; ! "eau; water"
 ngas:ngas Gender-4 ; ! "marais; marsh"
-ngə́ngɛ́:ngə¹ngɛ¹ Gender-3 ; ! "insecte; insect"
-ngə́ngə́mə:ngə¹ngə¹mə Gender-5 ; ! "microbe; germ"
-ngogé:ngoge¹ Gender-5 ; ! soir"; evening"
-ngós:ngo¹s Gender-3 ; ! "groupe de personne; group of people"
+! ngə́ngɛ́:ngə¹ngɛ¹ Gender-3 ; ! "insecte; insect"
+ngëngè:ngëngè Gender-3 ; ! "insecte; insect"
+! ngə́ngə́mə:ngə¹ngə¹mə Gender-5 ; ! "microbe; germ"
+ngëngëmë:ngëngëmë Gender-5 ; ! "microbe; germ"
+! ngogé:ngoge¹ Gender-5 ; ! soir"; evening"
+ngoge:ngoge Gender-5 ; ! soir"; evening"
+! ngós:ngo¹s Gender-3 ; ! "groupe de personne; group of people"
+ngos:ngos Gender-3 ; ! "groupe de personne; group of people"
 ngul:ngul Gender-5 ; ! "force; strength"
 nsis:nsis Gender-5 ; ! "nerf; nerve"
-oáp:oa¹p Gender-3b ; ! "nombril; navel"
+! oáp:oa¹p Gender-3b ; ! "nombril; navel"
+oap:oap Gender-3b ; ! "nombril; navel"
 oe:oe Gender-3c ; ! "rire"; laughter"
-ɔ́n:ɔ¹n Gender-1 ; ! "bébé; baby"
-ɔ́ngɔ́:ɔ¹ngɔ¹ Gender-1 ; ! "enfant; child"
+! ɔ́n:ɔ¹n Gender-1 ; ! "bébé; baby"
+òn:òn Gender-1 ; ! "bébé; baby"
+! ɔ́ngɔ́:ɔ¹ngɔ¹ Gender-1 ; ! "enfant; child"
+òngò:òngò Gender-1 ; ! "enfant; child"
 salag:salag Gender-4 ; ! "caniveau"
 sanga:sanga Gender-6 ; ! "tisane; herbal tea" 
-sédəga:se¹dəga Gender-4 ; ! "échantillon; sample"
-sí:si¹ Gender-0 ; ! "terre; earth"
+! sédəga:se¹dəga Gender-4 ; ! "échantillon; sample"
+sedëga:sedëga Gender-4 ; ! "échantillon; sample"
+! sí:si¹ Gender-0 ; ! "terre; earth"
+si:si Gender-0 ; ! "terre; earth"
 tam:tam Gender-4 ; ! "puit; well"
-tɛ́:tɛ¹ V ; !"être douloureux; to be painful"
-tə̌g:tə⁴g Gender-3 ; ! "faiblesse; weakness"
+! t!ɛ́:tɛ¹ V ; !"être douloureux; to be painful"
+tè:tè V ; !"être douloureux; to be painful"
+! tə̌g:tə⁴g Gender-3 ; ! "faiblesse; weakness"
+tëg:tëg Gender-3 ; ! "faiblesse; weakness"
 tin:tin Gender-5 ; ! "souche; stump"
-tólóg:to¹lo¹g Gender-3 ; ! "plaie; wound"
-vɛ̌s:vɛ⁴s Gender-4 ; ! "os; bone"
-vəga:vəga Gender-4 ; ! "exemple; example"
+! tólóg:to¹lo¹g Gender-3 ; ! "plaie; wound"
+tolog:tolog Gender-3 ; ! "plaie; wound"
+! vɛ̌s:vɛ⁴s Gender-4 ; ! "os; bone"
+vès:vès Gender-4 ; ! "os; bone"
+! vəga:vəga Gender-4 ; ! "exemple; example"
+vëga:vëga Gender-4 ; ! "exemple; example"
 vus:vus Gender-5 ; ! "camaraderie; fellowship"
-weməga:weməga Gender-4 ; ! "nécrose; necrosis"
-wɔ́:wɔ¹ Gender-0 ; ! "main; hand"
-yá:ya¹ V ; ! "grandir; grow up"
-yǎb:ya⁴b Gender-3 ; ! "longueur; length"
+! weməga:weməga Gender-4 ; ! "nécrose; necrosis"
+wemëga:wemëga Gender-4 ; ! "nécrose; necrosis"
+! wɔ́:wɔ¹ Gender-0 ; ! "main; hand"
+wò:wò Gender-0 ; ! "main; hand"
+! yá:ya¹ V ; ! "grandir; grow up"
+ya:ya V ; ! "grandir; grow up"
+! yǎb:ya⁴b Gender-3 ; ! "longueur; length"
+yab:yab Gender-3 ; ! "longueur; length"
 yalga:yalga Gender-4 ; ! "enveloppe; envelope"
-yəgɛ́:yəgɛ¹ Gender-3 ; ! "apprentissage; course"
+! yəgɛ́:yəgɛ¹ Gender-3 ; ! "apprentissage; course"
+yëgè:yëgè Gender-3 ; ! "apprentissage; course"
 yi:yi V ; ! "vouloir; will"
-yié:yie¹ Gender-3 ; ! "difficulté; difficulty"
-yǒm:yo⁴m Gender-3 ; ! "vieillesse; old age"
-yóməló:yo¹məlo¹ V ; ! "raviver; revive"
-yóŋ:yo¹ŋ Gender-3 ; ! " chaleur; heat"
-óp:o¹p Gender-3d ; ! "ciel; heaven"
-yɔŋ:yɔŋ Gender-4 ; ! "temps ; period"
-Zambá:Zamba¹ Gender-0 ; ! "Dieu; God"
-zǎm:za⁴m Gender-5 ; ! "lèpre; leprosy"
+! yié:yie¹ Gender-3 ; ! "difficulté; difficulty"
+yie:yie Gender-3 ; ! "difficulté; difficulty"
+! yǒm:yo⁴m Gender-3 ; ! "vieillesse; old age"
+yom:yom Gender-3 ; ! "vieillesse; old age"
+! yóməló:yo¹məlo¹ V ; ! "raviver; revive"
+yomëlo:yomëlo V ; ! "raviver; revive"
+! yóŋ:yo¹ŋ Gender-3 ; ! " chaleur; heat"
+yoñ:yoñ Gender-3 ; ! " chaleur; heat"
+! óp:o¹p Gender-3d ; ! "ciel; heaven"
+op:op Gender-3d ; ! "ciel; heaven"
+! yɔŋ:yɔŋ Gender-4 ; ! "temps ; period"
+yòñ:yòñ Gender-4 ; ! "temps ; period"
+! Zambá:Zamba¹ Gender-0 ; ! "Dieu; God"
+Zamba:Zamba Gender-0 ; ! "Dieu; God"
+! zǎm:za⁴m Gender-5 ; ! "lèpre; leprosy"
+zam:zam Gender-5 ; ! "lèpre; leprosy"
 zie:zie Gender-5 ; ! "faim; hunger"
 zimbi:zimbi Gender-1 ; !"soldat; soldier"
-zúé:zu¹e¹ Gender-3 ; ! "pauvreté; poverty"
+! zúé:zu¹e¹ Gender-3 ; ! "pauvreté; poverty"
+zue:zue Gender-3 ; ! "pauvreté; poverty"
 
 
 
