@@ -3,16 +3,45 @@
 Multichar_Symbols
 
 ! Part of speech categories
+%<abbr%> ! abréviation ; abbreviation
+%<adv%> ! Adverbe ; Adverb
+%<adj%> ! Adjectif ; Adjective
+%<card%> ! Numéral cardinal ; Cardinal Numeral
+%<cm%> ! Virgule
+%<cnjcoo%> !  conjonction de coordiation ;Co-ordinating conjunction
+%<cnsub%> ! conjonction de subordination ; subordinating conjunction
+%<conn%> ! Connective
+%<cop%> ! Copule
+%<dem%> ! Démonstratif ; Demonstrative
+%<det%> ! Déterminant
+%<ij%> ! Interjection
+%<lquot%> ! guillemets ouvrants
+%<loc%> ! Locatif ; locative
+%<lpar%> ! parenthèses ouvrantes
+%<mod%> ! particule modale
 %<n%>   ! Nom ; Noun
-%<vblex%> ! Verbe ; Verbe
+%<np%> ! Noun propre
+%<post%> ! Postposition
+%<pr%> ! Préposition
+%<prn%> ! Pronoun
+%<ord%> ! Numéral ordinal ; Ordinal Numeral
+%<rel%> ! Marqueur relatif ! Relative marker
+%<rpar%> ! parenthèses fermantes
+%<rquot%> ! guillemets fermants
+%<sent%> ! Ponctuation de fin de phrase (point)
+%<vaux%> ! Verbe auxiliaire
+%<vbhaber%> ! Verbe avoir
+%<vblex%> ! Verbe ; Verb
+%<vbser%> ! Verbe être
+%<vbmod%> ! Verbe modal
 
 ! Number morphology
 %<pl%>  ! Pluriel ; Plural
 %<sg%>  ! Singulier ;Singular
 
 ! Noun class morphology
-%<cl0%> ! Noun class 0 ; classe nominale 0
-%<cl1%> ! Noun class 1 ; classe nominale 1
+%<cl0%> ! Noun class 1 ; classe nominale 1
+%<cl1%> ! Noun class 1a ; classe nominale 1a
 %<cl2%> ! Noun class 2 ; classe nominale 2
 %<cl3%> ! Noun class 3 ; classe nominale 3
 %<cl4%> ! Noun class 4 ; classe nominale 4
@@ -32,7 +61,9 @@ Multichar_Symbols
 
 ! Verb morphology
 %<inf%> ! Infinitive ; infinitif
+%<imp%> ! Impératif ; Imperative
 %<ins%> ! Instrumental ; Instrumental
+%<neg%> ! Négation ; Negation
 %<refl%> ! Reflexif ; Reflexive
 %<p1%> ! Immediate past ; passé immédiat
 %<p2%> ! Recent past ; passé récent
@@ -43,6 +74,8 @@ Multichar_Symbols
 
 ! Other symbols
 %>      ! Morpheme boundary
+%<punct%> ! Ponctuation ; Punctuation
+
 
 %{ë%}
 
@@ -53,8 +86,8 @@ Multichar_Symbols
 @R.Number.Pl@
 
 ! Flags for Noun classes
-@P.Class.0@
 @P.Class.1@
+@P.Class.1a@
 @P.Class.2@
 @P.Class.3@
 @P.Class.4@
@@ -71,8 +104,8 @@ Multichar_Symbols
 @P.Class.10@
 @P.Class.11@
 @P.Class.16@
-!@R.Class.
 @R.Class.1@
+@R.Class.1a@
 @R.Class.2@
 @R.Class.3@
 @R.Class.4@
@@ -97,13 +130,19 @@ Multichar_Symbols
 
 LEXICON Root
 
+ADV ;
 Number ;
+V ;
+
+LEXICON ADV
+
+%adv%>: # ;
 
 LEXICON Number
 
-@P.Number.Sg@:@P.Number.Sg@%> StemsCl0 ;
 @P.Number.Sg@:@P.Number.Sg@m%> StemsCl1 ;
-@P.Number.Pl@:@P.Number.Pl@b%> StemsCl2 ;
+@P.Number.Sg@:@P.Number.Sg@%> StemsCl1a ;
+@P.Number.Pl@:@P.Number.Pl@b%{ë%}%> StemsCl2 ;
 @P.Number.Sg@:@P.Number.Sg@n%> StemsCl3 ;
 @P.Number.Pl@:@P.Number.Pl@min%> StemsCl4 ;
 @P.Number.Sg@:@P.Number.Sg@a%> StemsCl5 ;
@@ -121,13 +160,13 @@ LEXICON Number
 @P.Number.Sg@:@P.Number.Sg@ StemsCl16 ;
 
 
-LEXICON StemsCl0 !  Stems in Noun class 0
-
-@P.Class.0@:@P.Class.0@ Stems ;
-
 LEXICON StemsCl1 !  Stems in Noun class 1
 
 @P.Class.1@:@P.Class.1@ Stems ;
+
+LEXICON StemsCl1a !  Stems in Noun class 1a
+
+@P.Class.1a@:@P.Class.1a@ Stems ;
 
 LEXICON StemsCl2 ! Stems in Noun class 2
 
@@ -193,13 +232,14 @@ LEXICON StemsCl16 ! Stems in Noun class 16
  
 @P.Class.16@:@P.Class.16@ Stems ;
 
-LEXICON SuffCl0
-
-@R.Class.0@:@R.Class.0@	# ;
 
 LEXICON SuffCl1
 
 @R.Class.1@:@R.Class.1@	# ;
+
+LEXICON SuffCl1a
+
+@R.Class.1a@:@R.Class.1a@	# ;
 
 LEXICON SuffCl2
 
@@ -265,13 +305,15 @@ LEXICON SuffCl16
 
 @R.Class.16@:@R.Class.16@ # ;
 
-LEXICON Gender-0 ! singleton
-
-@R.Number.Sg@%<n%>%<cl0%>%<sg%>:@R.Number.Sg@ SuffCl0 ;
 
 LEXICON Gender-1 ! cl1-cl2 pairing 
 
 @R.Number.Sg@%<n%>%<cl1%>%<sg%>:@R.Number.Sg@ SuffCl1 ;
+@R.Number.Pl@%<n%>%<cl2%>%<pl%>:@R.Number.Pl@ SuffCl2 ;
+
+LEXICON Gender-1a ! cl1a-cl2 pairing 
+
+@R.Number.Sg@%<n%>%<cl1a%>%<sg%>:@R.Number.Sg@ SuffCl1a ;
 @R.Number.Pl@%<n%>%<cl2%>%<pl%>:@R.Number.Pl@ SuffCl2 ;
 
 LEXICON Gender-2 ! cl3-cl4 pairing
@@ -304,7 +346,12 @@ LEXICON Gender-3d ! cl5d one-class gender
 @R.Number.Sg@%<n%>%<cl5d%>%<sg%>:@R.Number.Sg@ SuffCl5d ;
 @R.Number.Sg@%<n%>%<cl5d%>%<sg%>:@R.Number.Sg@ SuffCl5d ;
 
-LEXICON Gender-3e ! cl6a one-class gender
+LEXICON Gender-3e ! cl5 one-class gender
+
+@R.Number.Sg@%<n%>%<cl5%>%<sg%>:@R.Number.Sg@ SuffCl5 ;
+@R.Number.Sg@%<n%>%<cl5%>%<sg%>:@R.Number.Sg@ SuffCl5 ;
+
+LEXICON Gender-3f ! cl6a one-class gender
 
 @R.Number.Pl@%<n%>%<cl6a%>%<pl%>:@R.Number.Pl@ SuffCl6a ;
 @R.Number.Pl@%<n%>%<cl6a%>%<pl%>:@R.Number.Pl@ SuffCl6a ;
@@ -344,9 +391,10 @@ LEXICON V
 LEXICON Stems
 
 ! abui:abui Gender-0 ; ! " plusieurs; many"
-abui:abui Gender-0 ; ! " plusieurs; many"
-! anə́:anə¹ ADV ; ! "comme; like"
+abui:abui ADV ; ! " plusieurs; many"
+!anə́:anə¹ ADV ; ! "comme; like"
 ! ǎl:a⁴l Gender-3a ; ! "village; village"
+dzogodo:dzogodo Gender-3 ; ! "canton"; "canton"
 al:al Gender-3a ; ! "village; village"
 ! ángondó:a¹ngondo¹ Gender-5 ; ! "horreur; atrocity"
 angondo:angondo Gender-5 ; ! "horreur; atrocity"
@@ -369,6 +417,8 @@ biali:biali V ; ! "naître; born"
 big:big Gender-3 ; ! " urticaire; hives"
 ! bɛ:bɛ V ; ! "dépecer; butcher"
 be:be Gender-3 ; ! "mal ; wrong"
+bè:bè Gender-3 ; ! "sein ; breast"
+bè:bè Gender-3 ; ! "cuisse ; thigh"
 bè:bè V ; ! "dépecer; butcher"
 ! bə́bə́lá:bə¹bə¹la¹ Gender-5 ; ! "vérité; true"
 bëbëla:bëbëla Gender-5 ; ! "vérité; true"
@@ -381,6 +431,7 @@ bëgë:bëgë V ; ! "porter; carry"
 ! bələ́:bələ¹ V ; ! "dire vrai; say the thruth"
 bëlë:bëlë V ; ! "dire vrai; say the thruth"
 ! bə́nde:bə¹nde V ; ! "recommander; recommand"
+bëm:bëm V ; ! "tarder", "delay"
 bëmba:bëmba Gender-3 ; ! "étable ; stable"
 bëña:bëña Gender-3 ; ! "cloche ; bell"
 bënde:bënde V ; ! "recommander; recommand"
@@ -463,7 +514,10 @@ lunga:lunga Gender-4 ; ! "association; association"
 ! manə:manə V ; ! "terminer; complete"
 manë:manë V ; ! "terminer; complete"
 ! mǒs:mo⁴s Gender-3 ; ! "journée; daytime"
+mëtua:mëtua Gender-1a ; ! "voiture"; "car"
 mos:mos Gender-3 ; ! "journée; daytime"
+mvele:mvele Gender-3e ; ! "captivité" ; "captivity"
+mvom:mvom Gender-3e ; ! "cajolerie" ; "cajolery"
 ! mvúm:mvu¹m Gender-4 ; ! "particule; particle"
 mvum:mvum Gender-4 ; ! "particule; particle"
 nam:nam Gender-4 ; ! "membre supérieur du corps; upper limb"
@@ -471,7 +525,9 @@ nam:nam Gender-4 ; ! "membre supérieur du corps; upper limb"
 nda:nda Gender-3 ; ! "maison; house"
 ndi:ndi Gender-5 ; ! "espoir; hope"
 ! ndím:ndi¹m Gender-3e ; ! "eau; water"
-ndim:ndim Gender-3e ; ! "eau; water"
+ndim:ndim Gender-3f ; ! "eau; water"
+ndiñ:ndiñ Gender-3 ; ! "cafouillis" ; "mess"
+ndòngò:ndòngò Gender-3 ; ! "cache-sexe" ; "cover-up"
 ngas:ngas Gender-4 ; ! "marais; marsh"
 ! ngə́ngɛ́:ngə¹ngɛ¹ Gender-3 ; ! "insecte; insect"
 ngëngè:ngëngè Gender-3 ; ! "insecte; insect"
@@ -495,7 +551,7 @@ sanga:sanga Gender-6 ; ! "tisane; herbal tea"
 ! sédəga:se¹dəga Gender-4 ; ! "échantillon; sample"
 sedëga:sedëga Gender-4 ; ! "échantillon; sample"
 ! sí:si¹ Gender-0 ; ! "terre; earth"
-si:si Gender-0 ; ! "terre; earth"
+si:si Gender-1a ; ! "terre; earth"
 tam:tam Gender-4 ; ! "puit; well"
 ! t!ɛ́:tɛ¹ V ; !"être douloureux; to be painful"
 tè:tè V ; !"être douloureux; to be painful"
@@ -512,7 +568,7 @@ vus:vus Gender-5 ; ! "camaraderie; fellowship"
 ! weməga:weməga Gender-4 ; ! "nécrose; necrosis"
 wemëga:wemëga Gender-4 ; ! "nécrose; necrosis"
 ! wɔ́:wɔ¹ Gender-0 ; ! "main; hand"
-wò:wò Gender-0 ; ! "main; hand"
+wò:wò Gender-1 ; ! "main; hand"
 ! yá:ya¹ V ; ! "grandir; grow up"
 ya:ya V ; ! "grandir; grow up"
 ! yǎb:ya⁴b Gender-3 ; ! "longueur; length"
@@ -534,15 +590,13 @@ op:op Gender-3d ; ! "ciel; heaven"
 ! yɔŋ:yɔŋ Gender-4 ; ! "temps ; period"
 yòñ:yòñ Gender-4 ; ! "temps ; period"
 ! Zambá:Zamba¹ Gender-0 ; ! "Dieu; God"
-Zamba:Zamba Gender-0 ; ! "Dieu; God"
+Zamba:Zamba Gender-1 ; ! "Dieu; God"
 ! zǎm:za⁴m Gender-5 ; ! "lèpre; leprosy"
 zam:zam Gender-5 ; ! "lèpre; leprosy"
 zie:zie Gender-5 ; ! "faim; hunger"
 zimbi:zimbi Gender-1 ; !"soldat; soldier"
 ! zúé:zu¹e¹ Gender-3 ; ! "pauvreté; poverty"
 zue:zue Gender-3 ; ! "pauvreté; poverty"
-
-
 
 
 

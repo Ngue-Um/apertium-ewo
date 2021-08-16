@@ -1,6 +1,6 @@
 Alphabet
  A B Ç D E Ä F G H I J Ž K L M N Ň O Ö P R S Ş T U Ü W Y Ý Z
- a b ç d e ɛ ə ä f g h i j ž k l m n ň o ö ɔ p r s ş t u ü w y ý z
+ a b ç d e ɛ ə ë ä f g h i j ž k l m n ň ñ o ö ò ɔ p r s ş t u ü w y ý z
 
  ¹:́   ! High tone
  ²:̀   ! Low tone
@@ -8,14 +8,14 @@ Alphabet
  ⁴:̌   ! Rising tone (Low-High)
  ⁵:̄   ! Mid tone
  
- %{ə%}:ə %{ə%}:0
+ %{ë%}:ë %{ë%}:0
 
  %{A%}:a %>:%>  ;
 
 Sets
 
 Vowel = A E Ä I O Ö U Ü Y Ý
-        a e ä ɛ ə i o ɔ ö u ü y ý ;
+        a e ä ɛ ə ë i o ɔ ö ò u ü y ý ;
 
 Rules
 
@@ -23,7 +23,7 @@ Rules
 i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
 
 "Delete prefix vowel at morpheme boundary before roots begining in a vowel"
-%{ə%}:0 <=> m _ %>: :Vowel ;
+%{ë%}:0 <=> m _ %>: :Vowel ;
 
 
 ! Resources:
