@@ -10,12 +10,24 @@ Alphabet
  
  %{ë%}:ë %{ë%}:0
 
- %{A%}:a %>:%>  ;
+ %{A%}:a %>:%>  
+
+ %{N%}:n %{N%}:n ;
+
 
 Sets
 
 Vowel = A E Ä I O Ö U Ü Y Ý
         a e ä ɛ ə ë i o ɔ ö ò u ü y ý ;
+
+Labials = b p ;
+
+Alveolars = t d l s z ;
+
+Palatals = y j ;
+
+Velars = k g ;
+
 
 Rules
 
@@ -23,7 +35,12 @@ Rules
 i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
 
 "Delete prefix vowel at morpheme boundary before roots begining in a vowel"
-%{ë%}:0 <=> m _ %>: :Vowel ;
+%{ë%}:0 <=> [ b | m ] _ %>: :Vowel ;
+
+! %{N%}:n <=> _ %>: Alveoloars ;
+
+! %{N%}:n <=> n _ %>: :Alveolars ;
+
 
 
 ! Resources:
