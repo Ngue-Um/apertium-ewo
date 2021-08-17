@@ -144,7 +144,7 @@ LEXICON Number
 @P.Number.Sg@:@P.Number.Sg@%> StemsCl1a ;
 @P.Number.Pl@:@P.Number.Pl@b%{ë%}%> StemsCl2 ;
 @P.Number.Sg@:@P.Number.Sg@n%> StemsCl3 ;
-@P.Number.Pl@:@P.Number.Pl@min%> StemsCl4 ;
+@P.Number.Pl@:@P.Number.Pl@mi%> StemsCl4 ;
 @P.Number.Sg@:@P.Number.Sg@a%> StemsCl5 ;
 @P.Number.Sg@:@P.Number.Sg@dz%> StemsCl5a ;
 @P.Number.Sg@:@P.Number.Sg@d%> StemsCl5b ;
@@ -398,16 +398,16 @@ LEXICON VERB_INF ! Lexicon for infinitive verbs
 
 LEXICON Stems
 
-! abui:abui Gender-0 ; ! " plusieurs; many"
-abui:abui ADV ; ! " plusieurs; many"
-!anə́:anə¹ ADV ; ! "comme; like"
-! ǎl:a⁴l Gender-3a ; ! "village; village"
+! abui:abui Gender-0 ; ! " plusieurs"; "many"
+abui:abui ADV ; ! " plusieurs"; "many"
+!anə́:anə¹ ADV ; ! "comme"; "like"
+! ǎl:a⁴l Gender-3a ; ! "village"; "village"
 dzogodo:dzogodo Gender-3 ; ! "canton"; "canton"
-al:al Gender-3a ; ! "village; village"
-! ángondó:a¹ngondo¹ Gender-5 ; ! "horreur; atrocity"
-angondo:angondo Gender-5 ; ! "horreur; atrocity"
-!aŋ:aŋ Gender-4 ; ! "médicament; drug"
-añ:añ Gender-4 ; ! "médicament; drug"
+al:al Gender-3a ; ! "village" ; "village"
+! ángondó:a¹ngondo¹ Gender-5 ; ! "horreur" ; "atrocity"
+angondo:angondo Gender-5 ; ! "horreur" ; "atrocity"
+!aŋ:aŋ Gender-4 ; ! "médicament" ; "drug"
+añ:añ Gender-4 ; ! "médicament" ; "drug"
 ! ayóŋ:a¹yo¹ŋ Gender-5 ; ! " chaleur; heat"
 ayoñ:ayoñ Gender-5 ; ! " chaleur; heat"
 baala:baala VERB_INF ; ! "garder; keep"
@@ -453,16 +453,22 @@ bò:bò VERB_INF ; ! "faire ; do"
 bò:bò Gender-3 ; ! "pied; foot"
 ! bɔban:bɔban VERB_REFL ; ! "se faire; happen"
 bò:bò VERB_REFL ; ! "se faire; happen"
+bobo:bobo ; VERB_INF ; "tâter" ; 
 ! bɔ́d:bɔ¹d Gender-3 ; ! " petitesse; compactness"
-bòd:bòd Gender-3 ; ! " petitesse; compactness"
+bòd:bòd Gender-3 ; ! "petitesse" ; "compactness"
+bòd:bòdan VERB_INF ; ! "palper" ; "touch" ## analysis incomplete (gloss for suffix -an ; noun or verb?)
 ! bú:bu¹ Gender-3 ; ! "touffe; clump"
 bu:bu Gender-3 ; ! "touffe; clump"
 bum:bum Gender-3 ; ! "ventre; belly"
 bwala:bwala VERB_INF ; ! "soutenir (un témoignage); support"
+dil:dilan VERB_INF ; ! "surprendre" ; "surprise" ## analysis incomplete (gloss for suffix -an)
+dud:dudan VERB_INF ; ! "maigrir" ; "loose weight" ## analysis incomplete (what is the gloss for suffix "-an"
 dudug:dudug Gender-4 ; ! "sueur ; sweat"
 dulu:dulu Gender-5 ; ! "marche; treck"
 dzidzin:dzidzin Gender-4 ; ! "dignité;  dignity"
 dzo:dzo Gender-4 ; ! "membre du corps; body limb"
+dzum:dzumi VERB_INF ; ! "donner aved dédain" ; "to give with disdain"
+fai:fai VERB_INF ; ! "pousser" ; "push"
 fas:fas Gender-4 ; ! "analyse; screening" 
 ! fə́:fə¹ Gender-3 ; ! "autre: other"
 fë:fë Gender-3 ; ! "autre: other"
@@ -479,35 +485,44 @@ fël:fël Gender-4 ; ! "cicatrice; scare"
 ! fíd:fi¹d VERB_INF ; ! "écraser; crush"
 fid:fid VERB_INF ; ! "écraser; crush"
 fola:fola Gender-3 ; ! "place ; place"
+fub:fubu VERB_INF ; ! "purifier" ; "purify" ## analysis not complete (wnat is the gloss for suffix "-u"?)
 gal:gal Gender-1 ; ! female ; female
 ! iníngá:ini¹nga¹ Gender-1 ; ! "femme; woman"
 ininga:ininga Gender-1 ; ! "femme; woman"
+kad:kada VERB_INF ; ! "ne pas abdiquer", "not to give up" ## analysis incomplete (what is the gloss for suffix '-a'?)
 kalan:kalan VERB_INF ; ! "transmettre; transmit"
 ! kə́:kə¹ VERB_INF ; ! " partir; go"
 kë:kë VERB_INF ; ! " partir; go"
-! kə́ŋ:kə¹ŋ Gender-3 ; ! "intelligence; intelligence"
-këñ:këñ Gender-3 ; ! "intelligence; intelligence"
-!kə̌ŋ:kə⁴ŋ Gender-3 ; ! "technique; know-how"
-këñ:këñ Gender-3 ; ! "technique; know-how"
+! kə́ŋ:kə¹ŋ Gender-3 ; ! "intelligence; "intelligence"
+këñ:këñ Gender-3 ; ! "intelligence"; "intelligence"
+!kə̌ŋ:kə⁴ŋ Gender-3 ; ! "technique"; "know-how"
+këñ:këñ Gender-2 ; ! "(avoir un) oeil ouche" ; "(have a) shady eye" ## analysis not complete (plural is "mi-këñ" or "min-këñ"?)
+këñ:këñ Gender-3 ; ! "technique"; "know-how"
+këñ:këñ Gender-3 ; ! "technique"; "know-how"
+këñ:këñëbë VERB_INF ; ! "loucher des yeux" ; "squint with the eyes" ## analys not complete (a-këñ-ëb-ë)
 ki:ki Gender-3 ; ! "sang; blood"
 ki:ki VERB_INF ; ! "s'abstenir; (de)refrain (from)" 
-kídí:ki¹di¹ Gender-5 ; ! "matin; morning"
-kidi:kidi Gender-5 ; ! "matin; morning"
-kie:kie Gender-4 ; ! "fer; iron"
+kídí:ki¹di¹ Gender-5 ; ! "matin"; "morning"
+kidi:kidi Gender-5 ; ! "matin"; "morning"
+kie:kie Gender-4 ; ! "fer"; "iron"
 kil:kilan VERB_INF ; ! "tourner" ; "turn" ## analysis incomplete
-kili:kili VERB_INF ; ! " interdir à; forbidden"
-! kóán:ko¹a¹n Gender-4 ; ! "réunion; meeting"
-koan:koan Gender-4 ; ! "réunion; meeting"
+kili:kili VERB_INF ; ! " interdir à"; "forbidden"
+! kóán:ko¹a¹n Gender-4 ; ! "réunion"; "meeting"
+koan:koan Gender-4 ; ! "réunion"; "meeting"
 kob:koba Gender-3 ; ! "cache-sexe" ; "cover-up"
-kob:kob Gender-4 ; ! "peau; skin"
-! kɔ̌n:kɔ⁴n Gender-6 ; ! "maladie; illness"
+kob:kob Gender-4 ; ! "peau"; "skin"
+! kɔ̌n:kɔ⁴n Gender-6 ; ! "maladie"; "illness"
+kod:kod Gender-4 ; ! "cachexie" ; "cachexia"
 kod:kodo Gender-3 ; ! "exode" ; "exodus"
 koe:koe Gender-3 ; ! "(action de) rejoindre" ; "join"
 kog:kogo Gender-3 ; ! "démultiplication" ; "leverage" ## analysis not complete
 kog:kogo Gender-3 ; ! "morsure" ; "bite" ## analysis not complete
+kòg:kòg Gender-3 ; ! "caillouteux" ; "gravelly, stony" ## analysis not complete (noun or adjective?)
 kòn:kòn Gender-6 ; ! "maladie; illness"!
+kòs:kòs Gender-3 ; ! "capacité" ; "capacity"
 ! kpələ́mvě:kpələ¹mve⁴ Gender-5 ; ! "cellulite; stretch mark"
 kpëlëmve:kpëlëmve Gender-5 ; ! "cellulite; stretch mark"
+kpë:kpë VERB_INF ; ! "renverser" ; "reverse, turn over"
 kya:kya Gender-3 ; ! "type" ; "typeo"
 lad:lada Gender-3 ; ! "câblage" ; "wiring" ## analysis not complete
 lal:lali Gender-3e ; ! "captation" ; "capture, capturing" ## analysis not complete
