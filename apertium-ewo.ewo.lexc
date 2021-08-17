@@ -453,7 +453,7 @@ bò:bò VERB_INF ; ! "faire ; do"
 bò:bò Gender-3 ; ! "pied; foot"
 ! bɔban:bɔban VERB_REFL ; ! "se faire; happen"
 bò:bò VERB_REFL ; ! "se faire; happen"
-bobo:bobo ; VERB_INF ; "tâter" ; 
+bobo:bobo VERB_INF ; ! "tâter" ; "feel, daddle"
 ! bɔ́d:bɔ¹d Gender-3 ; ! " petitesse; compactness"
 bòd:bòd Gender-3 ; ! "petitesse" ; "compactness"
 bòd:bòdan VERB_INF ; ! "palper" ; "touch" ## analysis incomplete (gloss for suffix -an ; noun or verb?)
