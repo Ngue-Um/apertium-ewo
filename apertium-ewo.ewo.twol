@@ -10,34 +10,43 @@ Alphabet
  
  %{ë%}:ë %{ë%}:0
 
+ %{E%}:e %{I%}:y
+
  %{A%}:a %>:%>  
 
- %{N%}:n %{N%}:n ;
-
+ %{N%}:n %{N%}:m %{N%}:ñ
+;
 
 Sets
 
-Vowel = A E Ä I O Ö U Ü Y Ý
+Vowels = A E Ä I O Ö U Ü Y Ý
         a e ä ɛ ə ë i o ɔ ö ò u ü y ý ;
+
+FrontVows = e i ;
 
 Labials = b p ;
 
 Alveolars = t d l s z ;
 
-Palatals = y j ;
+Palatals = y ;
 
 Velars = k g ;
 
 
 Rules
 
+"Remove morpheme boundary"
+%>:0 <=> _ ;
+
 "Remove suffix vowel with vowel-ending stem"
 i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
 
 "Delete prefix vowel at morpheme boundary before roots begining in a vowel"
-%{ë%}:0 <=> [ b | m ] _ %>: :Vowel ;
+%{ë%}:0 <=> [ b | m ] _ %>: :Vowels ;
 
-! %{N%}:n <=> _ %>: Alveoloars ;
+! %{E%}:y <=> %>: _ Vows %{VSUF%}:e ;
+
+!%{N%}:ñ <=> _ %>: :Velars ;
 
 ! %{N%}:n <=> n _ %>: :Alveolars ;
 
