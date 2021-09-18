@@ -326,11 +326,11 @@ LEXICON Gender-2 ! cl3-cl4 pairing
 LEXICON Gender-2a ! one class gender (cl3)
 
 @R.Number.Sg@%<n%>%<cl3%>%<sg%>:@R.Number.Sg@ SuffCl3 ;
-!@R.Number.Sg@%<n%>%<cl3%>%<sg%>:@R.Number.Sg@ SuffCl3 ;
+@R.Number.Sg@%<n%>%<cl3%>%<sg%>:@R.Number.Sg@ SuffCl3 ;
 
 LEXICON Gender-2b ! one class gender (cl4) 
 
-@R.Number.Sg@%<n%>%<cl3%>%<sg%>:@R.Number.Sg@ SuffCl3 ;
+@R.Number.Pl@%<n%>%<cl4%>%<pl%>:@R.Number.Pl@ SuffCl4 ;
 @R.Number.Pl@%<n%>%<cl4%>%<pl%>:@R.Number.Pl@ SuffCl4 ;
 
 LEXICON Gender-3 ! cl5-cl6 pairing
@@ -351,12 +351,12 @@ LEXICON Gender-3b ! cl5b-cl6 pairing
 LEXICON Gender-3c ! cl5c one-class gender
 
 @R.Number.Sg@%<n%>%<cl5c%>%<sg%>:@R.Number.Sg@ SuffCl5c ;
-@R.Number.Sg@%<n%>%<cl5c%>%<sg%>:@R.Number.Sg@ SuffCl5c ;
+!@R.Number.Sg@%<n%>%<cl5c%>%<sg%>:@R.Number.Sg@ SuffCl5c ;
 
 LEXICON Gender-3d ! cl5d one-class gender
 
 @R.Number.Sg@%<n%>%<cl5d%>%<sg%>:@R.Number.Sg@ SuffCl5d ;
-@R.Number.Sg@%<n%>%<cl5d%>%<sg%>:@R.Number.Sg@ SuffCl5d ;
+!@R.Number.Sg@%<n%>%<cl5d%>%<sg%>:@R.Number.Sg@ SuffCl5d ;
 
 LEXICON Gender-3e ! cl5 one-class gender (class 5)
 
@@ -397,7 +397,7 @@ LEXICON V ! Lexicon for verb derivation and inflection
 
 LEXICON VERB_REFL ! Lexicon for reflexive verbs
 
-%<inf%>%<refl%>:ban # ;
+%<refl%>%<inf%>:ban # ;
 
 LEXICON VERB_INF ! Lexicon for infinitive verbs
 
@@ -463,14 +463,11 @@ am:am GenderPos-1 ; ! "ma" ; "my"
 !anə́:anə¹ ADV ; ! "comme" ; "like"
 anë:anë ADV ; ! "comme" ; "like"
 ! ǎl:a⁴l Gender-3a ; ! "village" ; "village"
-dzogodo:dzogodo Gender-3 ; ! "canton" ; "canton"
 al:al Gender-3a ; ! "village" ; "village"
 ! ángondó:a¹ngondo¹ Gender-5 ; ! "horreur" ; "atrocity"
-angondo:angondo Gender-5 ; ! "horreur" ; "atrocity"
 !aŋ:aŋ Gender-4 ; ! "médicament" ; "drug"
 añ:añ Gender-4 ; ! "médicament" ; "drug"
 ! ayóŋ:a¹yo¹ŋ Gender-5 ; ! " chaleur" ; "heat"
-ayoñ:ayoñ Gender-5 ; ! " chaleur" ; "heat"
 !a si:a si ADV ; ! "capital" ; "capital" ## analysis not complete (one word or two words?)
 !a ten:a ten ADV ; ! "candide" ; "candid" ## analysis not complete (one word or two words?)
 baala:baala VERB_INF ; ! "garder" ; "keep"
@@ -550,6 +547,7 @@ dudug:dudug Gender-4 ; ! "sueur" ; "sweat"
 dulu:dulu Gender-5 ; ! "marche" ; "treck"
 dzidzin:dzidzin Gender-4 ; ! "dignité" ;  "dignity"
 dzo:dzo Gender-4 ; ! "membre du corps" ; "body limb"
+dzogodo:dzogodo Gender-3 ; ! "canton" ; "canton"
 dzòñ:dzòñ Gender-2 ; ! "route" ; "road"
 dzum:dzumi VERB_INF ; ! "donner aved dédain" ; "to give with disdain"
 faga:faga Gender-4 ; ! "hareng" ; "herring" ## analysis not complete (no final vowel -a?)
@@ -665,6 +663,7 @@ ngëngëmë:ngëngëmë Gender-5 ; ! "microbe" ; "germ"
 ! ngogé:ngoge¹ Gender-5 ; ! soir" ; evening"
 ngoge:ngoge Gender-5 ; ! "soir" ; "evening"
 ! ngós:ngo¹s Gender-3 ; ! "groupe de personne" ; "group of people"
+ngondo:ngondo Gender-3e ; ! "horreur" ; "atrocity"
 ngos:ngos Gender-3 ; ! "groupe de personne" ; "group of people"
 ngul:ngul Gender-5 ; ! "force" ; "strength"
 nòñòb:nòñòban Gender-3e ; ! "capture" ; "capture"
@@ -700,7 +699,7 @@ tum:tum Gender-2 ; ! "canne" ; "canne, rod"
 vès:vès Gender-4 ; ! "os" ; "bone"
 ! vəga:vəga Gender-4 ; ! "exemple" ; "example"
 vëga:vëga Gender-4 ; ! "exemple" ; "example"
-vus:vus Gender-5 ; ! "camaraderie" ; "fellowship"
+vus:vus Gender-3e ; ! "camaraderie" ; "fellowship"
 ! weməga:weməga Gender-4 ; ! "nécrose" ; "necrosis"
 way:way Gender-3 ; ! "repos, vacances" ; "rest, vacations"
 wemëga:wemëga Gender-4 ; ! "nécrose" ; "necrosis"
@@ -721,7 +720,7 @@ yom:yom Gender-3 ; ! "vieillesse" ; "old age"
 ! yóməló:yo¹məlo¹ VERB_INF ; ! "raviver" ; "revive"
 yomëlo:yomëlo VERB_INF ; ! "raviver" ; "revive"
 ! yóŋ:yo¹ŋ Gender-3 ; ! "chaleur ; "heat"
-yoñ:yoñ Gender-3 ; ! "chaleur" ; "heat"
+yoñ:yoñ Gender-3e ; ! "chaleur" ; "heat"
 ! yɔŋ:yɔŋ Gender-4 ; ! "temps" ; "period"
 yòñ:yòñ Gender-4 ; ! "temps" ; "period"
 ! Zambá:Zamba¹ Gender-0 ; ! "Dieu" ; "God"
@@ -732,10 +731,6 @@ zie:zie Gender-5 ; ! "faim" ; "hunger"
 zimbi:zimbi Gender-1 ; !"soldat" ; "soldier"
 ! zúé:zu¹e¹ Gender-3 ; ! "pauvreté" ; "poverty"
 zue:zue Gender-3 ; ! "pauvreté" ; "poverty"
-
-
-
-
 
 
  
