@@ -401,7 +401,7 @@ LEXICON VERB_REFL ! Lexicon for reflexive verbs
 
 LEXICON VERB_INF ! Lexicon for infinitive verbs
 
-%<inf%>:0 # ;
+%<v%>%<inf%>:0 # ;
 
 LEXICON POS ! Lexicon for possessive adjectives
 
