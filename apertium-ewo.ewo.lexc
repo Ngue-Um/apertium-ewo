@@ -3,7 +3,6 @@
 Multichar_Symbols
 
 ! Part of speech categories
-%<v%>
 %<abbr%> ! abréviation ; abbreviation
 %<adv%> ! Adverbe ; Adverb
 %<adj%> ! Adjectif ; Adjective
@@ -403,7 +402,7 @@ LEXICON VERB_REFL ! Lexicon for reflexive verbs
 
 LEXICON VERB_INF ! Lexicon for infinitive verbs
 
-%<v%>%<inf%>:0 # ;
+%<vblex%>%<inf%>:0 # ;
 
 LEXICON POS ! Lexicon for possessive adjectives
 
