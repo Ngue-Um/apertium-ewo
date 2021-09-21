@@ -46,9 +46,11 @@ i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
 
 ! %{E%}:y <=> %>: _ Vows %{VSUF%}:e ;
 
-!%{N%}:ñ <=> _ %>: :Velars ;
+"{N} to /ng/"
+%{N%}:ñ <=> _ %>: :Velars ;
 
-! %{N%}:n <=> n _ %>: :Alveolars ;
+"{N} to /ng/"
+%{N%}:n <=> n _ %>: :Alveolars ;
 
 
 

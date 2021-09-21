@@ -79,6 +79,7 @@ Multichar_Symbols
 
 
 %{ë%}
+%{N%}
 
 ! Flags for Number
 @P.Number.Sg@
@@ -145,7 +146,7 @@ LEXICON Number
 @P.Number.Sg@:@P.Number.Sg@m%> StemsCl1 ;
 @P.Number.Sg@:@P.Number.Sg@%> StemsCl1a ;
 @P.Number.Pl@:@P.Number.Pl@b%{ë%}%> StemsCl2 ;
-@P.Number.Sg@:@P.Number.Sg@n%> StemsCl3 ;
+@P.Number.Sg@:@P.Number.Sg@%{N%}%> StemsCl3 ;
 @P.Number.Pl@:@P.Number.Pl@min%> StemsCl4 ;
 @P.Number.Sg@:@P.Number.Sg@a%> StemsCl5 ;
 @P.Number.Sg@:@P.Number.Sg@dz%> StemsCl5a ;
@@ -401,7 +402,7 @@ LEXICON VERB_REFL ! Lexicon for reflexive verbs
 
 LEXICON VERB_INF ! Lexicon for infinitive verbs
 
-%<inf%>:0 # ;
+%<vblex%>%<inf%>:0 # ;
 
 LEXICON POS ! Lexicon for possessive adjectives
 
@@ -563,6 +564,7 @@ fëb:fëb VERB_INF ; ! "sonder" ; "test"
 fëfè:fëfè Gender-4 ; ! "végétation anarchique" ; "wild growth"
 ! fəg:fəg Gender-5 ; ! "sagesse" ; "wise"
 fëg:fëg Gender-5 ; ! "sagesse" ; "wise"
+fëg:fëg Gender-2 ; ! "sac" ; "bag" 
 ! fəl:fəl Gender-4 ; ! "cicatrice" ; "scare"
 fël:fël Gender-4 ; ! "cicatrice" ; "scare"
 ! fíd:fi¹d VERB_INF ; ! "écraser" ; "crush"
@@ -701,7 +703,11 @@ vès:vès Gender-4 ; ! "os" ; "bone"
 ! vəga:vəga Gender-4 ; ! "exemple" ; "example"
 vëga:vëga Gender-4 ; ! "exemple" ; "example"
 vus:vus Gender-3e ; ! "camaraderie" ; "fellowship"
+<<<<<<< HEAD
 vus:vus Gender-2a ; ! "derrière" ; "back"
+=======
+vus:vus Gender-2a ; ! "derrière" ; "back" 
+>>>>>>> b32114cecc4d7a67640d3e6fe5625d3d7f51dfd4
 ! weməga:weməga Gender-4 ; ! "nécrose" ; "necrosis"
 way:way Gender-3 ; ! "repos, vacances" ; "rest, vacations"
 wemëga:wemëga Gender-4 ; ! "nécrose" ; "necrosis"
