@@ -3,6 +3,7 @@
 Multichar_Symbols
 
 ! Part of speech categories
+%<v%>
 %<abbr%> ! abréviation ; abbreviation
 %<adv%> ! Adverbe ; Adverb
 %<adj%> ! Adjectif ; Adjective
@@ -79,6 +80,7 @@ Multichar_Symbols
 
 
 %{ë%}
+%{N%}
 
 ! Flags for Number
 @P.Number.Sg@
@@ -145,7 +147,7 @@ LEXICON Number
 @P.Number.Sg@:@P.Number.Sg@m%> StemsCl1 ;
 @P.Number.Sg@:@P.Number.Sg@%> StemsCl1a ;
 @P.Number.Pl@:@P.Number.Pl@b%{ë%}%> StemsCl2 ;
-@P.Number.Sg@:@P.Number.Sg@n%> StemsCl3 ;
+@P.Number.Sg@:@P.Number.Sg@%{N%}%> StemsCl3 ;
 @P.Number.Pl@:@P.Number.Pl@min%> StemsCl4 ;
 @P.Number.Sg@:@P.Number.Sg@a%> StemsCl5 ;
 @P.Number.Sg@:@P.Number.Sg@dz%> StemsCl5a ;
@@ -701,6 +703,7 @@ vès:vès Gender-4 ; ! "os" ; "bone"
 ! vəga:vəga Gender-4 ; ! "exemple" ; "example"
 vëga:vëga Gender-4 ; ! "exemple" ; "example"
 vus:vus Gender-3e ; ! "camaraderie" ; "fellowship"
+vus:vus Gender-2a ; ! "derrière" ; "back" 
 ! weməga:weməga Gender-4 ; ! "nécrose" ; "necrosis"
 way:way Gender-3 ; ! "repos, vacances" ; "rest, vacations"
 wemëga:wemëga Gender-4 ; ! "nécrose" ; "necrosis"
