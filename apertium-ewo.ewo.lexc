@@ -703,11 +703,7 @@ vès:vès Gender-4 ; ! "os" ; "bone"
 ! vəga:vəga Gender-4 ; ! "exemple" ; "example"
 vëga:vëga Gender-4 ; ! "exemple" ; "example"
 vus:vus Gender-3e ; ! "camaraderie" ; "fellowship"
-<<<<<<< HEAD
 vus:vus Gender-2a ; ! "derrière" ; "back"
-=======
-vus:vus Gender-2a ; ! "derrière" ; "back" 
->>>>>>> b32114cecc4d7a67640d3e6fe5625d3d7f51dfd4
 ! weməga:weməga Gender-4 ; ! "nécrose" ; "necrosis"
 way:way Gender-3 ; ! "repos, vacances" ; "rest, vacations"
 wemëga:wemëga Gender-4 ; ! "nécrose" ; "necrosis"
