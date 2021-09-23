@@ -444,8 +444,8 @@ LEXICON SuffPosCl2
 
 LEXICON GenderPos-1 ! cl1-cl2 pairing of Possessive adjectives 
 
-@R.Number.Sg@%<pos%>%<cl1%>%<sg%>:@R.Number.Sg@ SuffPosCl1 ;
-@R.Number.Pl@%<pos%>%<cl2%>%<pl%>:@R.Number.Pl@ SuffPosCl2 ;
+@R.Number.Sg@%<adj%>%<pos%>%<cl1%>%<sg%>:@R.Number.Sg@ SuffPosCl1 ;
+@R.Number.Pl@%<adj%>%<pos%>%<cl2%>%<pl%>:@R.Number.Pl@ SuffPosCl2 ;
 
 
 
@@ -704,6 +704,10 @@ vès:vès Gender-4 ; ! "os" ; "bone"
 vëga:vëga Gender-4 ; ! "exemple" ; "example"
 vus:vus Gender-3e ; ! "camaraderie" ; "fellowship"
 vus:vus Gender-2a ; ! "derrière" ; "back"
+<<<<<<< HEAD
+=======
+vus:vus Gender-2a ; ! "derrière" ; "back" 
+>>>>>>> 41556797fa33f332c9e15505b2b4953833eb3104
 ! weməga:weməga Gender-4 ; ! "nécrose" ; "necrosis"
 way:way Gender-3 ; ! "repos, vacances" ; "rest, vacations"
 wemëga:wemëga Gender-4 ; ! "nécrose" ; "necrosis"
