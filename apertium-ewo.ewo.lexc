@@ -408,21 +408,21 @@ LEXICON POS ! Lexicon for possessive adjectives
 
 @P.Number.Sg@:@P.Number.Sg@w%> StemsPosCl1 ;
 @P.Number.Pl@:@P.Number.Pl@b%> StemsPosCl2 ;
-!@P.Number.Sg@:@P.Number.Sg@n%> StemsCl3 ;
-!@P.Number.Pl@:@P.Number.Pl@min%> StemsCl4 ;
-!@P.Number.Sg@:@P.Number.Sg@a%> StemsCl5 ;
-!@P.Number.Sg@:@P.Number.Sg@dz%> StemsCl5a ;
-!@P.Number.Sg@:@P.Number.Sg@d%> StemsCl5b ;
-!@P.Number.Sg@:@P.Number.Sg@l%> StemsCl5c ;
-!@P.Number.Sg@:@P.Number.Sg@y%> StemsCl5d ;
-!@P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsCl6 ;
-!@P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsCl6a ;
-!@P.Number.Sg@:@P.Number.Sg@e%> StemsCl7 ;
-!@P.Number.Pl@:@P.Number.Pl@bi%> StemsCl8 ;
-!@P.Number.Sg@:@P.Number.Sg@ StemsCl9 ;
-!@P.Number.Pl@:@P.Number.Pl@ StemsCl10 ;
-!@P.Number.Sg@:@P.Number.Sg@o%> StemsCl11 ;
-!@P.Number.Sg@:@P.Number.Sg@ StemsCl16 ;
+@P.Number.Sg@:@P.Number.Sg@w%> StemsPosCl3 ;
+@P.Number.Pl@:@P.Number.Pl@mi%> StemsPosCl4 ;
+@P.Number.Sg@:@P.Number.Sg@d%> StemsPosCl5 ;
+!@P.Number.Sg@:@P.Number.Sg@dz%> StemsPosCl5a ;
+!@P.Number.Sg@:@P.Number.Sg@d%> StemsPosCl5b ;
+!@P.Number.Sg@:@P.Number.Sg@l%> StemsPosCl5c ;
+!@P.Number.Sg@:@P.Number.Sg@y%> StemsPosCl5d ;
+@P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsPosCl6 ;
+!@P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsPosCl6a ;
+@P.Number.Sg@:@P.Number.Sg@e%> StemsPosCl7 ;
+@P.Number.Pl@:@P.Number.Pl@bi%> StemsPosCl8 ;
+@P.Number.Sg@:@P.Number.Sg@w%> StemsPosCl9 ;
+@P.Number.Pl@:@P.Number.Pl@ StemsPosCl10 ;
+@P.Number.Sg@:@P.Number.Sg@o%> StemsPosCl11 ;
+@P.Number.Sg@:@P.Number.Sg@ StemsPosCl16 ;
 
 LEXICON StemsPosCl1 !  Stems in Noun class 1 and Noun class 2 Possessive adjectives
 
@@ -432,22 +432,125 @@ LEXICON StemsPosCl2 ! Stems in Noun class 2 Possessive adjectives
 
 @P.Class.2@:@P.Class.2@ Stems ;
 
+LEXICON StemsPosCl3 ! Stems in Noun class 3 Possessive adjectives
 
-LEXICON SuffPosCl1 ! Markers of possessive adjectives should be moved before the stem
+@P.Class.3@:@P.Class.3@ Stems ;
 
-@R.Class.1@:@R.Class.1@	# ;
+LEXICON StemsPosCl4 ! Stems in Noun class 4 Possessive adjectives
 
-LEXICON SuffPosCl2
+@P.Class.4@:@P.Class.4@ Stems ;
+
+LEXICON StemsPosCl5 ! Stems in Noun class 5 Possessive adjectives
+
+@P.Class.5@:@P.Class.5@ Stems ;
+
+LEXICON StemsPosCl6 ! Stems in Noun class 6 Possessive adjectives
+
+@P.Class.6@:@P.Class.6@ Stems ;
+
+LEXICON StemsPosCl7 ! Stems in Noun class 7 Possessive adjectives
+
+@P.Class.7@:@P.Class.7@ Stems ;
+
+LEXICON StemsPosCl8 ! Stems in Noun class 8 Possessive adjectives
+
+@P.Class.8@:@P.Class.8@ Stems ;
+
+LEXICON StemsPosCl9 ! Stems in Noun class 9 Possessive adjectives
+
+@P.Class.9@:@P.Class.9@ Stems ;
+
+LEXICON StemsPosCl10 ! Stems in Noun class 10 Possessive adjectives
+
+@P.Class.10@:@P.Class.10@ Stems ;
+
+LEXICON StemsPosCl11 ! Stems in Noun class 11 Possessive adjectives
+
+@P.Class.11@:@P.Class.11@ Stems ;
+
+LEXICON StemsPosCl16 ! Stems in Noun class 16 Possessive adjectives
+
+@P.Class.16@:@P.Class.16@ Stems ;
+
+
+LEXICON SuffPosCl1 ! Markers of possessive adjectives in noun class 1 should be moved before the stem
+
+@R.Class.1@:@R.Class.1@	# ; 
+
+LEXICON SuffPosCl2 ! Markers of possessive adjectives in noun class 2 should be moved before the stem
 
 @R.Class.2@:@R.Class.2@ # ;
 
+LEXICON SuffPosCl3 ! Markers of possessive adjectives in noun class 3 should be moved before the stem
 
-LEXICON GenderPos-1 ! cl1-cl2 pairing of Possessive adjectives 
+@R.Class.3@:@R.Class.3@ # ;
+
+LEXICON SuffPosCl4 ! Markers of possessive adjectives in noun class 4 should be moved before the stem
+
+@R.Class.4@:@R.Class.4@ # ;
+
+LEXICON SuffPosCl5 !  Markers of possessive adjectives in noun class 5 should be moved before the stem
+
+@R.Class.5@:@R.Class.5@ # ;
+
+LEXICON SuffPosCl6 !  Markers of possessive adjectives in noun class 6 should be moved before the stem
+
+@R.Class.6@:@R.Class.6@ # ;
+
+LEXICON SuffPosCl7 ! Markers of possessive adjectives in noun class 7 should be moved before the stem
+
+@R.Class.7@:@R.Class.7@ # ;
+
+LEXICON SuffPosCl8 ! Markers of possessive adjectives in noun class 8 should be moved before the stem
+
+@R.Class.8@:@R.Class.8@ # ;
+
+LEXICON SuffPosCl9 ! Markers of possessive adjectives in noun class 9 should be moved before the stem
+
+@R.Class.9@:@R.Class.9@ # ;
+
+LEXICON SuffPosCl10 ! Markers of possessive adjectives in noun class 10 should be moved before the stem
+
+@R.Class.10@:@R.Class.10@ # ;
+
+LEXICON SuffPosCl11 ! Markers of possessive adjectives in noun class 11 should be moved before the stem
+
+@R.Class.11@:@R.Class.11@ # ;
+
+LEXICON SuffPosCl16 ! Markers of possessive adjectives in noun class 16 should be moved before the stem
+
+@R.Class.16@:@R.Class.16@ # ;
+
+
+LEXICON GenderPos-1 ! cl1-cl2 pairing of possessive adjectives 
 
 @R.Number.Sg@%<adj%>%<pos%>%<cl1%>%<sg%>:@R.Number.Sg@ SuffPosCl1 ;
 @R.Number.Pl@%<adj%>%<pos%>%<cl2%>%<pl%>:@R.Number.Pl@ SuffPosCl2 ;
 
+LEXICON GenderPos-2 ! cl3-cl4 pairing of possessive adjectives
 
+@R.Number.Sg@%<adj%>%<pos%>%<cl3%>%<sg%>:@R.Number.Sg@ SuffPosCl3 ;
+@R.Number.Pl@%<adj%>%<pos%>%<cl4%>%<pl%>:@R.Number.Pl@ SuffPosCl4 ;
+
+LEXICON GenderPos-3 ! cl5-cl6 pairing of possessive adjectives
+
+@R.Number.Sg@%<adj%>%<pos%>%<cl5%>%<sg%>:@R.Number.Sg@ SuffPosCl5 ;
+@R.Number.Pl@%<adj%>%<pos%>%<cl6%>%<pl%>:@R.Number.Pl@ SuffPosCl6 ;
+
+LEXICON GenderPos-4 ! cl7-cl8 pairing of possessive adjectives 
+
+@R.Number.Sg@%<adj%>%<pos%>%<cl7%>%<sg%>:@R.Number.Sg@ SuffPosCl7 ;
+@R.Number.Pl@%<adj%>%>pos%>%<cl8%>%<pl%>:@R.Number.Pl@ SuffPosCl8 ;
+
+LEXICON GenderPos-5 ! cl9-cl10 pairing of possessive adjectives
+
+@R.Number.Sg@%<adj%>%<pos%>%<cl9%>%<sg%>:@R.Number.Sg@ SuffPosCl9 ;
+@R.Number.Pl@%<adj%>%<pos%>%<cl10%>%<pl%>:@R.Number.Pl@ SuffPosCl10 ;
+
+LEXICON GenderPos-6 ! cl11-cl16 pairing of possessive adjectives
+
+@R.Number.Sg@%<adj%>%<pos%>%<cl11%>%<sg%>:@R.Number.Sg@ SuffPosCl11 ;
+@R.Number.Pl@%<adj%>%<pos%>%<cl16%>%<pl%>:@R.Number.Pl@ SuffPosCl16 ;
 
 
 
@@ -459,8 +562,18 @@ LEXICON Stems
 
 ! abui:abui Gender-0 ; ! " plusieurs" ; "many"
 abui:abui ADV ; ! " plusieurs" ; "many"
-am:am GenderPos-1 ; ! "mon" ; "my"
-am:am GenderPos-1 ; ! "ma" ; "my"
+ama:ama GenderPos-1 ; ! "mon" ; "my"
+ama:ama GenderPos-1 ; ! "ma" ; "my"
+ama:ama GenderPos-2 ; ! "mon" ; "my"
+ama:ama GenderPos-2 ; ! "mon" ; "my"
+ama:ama GenderPos-3 ; ! "mon" ; "my"
+ama:ama GenderPos-3 ; ! "mon" ; "my"
+ama:ama GenderPos-4 ; ! "mon" ; "my"
+ama:ama GenderPos-4 ; ! "mon" ; "my"
+ama:ama GenderPos-5 ; ! "mon" ; "my"
+ama:ama GenderPos-5 ; ! "mon" ; "my"
+ama:ama GenderPos-6 ; ! "mon" ; "my"
+ama:ama GenderPos-6 ; ! "mon" ; "my"
 !anə́:anə¹ ADV ; ! "comme" ; "like"
 anë:anë ADV ; ! "comme" ; "like"
 ! ǎl:a⁴l Gender-3a ; ! "village" ; "village"
