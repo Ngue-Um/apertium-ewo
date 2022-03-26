@@ -43,6 +43,7 @@ Multichar_Symbols
 ! Noun class morphology
 %<cl0%> ! Noun class 1 ; classe nominale 1
 %<cl1%> ! Noun class 1a ; classe nominale 1a
+%<cl1a%> ! Noun class 1a ; classe nominale 1a 
 %<cl2%> ! Noun class 2 ; classe nominale 2
 %<cl3%> ! Noun class 3 ; classe nominale 3
 %<cl4%> ! Noun class 4 ; classe nominale 4
@@ -136,6 +137,7 @@ ADV ;
 Number ;
 V ;
 POS ;
+Pronoms ;
 
 LEXICON ADV
 
@@ -383,6 +385,7 @@ LEXICON Gender-6 ! cl11-cl16 pairing
 
 @R.Number.Sg@%<n%>%<cl11%>%<sg%>:@R.Number.Sg@ SuffCl11 ;
 @R.Number.Pl@%<n%>%<cl16%>%<pl%>:@R.Number.Pl@ SuffCl16 ;
+
 
 
 LEXICON V ! Lexicon for verb derivation and inflection
@@ -655,6 +658,7 @@ bum:bum Gender-3 ; ! "ventre" ; "belly"
 bwala:bwala VERB_INF ; ! "soutenir (un témoignage)" ; "support"
 byan:byan Gender-2 ; ! "mollet" ; "calf"
 !dañ ngala:dañ ngala Gender-3 ; ! "câble" ; "wire" ## analysis not complete (is it a compound?)
+di:di VERB_INF ; ! "manger" ; 
 dil:dilan VERB_INF ; ! "surprendre" ; "surprise" ## analysis incomplete (gloss for suffix -an)
 dud:dudan VERB_INF ; ! "maigrir" ; "loose weight" ## analysis incomplete (what is the gloss for suffix "-an"
 dudug:dudug Gender-4 ; ! "sueur" ; "sweat"
@@ -664,6 +668,7 @@ dzo:dzo Gender-4 ; ! "membre du corps" ; "body limb"
 dzogodo:dzogodo Gender-3 ; ! "canton" ; "canton"
 dzòñ:dzòñ Gender-2 ; ! "route" ; "road"
 dzum:dzumi VERB_INF ; ! "donner aved dédain" ; "to give with disdain"
+dòbëdò:dòbëdò Gender-1a ; ! "hopitâl"; "hospital"
 faga:faga Gender-4 ; ! "hareng" ; "herring" ## analysis not complete (no final vowel -a?)
 fai:fai VERB_INF ; ! "pousser" ; "push"
 fas:fas Gender-4 ; ! "analyse" ; "screening" 
@@ -853,7 +858,9 @@ zue:zue Gender-3 ; ! "pauvreté" ; "poverty"
 
  
 
+LEXICON Pronoms 
 
+a%<prn%>%<cl1%>:a # ;
 
 
 
