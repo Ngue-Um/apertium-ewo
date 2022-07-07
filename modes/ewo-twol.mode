@@ -1,0 +1,1 @@
+hfst-strings2fst -S | hfst-compose-intersect '/home/ngotjomb/apertium_ewo_fra/apertium-ewo/.deps/ewo.twol.hfst' | hfst-fst2strings
