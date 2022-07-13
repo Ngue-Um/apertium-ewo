@@ -138,12 +138,22 @@ ADV ;
 Number ;
 V ;
 POS ;
-Pronoms ;
+PR ;
 CONJ ;
+Pronoms;
+
+LEXICON Pronoms 
+
+a%<prn%>%<cl1%>:a # ;
+
 
 LEXICON ADV
 
 %<adv%>: # ;
+
+LEXICON PR
+
+%<pr%>: # ;
 
 LEXICON CONJ 
 %<cnjcoo%>: # ;
@@ -386,7 +396,21 @@ LEXICON Gender-5 ! cl9-cl10 pairing
 @R.Number.Sg@%<n%>%<cl9%>%<sg%>:@R.Number.Sg@ SuffCl9 ;
 @R.Number.Pl@%<n%>%<cl10%>%<pl%>:@R.Number.Pl@ SuffCl10 ;
 
-LEXICON Gender-6 ! cl11-cl16 pairing
+LEXICON Gender-6 ! cl9-cl2 pairing
+
+@R.Number.Sg@%<n%>%<cl9%>%<sg%>:@R.Number.Sg@ SuffCl9 ;
+@R.Number.Pl@%<n%>%<cl2%>%<pl%>:@R.Number.Pl@ SuffCl2 ;
+
+LEXICON Gender-7 ! cl9-cl6 pairing
+
+@R.Number.Sg@%<n%>%<cl9%>%<sg%>:@R.Number.Sg@ SuffCl9 ;
+@R.Number.Pl@%<n%>%<cl6%>%<pl%>:@R.Number.Pl@ SuffCl6 ;
+
+LEXICON Gender-8 ! cl11-cl5 pairing
+@R.Number.Sg@%<n%>%<cl11%>%<sg%>:@R.Number.Sg@ SuffCl11 ;
+@R.Number.Pl@%<n%>%<cl5%>%<pl%>:@R.Number.Pl@ SuffCl5 ;
+
+LEXICON Gender-10 ! cl11-cl16 pairing
 
 @R.Number.Sg@%<n%>%<cl11%>%<sg%>:@R.Number.Sg@ SuffCl11 ;
 @R.Number.Pl@%<n%>%<cl16%>%<pl%>:@R.Number.Pl@ SuffCl16 ;
@@ -582,7 +606,7 @@ ama:ama GenderPos-5 ; ! "mon" ; "my"
 ama:ama GenderPos-5 ; ! "mon" ; "my"
 ama:ama GenderPos-6 ; ! "mon" ; "my"
 ama:ama GenderPos-6 ; ! "mon" ; "my"
-afi:afi Pr ; ! "malgré" ; "despite"
+afi:afi PR ; ! "malgré" ; "despite"
 ai:ai CONJ ; ! "avec" ; "with"  
 !anə́:anə¹ ADV ; ! "comme" ; "like"
 am:am Gender-3a ; ! "affaire"
@@ -592,6 +616,7 @@ al:al Gender-3a ; ! "village" ; "village"
 ! ángondó:a¹ngondo¹ Gender-5 ; ! "horreur" ; "atrocity"
 !aŋ:aŋ Gender-4 ; ! "médicament" ; "drug"
 aǹ:aǹ Gender-4 ; ! "médicament" ; "drug"
+aǹ:aǹ Gender-7 ; ! "mer" ; "sea"
 anyaǹ:anyaǹ Gender-1 ; ! "son frère" ; "his brother"
 ! ayóŋ:a¹yo¹ŋ Gender-5 ; ! " chaleur" ; "heat"
 !a si:a si ADV ; ! "capital" ; "capital" ## analysis not complete (one word or two words?)
@@ -735,7 +760,7 @@ bud:buda Gender-3 ; ! "cabas" ; "shopping bag" ## analysis not complete (is ther
 bud:budubu Gender-3 ; ! "cachoterie" ; "secrecy, concealment" ## analysis not complete (gloss missing for suffixes -ub and -u)
 bug:bug VERB_INF ; ! "casser" ; "broke"
 bug:bugi VERB_INF ; ! "être cassé" ; "to be broken"
-bugëban:bugëban ; ! "prospérer" ; "flourish"
+bugëban:bugëban VERB_INF ; ! "prospérer" ; "flourish"
 bugëban:bugëban Gender-3 ; ! "prospérité" ; "prosperity"
 bul:bul Gender-3 ; ! "huit" ; "eight"
 bum:bum VERB_INF ; ! "braiser" ; "broil"
@@ -866,7 +891,7 @@ këǹ:këǹ Gender-3 ; ! "technique" ; "know-how"
 këǹ:këǹëbë VERB_INF ; ! "loucher des yeux" ; "squint with the eyes" ## analys not complete (a-këñ-ëb-ë)
 fë:fë ADV ; ! "aussi" ; "also"
 fëb:fëb VERB_INF ; ! "projeter" ; "estimate"
-fim:fim Genger-5 ; ! "puissance" ; "power"
+fim:fim Gender-5 ; ! "puissance" ; "power"
 fimi:fimi VERB_INF ; ! "essuyer" ; "wipe"
 !!fëg:fëg ; 
 !!fè:fè ;
@@ -936,7 +961,7 @@ kue:kue Gender-3 ; ! "toux" ; "cough"
 kue:kue VERB_INF ; ! "tousser" ; "cough"
 kug:kug Gender-3 ; ! "bord" ; "side"
 kugu:kugu Gender-1a ; ! "cuisinier" ; "cook"
-kui:kui: VERB_INF ; ! "sortir" ; "go out"
+kui:kui VERB_INF ; ! "sortir" ; "go out"
 kuli:kulan VERB_REFL ; ! "se détacher" ; "come off"
 kuli:kuli VERB_INF ; ! "sortir quelque chose" ; " come out"
 kuli:kuliban VERB_INF ; ! se faire détacher
@@ -1016,8 +1041,8 @@ mvigi:mvigi Gender-5 ; ! "pratique médicale" ; "medical practice"
 mvom:mvom Gender-3e ; ! "cajolerie" ; "cajolery"
 ! mvúm:mvu¹m Gender-4 ; ! "particule" ; "particle"
 mvum:mvum Gender-4 ; ! "particule" ; "particle"
-myëgë:myëgë Gender-5 ; ! "digue" ; "dam"
-nal:nal Gender-2 ; ! "mensonge" ; "lie"
+myëgë:myëgë Gender-6 ; ! "digue" ; "dam"
+nal:nal Gender-2b ; ! "mensonge" ; "lie"
 nam:nam Gender-4 ; ! "membre supérieur du corps" ; "upper limb"
 namba:namba VERB_INF ; ! "toucher" ; "touch"
 ! ndá:nda¹ Gender-3 ; ! "maison" ; "house"
@@ -1030,7 +1055,7 @@ ndi:ndi Gender-5 ; ! "espoir" ; "hope"
 ndim:ndim Gender-3f ; ! "eau" ; "water"
 ndiǹ:ndiǹ Gender-3 ; ! "cafouillis" ; "mess"
 ndòng:ndòngò Gender-3 ; ! "cache-sexe" ; "cover-up"
-ndòǹ:ndòǹ Gender-7 ; ! "rapport" ; "report"
+ndòǹ:ndòǹ Gender-8 ; ! "rapport" ; "report"
 ndzog:ndzogodo Gender-3 ; ! "canton" ; "canton"
 nëǹ:nëǹ Gender-1 ; ! "hôte" ; "guest"
 ngan:ngan VERB_REFL ; ! "se braquer" ; "be stubbornly opposed to "
@@ -1082,7 +1107,7 @@ op:op Gender-3d ; ! "ciel" ; "heaven"
 ot:ot Gender-1 ; ! "personne" ; "person"
 odo:odo Gender-1 ; ! "humanité" ; "humanity"
 salag:salag Gender-4 ; ! "caniveau" ; "gutter"
-sanga:sanga Gender-6 ; ! "tisane" ; "herbal tea" 
+sanga:sanga Gender-10 ; ! "tisane" ; "herbal tea" 
 ! sédəga:se¹dəga Gender-4 ; ! "échantillon" ; "sample"
 !!së:së ADJ_IND ; ! "tout" ; "all"
 sëm:sëm Gender-2 ; ! "péché" ; "sin"
@@ -1097,7 +1122,7 @@ soanga:soanga Gender-1a ; ! "ma tante paternelle" ; "paternal aunt"
 soanga:esanga Gender-1a ; ! "sa tante paternelle" ; "his/her paternal aunt"
 sò:sò VERB_INF ; ! "être venu" ; "have come"
 sò:sò Gender-3 ; ! "cachette" ; "hiden place"
-sòbò :sòbò VERB_REFL ; ! "se cacher" ; "hide"
+sòbò:sòbò VERB_REFL ; ! "se cacher" ; "hide"
 sòbò:sòbò Gender-1a ; ! "savon" ; "soap"
 sòbò:sòbò Gender-3 ; ! "cache" ; "cover"
 soe:soe Gender-1 ; ! "lézard" ; "lizard"
@@ -1150,7 +1175,7 @@ vès:vès Gender-4 ; ! "os" ; "bone"
 ! vəga:vəga Gender-4 ; ! "exemple" ; "example"
 vëga:vëga Gender-4 ; ! "exemple" ; "example"
 vis:vis Gender-2 ; ! "amas" ; "cluster"
-vòg:vòng ADJ_IND ; ! "autre" ; "other"
+!vòg:vòng adjind ; ! "autre" ; "other"
 vòǹ:vòǹ Gender-3 ; ! "graisse" ; "fat"
 vus:vus Gender-3e ; ! "camaraderie" ; "fellowship"
 vus:vus Gender-2a ; ! "derrière" ; "back"
@@ -1206,22 +1231,9 @@ zam:zam Gender-5 ; ! "lèpre" ; "leprosy"
 zamanda:zamanda Gender-4 ; ! "cafouillage" ; "scramble"
 zie:zie Gender-5 ; ! "faim" ; "hunger"
 zimbi:zimbi Gender-1 ; ! "soldat" ; "soldier"
-ziǹ:ziǹ ADJ_IND ; ! "un tel" ; "such a"
+!ziǹ:ziǹ adjind ; ! "un tel" ; "such a"
 ! zúé:zu¹e¹ Gender-3 ; ! "pauvreté" ; "poverty"
 zue:zue Gender-3 ; ! "pauvreté" ; "poverty"
-
-
- 
-
-LEXICON Pronoms 
-
-a%<prn%>%<cl1%>:a # ;
-
-
-
-
-	
-
  
 
 
