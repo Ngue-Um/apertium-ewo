@@ -417,10 +417,10 @@ LEXICON POS ! Lexicon for possessive adjectives
 !@P.Number.Sg@:@P.Number.Sg@y%> StemsPosCl5d ;
 @P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsPosCl6 ;
 !@P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsPosCl6a ;
-@P.Number.Sg@:@P.Number.Sg@e%> StemsPosCl7 ;
+@P.Number.Sg@:@P.Number.Sg@dz%> StemsPosCl7 ;
 @P.Number.Pl@:@P.Number.Pl@bi%> StemsPosCl8 ;
-@P.Number.Sg@:@P.Number.Sg@w%> StemsPosCl9 ;
-@P.Number.Pl@:@P.Number.Pl@ StemsPosCl10 ;
+@P.Number.Sg@:@P.Number.Sg@dz%> StemsPosCl9 ;
+@P.Number.Pl@:@P.Number.Pl@dz%> StemsPosCl10 ;
 @P.Number.Sg@:@P.Number.Sg@o%> StemsPosCl11 ;
 @P.Number.Sg@:@P.Number.Sg@ StemsPosCl16 ;
 
@@ -562,18 +562,12 @@ LEXICON Stems
 
 ! abui:abui Gender-0 ; ! " plusieurs" ; "many"
 abui:abui ADV ; ! " plusieurs" ; "many"
-ama:ama GenderPos-1 ; ! "mon" ; "my"
-ama:ama GenderPos-1 ; ! "ma" ; "my"
-ama:ama GenderPos-2 ; ! "mon" ; "my"
-ama:ama GenderPos-2 ; ! "mon" ; "my"
-ama:ama GenderPos-3 ; ! "mon" ; "my"
-ama:ama GenderPos-3 ; ! "mon" ; "my"
-ama:ama GenderPos-4 ; ! "mon" ; "my"
-ama:ama GenderPos-4 ; ! "mon" ; "my"
-ama:ama GenderPos-5 ; ! "mon" ; "my"
-ama:ama GenderPos-5 ; ! "mon" ; "my"
-ama:ama GenderPos-6 ; ! "mon" ; "my"
-ama:ama GenderPos-6 ; ! "mon" ; "my"
+ama:ama GenderPos-1 ; ! "mon" ; "ma" ; "my"
+ama:ama GenderPos-2 ; ! "mes" ; "my"
+ama:ama GenderPos-3 ; ! "mon" ; "ma" ; "my"
+ama:ama GenderPos-4 ; ! "mes" ; "my"
+ama:ama GenderPos-5 ; ! "mon" ; "ma" ; "my"
+ama:ama GenderPos-6 ; ! "mes" ; "my"
 !anə́:anə¹ ADV ; ! "comme" ; "like"
 anë:anë ADV ; ! "comme" ; "like"
 ! ǎl:a⁴l Gender-3a ; ! "village" ; "village"
@@ -651,6 +645,7 @@ bom:bom Gender-3 ; ! "mesure" ; "mesure"
 bu:bu Gender-3 ; ! "touffe" ; "clump"
 bud:buda Gender-3 ; ! "cabas" ; "shopping bag" ## analysis not complete (is there a 'final vowel' -a?)
 bud:budubu Gender-3 ; ! "cachoterie" ; "secrecy, concealment" ## analysis not complete (gloss missing for suffixes -ub and -u)
+bugë:bugë VERB_REFL ; ! "prospérer" ; "flourish" ## NOT YET IN THE BILINGUAL DICTIONARY!
 bum:bum Gender-3 ; ! "ventre" ; "belly"
 bwala:bwala VERB_INF ; ! "soutenir (un témoignage)" ; "support"
 byan:byan Gender-2 ; ! "mollet" ; "calf"
@@ -787,6 +782,12 @@ nsis:nsis Gender-5 ; ! "nerf" ; "nerve"
 ! oáp:oa¹p Gender-3b ; ! "nombril" ; "navel"
 oap:oap Gender-3b ; ! "nombril" ; "navel"
 oe:oe Gender-3c ; ! "rire" ; "laughter"
+oe:oe GenderPos-1 ; ! "ton" ; "ta" ; "your"
+oe:oe GenderPos-2 ; ! "tes" ; "your"
+oe:oe GenderPos-3 ; ! "ton" ; "ta" ; "your"
+oe:oe GenderPos-4 ; ! "tes" ; "my"
+oe:oe GenderPos-5 ; ! "ton" ; "ta" ; "your"
+oe:oe GenderPos-6 ; ! "tes" ; "your"
 ! ɔ́n:ɔ¹n Gender-1 ; ! "bébé" ; "baby"
 òn:òn Gender-1 ; ! "bébé" ; "baby"
 ! ɔ́ngɔ́:ɔ¹ngɔ¹ Gender-1 ; ! "enfant" ; "child"

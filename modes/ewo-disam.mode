@@ -1,0 +1,5 @@
+
+      
+    hfst-proc -w '/home/ngueum/apertium-ewo/ewo.automorf.hfst' | cg-conv -a| vislcg3 --trace --grammar '/home/ngueum/apertium-ewo/ewo.rlx.bin' 
+  
+
