@@ -36,9 +36,24 @@ Multichar_Symbols
 %<vbser%> ! Verbe être
 %<vbmod%> ! Verbe modal
 
+! Pronoun types morphology
+%<pers%> ! personnel ; personal ;
+%<log%> ! logophorique ; logophoric ;
+%<rel%> ! relatif ; relative ;
+%<ind%> ! indefini ; indefinite ;
+%<itg%> ! interrogatif ; interrogative ;
+%<dem%> ! demonstratif ; demonstrative ;
+
+
 ! Number morphology
 %<pl%>  ! Pluriel ; Plural
 %<sg%>  ! Singulier ;Singular
+
+! Person morphology
+
+%<p1%> ! première personne ; first person ;
+%<p2%> ! deuxième personne ; second person ;
+%<p3%> ! troisième personne ; third person ;
 
 ! Noun class morphology
 %<cl0%> ! Noun class 1 ; classe nominale 1
@@ -132,10 +147,13 @@ Multichar_Symbols
 
 LEXICON Root
 
-ADV ;
-Number ;
-V ;
-POS ;
+ADV ; ! adverbes ; adverbs
+Number ; ! nombre (singulier/pluriel) ; number (singular/plural)
+V ; ! verbe ; verbs
+POS ; ! possessif (adjectif) ; possessives (adjectives)
+PR ; ! préposition ; preposition
+CNJCOO ; ! conjonction de coordination ; coordination conjunction
+PRN ; ! pronom ; pronouns
 
 LEXICON ADV
 
@@ -395,6 +413,8 @@ LEXICON V ! Lexicon for verb derivation and inflection
 %<vblex%>%<f1%>: # ;
 %<vblex%>%<f2%>: # ;
 %<vblex%>%<f3%>: # ;
+%<vbhaber%>: VERB_HAVE ; ! Verb "to have"
+%<vbser%>: VERB_BE ; ! Verb "to be"
 
 LEXICON VERB_REFL ! Lexicon for reflexive verbs
 
@@ -403,6 +423,14 @@ LEXICON VERB_REFL ! Lexicon for reflexive verbs
 LEXICON VERB_INF ! Lexicon for infinitive verbs
 
 %<vblex%>%<inf%>:0 # ;
+
+LEXICON VERB_HAVE ! Lexicon for verb "to have"
+
+%<vbhaber%>%<inf%>:0 # ;
+
+LEXICON VERB_BE ! Lexicon for verb "to be"
+
+%<vbser%>%<inf%>:0 # ;
 
 LEXICON POS ! Lexicon for possessive adjectives
 
@@ -552,6 +580,54 @@ LEXICON GenderPos-6 ! cl11-cl16 pairing of possessive adjectives
 @R.Number.Sg@%<adj%>%<pos%>%<cl11%>%<sg%>:@R.Number.Sg@ SuffPosCl11 ;
 @R.Number.Pl@%<adj%>%<pos%>%<cl16%>%<pl%>:@R.Number.Pl@ SuffPosCl16 ;
 
+LEXICON PR
+
+%<pr%>: # ;
+
+LEXICON CNJCOO
+
+%<cnjcoo%>: # ;
+
+LEXICON PRN ! Lexicon for pronouns ;
+
+%<prn%>: PRN_SG ; ! Lexicon for singular pronouns ;
+%<prn%>: PRN_PL ; ! Lexicion for plural pronouns ;
+
+LEXICON PRN_SG
+
+%<prn%>%<sg%>: PRN_SG_P1 ;
+%<prn%>%<sg%>: PRN_SG_P2 ;
+%<prn%>%<sg%>: PRN_SG_P3 ;
+
+LEXICON PRN_SG_P1
+
+%<prn%>%<sg%>%<p1%>: # ;
+
+LEXICON PRN_SG_P2
+
+%<prn%>%<sg%>%<p2%>: # ;
+
+LEXICON PRN_SG_P3
+
+%<prn%>%<sg%>%<p3%>: # ;
+
+LEXICON PRN_PL
+
+%<prn%>%<pl%>: PRN_PL_P1 ; 
+%<prn%>%<pl%>: PRN_PL_P2 ;
+%<prn%>%<pl%>: PRN_PL_P3 ;
+
+LEXICON PRN_PL_P1
+
+%<prn%>%<pl%>%<p1%>: # ;
+
+LEXICON PRN_PL_P2
+
+%<prn%>%<pl%>%<p2%>: # ;
+
+LEXICON PRN_PL_P3
+
+%<prn%>%<pl%>%<p3%>: # ;
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -560,18 +636,23 @@ LEXICON GenderPos-6 ! cl11-cl16 pairing of possessive adjectives
 
 LEXICON Stems
 
-! abui:abui Gender-0 ; ! " plusieurs" ; "many"
-abui:abui ADV ; ! " plusieurs" ; "many"
+an:an Gender-3 ; ! "récompense" ; "reward"
+! abui:abui Gender-0 ; ! "plusieurs" ; "many"
+akób:akób ADV ; !Locution Adverbiale : "capable de tomber sans effort" ; "able to fall without effort" ## orthography of entry needs to be checked
+abui:abui ADV ; ! "beaucoup" ; "many"
 ama:ama GenderPos-1 ; ! "mon" ; "ma" ; "my"
 ama:ama GenderPos-2 ; ! "mes" ; "my"
 ama:ama GenderPos-3 ; ! "mon" ; "ma" ; "my"
 ama:ama GenderPos-4 ; ! "mes" ; "my"
 ama:ama GenderPos-5 ; ! "mon" ; "ma" ; "my"
 ama:ama GenderPos-6 ; ! "mes" ; "my"
-!anə́:anə¹ ADV ; ! "comme" ; "like"
-anë:anë ADV ; ! "comme" ; "like"
+afi:afi PR ; ! "malgré" ; "despite"
+ai:ai CNJCOO ; ! "avec" ; "with" 
 ! ǎl:a⁴l Gender-3a ; ! "village" ; "village"
 al:al Gender-3a ; ! "village" ; "village"
+am:am Gender-3a ; ! "affaire" ; "issue"
+!anə́:anə¹ ADV ; ! "comme" ; "like"
+anë:anë ADV ; ! "comme" ; "like"
 ! ángondó:a¹ngondo¹ Gender-5 ; ! "horreur" ; "atrocity"
 !aŋ:aŋ Gender-4 ; ! "médicament" ; "drug"
 añ:añ Gender-4 ; ! "médicament" ; "drug"
@@ -619,6 +700,7 @@ bëmba:bëmba Gender-3 ; ! "étable" ; "stable"
 bëme:bëme VERB_INF ; ! "déposer" ; "deposit, file, submit" ## analysis not complete (no final vowel -e?)
 bëña:bëña Gender-3 ; ! "cloche" ; "bell"
 bënde:bënde VERB_INF ; ! "recommander" ; "recommand"
+bi:bi VERB_HAVE ; ! "avoir" ; "to be"
 bi:bi Gender-3 ; ! "capture" ; "capture"
 bie:bie VERB_INF ; ! "écouter" ; "listen"
 bie:bie VERB_INF ; ! "suivre" ; "follow"
@@ -766,6 +848,7 @@ ndim:ndim Gender-3f ; ! "eau" ; "water"
 ndiñ:ndiñ Gender-3 ; ! "cafouillis" ; "mess"
 ndòng:ndòngò Gender-3 ; ! "cache-sexe" ; "cover-up"
 ndzog:ndzogodo Gender-3 ; ! "canton" ; "canton"
+në:në VERB_BE ; ! "être" ; "be"
 ngas:ngas Gender-4 ; ! "marais" ; "marsh"
 ! ngə́ngɛ́:ngə¹ngɛ¹ Gender-3 ; ! "insecte" ; "insect"
 ngëngè:ngëngè Gender-3 ; ! "insecte" ; "insect"
@@ -779,6 +862,7 @@ ngos:ngos Gender-3 ; ! "groupe de personne" ; "group of people"
 ngul:ngul Gender-5 ; ! "force" ; "strength"
 nòñòb:nòñòban Gender-3e ; ! "capture" ; "capture"
 nsis:nsis Gender-5 ; ! "nerf" ; "nerve"
+nyu:nyu Gender-3 ; ! "bouche" ; "mouth"
 ! oáp:oa¹p Gender-3b ; ! "nombril" ; "navel"
 oap:oap Gender-3b ; ! "nombril" ; "navel"
 oe:oe Gender-3c ; ! "rire" ; "laughter"
@@ -843,7 +927,7 @@ yoñ:yoñ Gender-3e ; ! "chaleur" ; "heat"
 ! yɔŋ:yɔŋ Gender-4 ; ! "temps" ; "period"
 yòñ:yòñ Gender-4 ; ! "temps" ; "period"
 ! Zambá:Zamba¹ Gender-0 ; ! "Dieu" ; "God"
-Zamba:Zamba Gender-1 ; ! "Dieu" ; "God"
+Zamba:Zamba Gender-1a ; ! "Dieu" ; "God"
 ! zǎm:za⁴m Gender-5 ; ! "lèpre" ; "leprosy"
 zam:zam Gender-5 ; ! "lèpre" ; "leprosy"
 zie:zie Gender-5 ; ! "faim" ; "hunger"
@@ -851,6 +935,13 @@ zimbi:zimbi Gender-1 ; !"soldat" ; "soldier"
 ! zúé:zu¹e¹ Gender-3 ; ! "pauvreté" ; "poverty"
 zue:zue Gender-3 ; ! "pauvreté" ; "poverty"
 
+! Personal pronouns
+më:më PRN_SG_P1 ; ! "je" ; "I"
+o:o PRN_SG_P2 ; ! "tu" ; "you (sg)"
+a:a PRN_SG_P3 ; ! "il" ; "he"
+bi:bi PRN_PL_P1 ; ! "nous" ; "we"
+mi:mi PRN_PL_P2 ; ! "vous" ; "you (pl)"
+ba:ba PRN_PL_P3 ; ! "ils" ; "they"
 
  
 
