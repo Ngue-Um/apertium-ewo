@@ -6,7 +6,6 @@ Multichar_Symbols
 %<abbr%> ! abréviation ; abbreviation
 %<adv%> ! Adverbe ; Adverb
 %<adj%> ! Adjectif ; Adjective
-%<card%> ! Numéral cardinal ; Cardinal Numeral
 %<cm%> ! Virgule
 %<cnjcoo%> !  conjonction de coordiation ;Co-ordinating conjunction
 %<cnsub%> ! conjonction de subordination ; subordinating conjunction
@@ -25,7 +24,6 @@ Multichar_Symbols
 %<post%> ! Postposition
 %<pr%> ! Préposition
 %<prn%> ! Pronoun
-%<ord%> ! Numéral ordinal ; Ordinal Numeral
 %<rel%> ! Marqueur relatif ! Relative marker
 %<rpar%> ! parenthèses fermantes
 %<rquot%> ! guillemets fermants
@@ -35,6 +33,10 @@ Multichar_Symbols
 %<vblex%> ! Verbe ; Verb
 %<vbser%> ! Verbe être
 %<vbmod%> ! Verbe modal
+
+! Numerals morphology
+%<card%> ! Numéral cardinal ; Cardinal Numeral
+%<ord%> ! Numéral ordinal ; Ordinal Numeral
 
 ! Pronoun types morphology
 %<pers%> ! personnel ; personal ;
@@ -81,12 +83,16 @@ Multichar_Symbols
 %<ins%> ! Instrumental ; Instrumental
 %<neg%> ! Négation ; Negation
 %<refl%> ! Reflexif ; Reflexive
-%<p1%> ! Immediate past ; passé immédiat
-%<p2%> ! Recent past ; passé récent
-%<p3%> ! Remote past ; passé lointain
-%<f1%> ! Immediate future ; futur immédiat
-%<f2%> ! Near future ; futur récent
-%<p3%> ! Distant future ; futur lointain
+%<pres%> ! Présent ; Present
+%<pri%> ! Présent de l'indicatif ; present indicative
+%<past%> ! Passé ! Past
+%<past1%> ! Passé immédiat ; Immediate past
+%<past2%> ! Recent past ; passé récent
+%<past3%> ! Remote past ; passé lointain
+%<pret%> ! Preterite ; Preterit
+%<fut1%> ! Immediate future ; futur immédiat
+%<fut2%> ! Near future ; futur récent
+%<fut3%> ! Distant future ; futur lointain
 
 ! Other symbols
 %>      ! Morpheme boundary
@@ -121,6 +127,9 @@ Multichar_Symbols
 @P.Class.10@
 @P.Class.11@
 @P.Class.16@
+
+! Move noun class marker to the left !
+
 @R.Class.1@
 @R.Class.1a@
 @R.Class.2@
@@ -154,6 +163,7 @@ POS ; ! possessif (adjectif) ; possessives (adjectives)
 PR ; ! préposition ; preposition
 CNJCOO ; ! conjonction de coordination ; coordination conjunction
 PRN ; ! pronom ; pronouns
+CARD ; ! numéraux cardinaux ; cardinal numerals
 
 LEXICON ADV
 
@@ -407,14 +417,9 @@ LEXICON V ! Lexicon for verb derivation and inflection
 
 %<vblex%>: VERB_INF ;
 %<vblex%>: VERB_REFL ;
-%<vblex%>%<p1%>: # ;
-%<vblex%>%<p2%>: # ;
-%<vblex%>%<p3%>: # ;
-%<vblex%>%<f1%>: # ;
-%<vblex%>%<f2%>: # ;
-%<vblex%>%<f3%>: # ;
 %<vbhaber%>: VERB_HAVE ; ! Verb "to have"
 %<vbser%>: VERB_BE ; ! Verb "to be"
+%vblex%>: VERB_INFL ; ! verb inflection
 
 LEXICON VERB_REFL ! Lexicon for reflexive verbs
 
@@ -431,6 +436,55 @@ LEXICON VERB_HAVE ! Lexicon for verb "to have"
 LEXICON VERB_BE ! Lexicon for verb "to be"
 
 %<vbser%>%<inf%>:0 # ;
+
+LEXICON VERB_INFL
+
+%<veblex%>: VERB_INFL_PRES_BE ;
+%<veblex%>: VERB_INFL_PRES_HAVE ;
+%<veblex%>: VERB_INFL_PRES ;
+%<veblex%>: VERB_INFL_PAST1 ;
+%<veblex%>: VERB_INFL_PAST2 ;
+%<veblex%>: VERB_INFL_PAST3 ;
+%<veblex%>: VERB_INFL_FUT1 ;
+%<veblex%>: VERB_INFL_FUT2 ;
+%<veblex%>: VERB_INFL_FUT3 ;
+
+LEXICON VERB_INFL_PRES_BE
+
+%vbser%>%<pres%>: # ;
+
+LEXICON VERB_INFL_PRES_HAVE
+
+%vbhaber%>%<pres%>: # ;
+
+LEXICON VERB_INFL_PRES
+
+%vblex%>%<pres%>: # ;
+
+LEXICON VERB_INFL_PAST1
+
+%vblex%>%<past1%>: # ;
+
+LEXICON VERB_INFL_PAST2
+
+%vblex%>%<past2%>: # ;
+
+LEXICON VERB_INFL_PAST3
+
+%vblex%>%<past3%>: # ;
+
+LEXICON VERB_INFL_FUT1
+
+%vblex%>%<fut1%>: # ;
+
+LEXICON VERB_INFL_FUT2
+
+%vblex%>%<fut2%>: # ;
+
+LEXICON VERB_INFL_FUT3
+
+%vblex%>%<fut3%>: # ;
+
 
 LEXICON POS ! Lexicon for possessive adjectives
 
@@ -595,39 +649,205 @@ LEXICON PRN ! Lexicon for pronouns ;
 
 LEXICON PRN_SG
 
-%<prn%>%<sg%>: PRN_SG_P1 ;
-%<prn%>%<sg%>: PRN_SG_P2 ;
-%<prn%>%<sg%>: PRN_SG_P3 ;
+%<prn%>%<sg%>: PRN_P1_SG ;
+%<prn%>%<sg%>: PRN_P2_SG ;
+%<prn%>%<sg%>: PRN_P3_SG ;
 
-LEXICON PRN_SG_P1
+LEXICON PRN_P1_SG
 
-%<prn%>%<sg%>%<p1%>: # ;
+%<prn%>%<p1%>%<sg%>: # ;
 
-LEXICON PRN_SG_P2
+LEXICON PRN_P2_SG
 
-%<prn%>%<sg%>%<p2%>: # ;
+%<prn%>%<p2%>%<sg%>: # ;
 
-LEXICON PRN_SG_P3
+LEXICON PRN_P3_SG
 
-%<prn%>%<sg%>%<p3%>: # ;
+%<prn%>%<p3%>%<sg%>: # ;
 
 LEXICON PRN_PL
 
-%<prn%>%<pl%>: PRN_PL_P1 ; 
-%<prn%>%<pl%>: PRN_PL_P2 ;
-%<prn%>%<pl%>: PRN_PL_P3 ;
+%<prn%>%<pl%>: PRN_P1_PL ; 
+%<prn%>%<pl%>: PRN_P2_PL ;
+%<prn%>%<pl%>: PRN_P3_PL ;
 
-LEXICON PRN_PL_P1
+LEXICON PRN_P1_PL
 
-%<prn%>%<pl%>%<p1%>: # ;
+%<prn%>%<p1%>%<pl%>: # ;
 
-LEXICON PRN_PL_P2
+LEXICON PRN_P2_PL
 
-%<prn%>%<pl%>%<p2%>: # ;
+%<prn%>%<p2%>%<pl%>: # ;
 
-LEXICON PRN_PL_P3
+LEXICON PRN_P3_PL
 
-%<prn%>%<pl%>%<p3%>: # ;
+%<prn%>%<p3%>%<pl%>: # ;
+
+
+LEXICON CARD ! Plural numeral cardinals
+
+@P.Number.Sg@:@P.Number.Sg@w%> StemsCardCl1 ;
+@P.Number.Pl@:@P.Number.Pl@be%> StemsCardCl2 ;
+@P.Number.Sg@:@P.Number.Sg@w%> StemsCardCl3 ;
+@P.Number.Pl@:@P.Number.Pl@mi%> StemsCardCl4 ;
+@P.Number.Sg@:@P.Number.Sg@d%> StemsCardCl5 ;
+!@P.Number.Sg@:@P.Number.Sg@dz%> StemsCardCl5a ;
+!@P.Number.Sg@:@P.Number.Sg@d%> StemsCardCl5b ;
+!@P.Number.Sg@:@P.Number.Sg@l%> StemsCardCl5c ;
+!@P.Number.Sg@:@P.Number.Sg@y%> StemsCardCl5d ;
+@P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsCardCl6 ;
+!@P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsCardCl6a ;
+@P.Number.Sg@:@P.Number.Sg@dz%> StemsCardCl7 ;
+@P.Number.Pl@:@P.Number.Pl@bi%> StemsCardCl8 ;
+@P.Number.Sg@:@P.Number.Sg@dz%> StemsCardCl9 ;
+@P.Number.Pl@:@P.Number.Pl@dz%> StemsCardCl10 ;
+@P.Number.Sg@:@P.Number.Sg@o%> StemsCardCl11 ;
+@P.Number.Sg@:@P.Number.Sg@ StemsCardCl16 ;
+
+
+LEXICON StemsCardCl1 !  Stems in Noun class 1 cardinal numerals
+
+@P.Class.1@:@P.Class.1@ Stems ;
+
+LEXICON StemsCardCl2 ! Stems in Noun class 2 Cardinal numerals
+
+@P.Class.2@:@P.Class.2@ Stems ;
+
+LEXICON StemsCardCl3 ! Stems in Noun class 3 Cardinal numerals
+
+@P.Class.3@:@P.Class.3@ Stems ;
+
+LEXICON StemsCardCl4 ! Stems in Noun class 4 Cardinal numerals
+
+@P.Class.4@:@P.Class.4@ Stems ;
+
+LEXICON StemsCardCl5 ! Stems in Noun class 5 Cardinal numerals
+
+@P.Class.5@:@P.Class.5@ Stems ;
+
+LEXICON StemsCardCl6 ! Stems in Noun class 6 Cardinal numerals
+
+@P.Class.6@:@P.Class.6@ Stems ;
+
+LEXICON StemsCardCl7 ! Stems in Noun class 7 Cardinal numerals
+
+@P.Class.7@:@P.Class.7@ Stems ;
+
+LEXICON StemsCardCl8 ! Stems in Noun class 8 Cardinal numerals
+
+@P.Class.8@:@P.Class.8@ Stems ;
+
+LEXICON StemsCardCl9 ! Stems in Noun class 9 Possessive adjectives
+
+@P.Class.9@:@P.Class.9@ Stems ;
+
+LEXICON StemsCardCl10 ! Stems in Noun class 10 Cardinal numerals
+
+@P.Class.10@:@P.Class.10@ Stems ;
+
+LEXICON StemsCardCl11 ! Stems in Noun class 11 Cardinal numerals
+
+@P.Class.11@:@P.Class.11@ Stems ;
+
+LEXICON StemsCardCl16 ! Stems in Noun class 16 Cardinal numerals
+
+@P.Class.16@:@P.Class.16@ Stems ;
+
+
+LEXICON SuffCardCl1 ! Markers of possessive adjectives in noun class 1 should be moved before the stem
+
+@R.Class.1@:@R.Class.1@	# ; 
+
+LEXICON SuffCardCl2 ! Markers of possessive adjectives in noun class 2 should be moved before the stem
+
+@R.Class.2@:@R.Class.2@ # ;
+
+LEXICON SuffCardCl3 ! Markers of possessive adjectives in noun class 3 should be moved before the stem
+
+@R.Class.3@:@R.Class.3@ # ;
+
+LEXICON SuffCardCl4 ! Markers of possessive adjectives in noun class 4 should be moved before the stem
+
+@R.Class.4@:@R.Class.4@ # ;
+
+LEXICON SuffCardCl5 !  Markers of possessive adjectives in noun class 5 should be moved before the stem
+
+@R.Class.5@:@R.Class.5@ # ;
+
+LEXICON SuffCardCl6 !  Markers of possessive adjectives in noun class 6 should be moved before the stem
+
+@R.Class.6@:@R.Class.6@ # ;
+
+LEXICON SuffCardCl7 ! Markers of possessive adjectives in noun class 7 should be moved before the stem
+
+@R.Class.7@:@R.Class.7@ # ;
+
+LEXICON SuffCardCl8 ! Markers of possessive adjectives in noun class 8 should be moved before the stem
+
+@R.Class.8@:@R.Class.8@ # ;
+
+LEXICON SuffCardCl9 ! Markers of possessive adjectives in noun class 9 should be moved before the stem
+
+@R.Class.9@:@R.Class.9@ # ;
+
+LEXICON SuffCardCl10 ! Markers of possessive adjectives in noun class 10 should be moved before the stem
+
+@R.Class.10@:@R.Class.10@ # ;
+
+LEXICON SuffCardCl11 ! Markers of possessive adjectives in noun class 11 should be moved before the stem
+
+@R.Class.11@:@R.Class.11@ # ;
+
+LEXICON SuffCardCl16 ! Markers of possessive adjectives in noun class 16 should be moved before the stem
+
+@R.Class.16@:@R.Class.16@ # ;
+
+
+LEXICON AgrCard-1 ! Agreement of numeral cardinal "one" in class 1
+
+@R.Number.Sg@%<adj%>%<card%>%<cl1%>%<sg%>:@R.Number.Sg@ SuffCardCl1 ;
+
+LEXICON AgrCard-2 ! Agreement of numeral cardinal "two" in class 2
+@R.Number.Pl@%<adj%>%<card%>%<cl2%>%<pl%>:@R.Number.Pl@ SuffCardCl2 ;
+
+LEXICON AgrCard-3 ! Agreement of numeral cardinal "three" in class 3
+
+@R.Number.Sg@%<adj%>%<card%>%<cl3%>%<sg%>:@R.Number.Sg@ SuffCardCl3 ;
+
+LEXICON AgrCard-4 ! Agreement of numeral cardinal "four" in class 4
+@R.Number.Pl@%<adj%>%<card%>%<cl4%>%<pl%>:@R.Number.Pl@ SuffCardCl4 ;
+
+LEXICON AgrCard-5 ! Agreement of numeral cardinal "five" in class 5
+
+@R.Number.Sg@%<adj%>%<card%>%<cl5%>%<sg%>:@R.Number.Sg@ SuffCardCl5 ;
+
+LEXICON AgrCard-6 ! Agreement of numeral cardinal "six" in class 6
+@R.Number.Pl@%<adj%>%<card%>%<cl6%>%<pl%>:@R.Number.Pl@ SuffCardCl6 ;
+
+LEXICON AgrCard-7 ! Agreement of numeral cardinal "seven" in class 7
+
+@R.Number.Sg@%<adj%>%<card%>%<cl7%>%<sg%>:@R.Number.Sg@ SuffCardCl7 ;
+
+LEXICON AgrCard-8 ! Agreement of numeral cardinal "eight" in class 8
+@R.Number.Pl@%<adj%>%>pos%>%<cl8%>%<pl%>:@R.Number.Pl@ SuffCardCl8 ;
+
+LEXICON AgrCard-9 ! Agreement of numeral cardinal "nine" in class 9
+
+@R.Number.Sg@%<adj%>%<card%>%<cl9%>%<sg%>:@R.Number.Sg@ SuffCardCl9 ;
+
+LEXICON AgrCard-10 ! Agreement of numeral cardinal "ten" in class 10
+@R.Number.Pl@%<adj%>%<card%>%<cl10%>%<pl%>:@R.Number.Pl@ SuffCardCl10 ;
+
+LEXICON AgrCard-11 ! Agreement of numeral cardinal "eleven" in class 11
+
+@R.Number.Sg@%<adj%>%<card%>%<cl11%>%<sg%>:@R.Number.Sg@ SuffCardCl11 ;
+
+LEXICON AgrCard-16 ! Agreement of numeral cardinal "sixteen" in class 16
+
+@R.Number.Pl@%<adj%>%<card%>%<cl16%>%<pl%>:@R.Number.Pl@ SuffCardCl16 ;
+
+
+
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -936,13 +1156,46 @@ zimbi:zimbi Gender-1 ; !"soldat" ; "soldier"
 zue:zue Gender-3 ; ! "pauvreté" ; "poverty"
 
 ! Personal pronouns
-më:më PRN_SG_P1 ; ! "je" ; "I"
-o:o PRN_SG_P2 ; ! "tu" ; "you (sg)"
-a:a PRN_SG_P3 ; ! "il" ; "he"
-bi:bi PRN_PL_P1 ; ! "nous" ; "we"
-mi:mi PRN_PL_P2 ; ! "vous" ; "you (pl)"
-ba:ba PRN_PL_P3 ; ! "ils" ; "they"
+më:më PRN_P1_SG ; ! "je" ; "I"
+o:o PRN_P2_SG ; ! "tu" ; "you (sg)"
+a:a PRN_P3_SG ; ! "il" ; "he"
+bi:bi PRN_P1_PL ; ! "nous" ; "we"
+mi:mi PRN_P2_PL ; ! "vous" ; "you (pl)"
+ba:ba PRN_P3_PL ; ! "ils" ; "they"
 
+
+! Inflexional morphemes
+nga:nga VERB_INFL_PAST1 ; ! "morphème du passé récent" ;
+
+! Cardinal numerals
+! deux ; two
+be:be AgrCard-1 ; ! "deux (classe nominale 1)" ; "two (noun class 1)"
+be:be AgrCard-2 ; ! "deux (classe nominale 2)" ; "two (noun class 2)"
+be:be AgrCard-3 ; ! "deux (classe nominale 3)" ; "two (noun class 3)"
+be:be AgrCard-4 ; ! "deux (classe nominale 4)" ; "two (noun class 4)"
+be:be AgrCard-5 ; ! "deux (classe nominale 5)" ; "two (noun class 5)"
+be:be AgrCard-6 ; ! "deux (classe nominale 6)" ; "two (noun class 6)"
+be:be AgrCard-7 ; ! "deux (classe nominale 7)" ; "two (noun class 7)"
+be:be AgrCard-8 ; ! "deux (classe nominale 8)" ; "two (noun class 8)"
+be:be AgrCard-9 ; ! "deux (classe nominale 9)" ; "two (noun class 9)"
+be:be AgrCard-10 ; ! "deux (classe nominale 10)" ; "two (noun class 10)"
+be:be AgrCard-11 ; ! "deux (classe nominale 10)" ; "two (noun class 10)"
+be:be AgrCard-16 ; ! "deux (classe nominale 10)" ; "two (noun class 10)"
+
+
+! trois ; three
+le:le AgrCard-1 ; ! "trois (classe nominale 1)" ; "three (noun class 1)"
+le:le AgrCard-2 ; ! "trois (classe nominale 2)" ; "three (noun class 2)"
+le:le AgrCard-3 ; ! "trois (classe nominale 3)" ; "three (noun class 3)"
+le:be AgrCard-4 ; ! "trois (classe nominale 4)" ; "three (noun class 4)"
+be:le AgrCard-5 ; ! "trois (classe nominale 5)" ; "three (noun class 5)"
+le:le AgrCard-6 ; ! "trois (classe nominale 6)" ; "three (noun class 6)"
+le:le AgrCard-7 ; ! "trois (classe nominale 7)" ; "three (noun class 7)"
+le:le AgrCard-8 ; ! "trois (classe nominale 8)" ; "three (noun class 8)"
+le:le AgrCard-9 ; ! "trois (classe nominale 9)" ; "three (noun class 9)"
+le:le AgrCard-10 ; ! "trois (classe nominale 10)" ; "three (noun class 10)"
+le:le AgrCard-11 ; ! "trois (classe nominale 10)" ; "three (noun class 10)"
+le:le AgrCard-16 ; ! "trois (classe nominale 10)" ; "three (noun class 10)"
  
 
 
