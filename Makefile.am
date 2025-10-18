@@ -126,7 +126,7 @@ apertium_ewo_DATA=$(TARGETS_COMMON) $(EXTRA_TARGETS)
 pkgconfigdir = $(prefix)/share/pkgconfig
 pkgconfig_DATA = $(BASENAME).pc
 
-noinst_DATA=modes/$(LANG1)-morph.mode
+#noinst_DATA=modes/$(LANG1)-morph.mode
 
 install-data-local: install-modes
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).lexc $(DESTDIR)$(apertium_ewo_srcdir)

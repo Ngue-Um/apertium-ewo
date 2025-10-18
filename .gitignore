@@ -1,0 +1,20 @@
+# Fichiers générés
+*.hfst
+*.att.gz
+*.bin
+*.mode
+.deps/
+modes/
+
+# Fichiers de build
+Makefile
+Makefile.in
+configure
+config.log
+config.status
+autom4te.cache/
+aclocal.m4
+
+# Temporaires
+*~
+*.swp

@@ -1,89 +1,89 @@
-Ewondo: `apertium-ewo`
-===============================================================================
+# Apertium Ewondo (ewo)
 
-This is an Apertium monolingual language package for Ewondo. What
-you can use this language package for:
+Analyseur morphologique et étiqueteur pour la langue Ewondo.
 
-* Morphological analysis of Ewondo
-* Morphological generation of Ewondo
-* Part-of-speech tagging of Ewondo
+## Prérequis
 
-Requirements
--------------------------------------------------------------------------------
+- HFST (>= 3.15.1)
+- Apertium (>= 3.6.1)
+- CG3 (>= 1.3.1)
 
-You will need the following software installed:
-
-* lttoolbox (>= 3.5.1)
-* apertium (>= 3.6.1)
-* vislcg3 (>= 1.3.1)
-* hfst (>= 3.15.1)
-
-If this does not make any sense, we recommend you look at: www.apertium.org.
-
-Compiling
--------------------------------------------------------------------------------
-
-Given the requirements being installed, you should be able to just run:
-
+Sur Ubuntu/Debian :
 ```bash
-$ ./configure
-$ make
+sudo apt install apertium hfst cg3
 ```
 
-You can use `./autogen.sh` instead of `./configure` if you're compiling
-from source.
-
-If you're doing development, you don't have to install the data, you
-can use it directly from this directory.
-
-If you are installing this language package as a prerequisite for an
-Apertium translation pair, then do (typically as root / with sudo):
-
+## Installation rapide
 ```bash
-$ make install
+git clone <votre-repo>
+cd apertium-ewo
+./setup.sh
 ```
 
-You can use a `--prefix` with `./configure` to install as a non-root user,
-but make sure to use the same prefix when installing the translation
-pair and any other language packages.
-
-Testing
--------------------------------------------------------------------------------
-
-If you are in the source directory after running make, the following
-commands should work:
-
-```console
-$ echo "TODO: test sentence" | apertium -d . ewo-morph
-TODO: test analysis result
-
-$ echo "TODO: test sentence" | apertium -d . ewo-tagger
-TODO: test tagger result
+## Installation manuelle
+```bash
+git clone <votre-repo>
+cd apertium-ewo
+./rebuild_apertium.sh
 ```
 
-Files and data
--------------------------------------------------------------------------------
+## Utilisation
+```bash
+# Analyse morphologique
+echo "mëbu" | apertium -d . ewo-morph
 
-* [`apertium-ewo.ewo.lexc`](apertium-ewo.ewo.lexc) - Morphotactic dictionary
-* [`apertium-ewo.ewo.twol`](apertium-ewo.ewo.twol) - Morphophonological rules
-* [`apertium-ewo.ewo.rlx`](apertium-ewo.ewo.rlx) - Constraint Grammar disambiguation rules
-* [`apertium-ewo.post-ewo.dix`](apertium-ewo.post-ewo.dix) - Post-generator
-* [`ewo.prob`](ewo.prob) - Tagger model
-* [`modes.xml`](modes.xml) - Translation modes
+# Étiquetage
+echo "mëbu abôm" | apertium -d . ewo-tagger
 
-For more information
--------------------------------------------------------------------------------
+# Génération
+echo "^bu<n><cl6><pl>$" | apertium -d . ewo-gener
 
-* http://wiki.apertium.org/wiki/Installation
-* http://wiki.apertium.org/wiki/apertium-ewo
-* http://wiki.apertium.org/wiki/Using_an_lttoolbox_dictionary
+# Désambiguïsation
+echo "mëbu abôm" | apertium -d . ewo-disam
+```
 
-Help and support
--------------------------------------------------------------------------------
+## Structure du projet
+```
+apertium-ewo/
+├── apertium-ewo.ewo.lexc        # Lexique
+├── apertium-ewo.ewo.twol        # Règles phonologiques
+├── apertium-ewo.ewo.mor.twol    # Règles morphophonologiques
+├── apertium-ewo.ewo.rlx         # Désambiguïsation (CG3)
+├── apertium-ewo.ewo.spellrelax  # Relaxation orthographique
+├── modes.xml                     # Configuration des modes
+├── rebuild_apertium.sh           # Script de compilation
+├── setup.sh                      # Script d'installation
+└── modes/                        # Fichiers .mode (générés)
+```
 
-If you need help using this language pair or data, you can contact:
+## Développement
 
-* Mailing list: apertium-stuff@lists.sourceforge.net
-* IRC: `#apertium` on irc.freenode.net (irc://irc.freenode.net/#apertium)
+### Modifier le lexique
+Éditez `apertium-ewo.ewo.lexc` puis recompilez :
+```bash
+./rebuild_apertium.sh
+```
 
-See also the file [`AUTHORS`](AUTHORS), included in this distribution.
+### Modifier les règles phonologiques
+Éditez `apertium-ewo.ewo.twol` puis recompilez.
+
+### Modifier la désambiguïsation
+Éditez `apertium-ewo.ewo.rlx` puis recompilez.
+
+## Notes importantes
+
+- Les fichiers `.mode` sont générés automatiquement avec des **chemins relatifs**
+- Ne versionnez pas les fichiers générés (`.hfst`, `.bin`, `.mode`)
+- Utilisez toujours `./rebuild_apertium.sh` pour recompiler
+
+## Problèmes connus
+
+Si `apertium-gen-modes` plante (Segmentation fault), le script `rebuild_apertium.sh` crée les fichiers `.mode` manuellement avec des chemins relatifs.
+
+## Licence
+
+[Votre licence ici]
+
+## Contributeurs
+
+[Vos noms ici]
