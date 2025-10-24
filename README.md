@@ -1,98 +1,238 @@
+````
+
 # Apertium Ewondo (ewo)
 
-Analyseur morphologique et étiqueteur pour la langue Ewondo.
 
-## Prérequis
+**Apertium Ewondo** is a morphological analyser and tagger for the **Ewondo** language, a Bantu language spoken in Cameroon.  
 
-- HFST (>= 3.15.1)
-- Apertium (>= 3.6.1)
-- CG3 (>= 1.3.1)
+This module is developed within the Apertium ecosystem to support the creation of rule-based translation and language processing tools for low-resourced African languages.
 
-Sur Ubuntu/Debian :
+
+---
+
+
+## Prerequisites
+
+
+Before installation, ensure that the following packages are available:
+
+
+- **HFST** (>= 3.15.1)  
+
+- **Apertium** (>= 3.6.1)  
+
+- **CG3** (>= 1.3.1)
+
+
+On Ubuntu/Debian systems:
+
 ```bash
+
 sudo apt install apertium hfst cg3
-```
 
-## Installation rapide
+````
+
+
+---
+
+
+## Quick Installation
+
+
 ```bash
-git clone <votre-repo>
+
+git clone https://github.com/Ngue-Um/apertium-ewo.git
+
 cd apertium-ewo
+
 ./setup.sh
+
 ```
 
-## Installation manuelle
+
+---
+
+
+## Manual Installation
+
+
+If you prefer to rebuild manually:
+
+
 ```bash
-git clone <votre-repo>
+
+git clone https://github.com/Ngue-Um/apertium-ewo.git
+
 cd apertium-ewo
+
 ./rebuild_apertium.sh
+
 ```
 
-## Utilisation
+
+---
+
+
+## Usage Examples
+
+
+### Morphological Analysis
+
+
 ```bash
-# Analyse morphologique
-echo "mëbu" | apertium -d . ewo-morph
 
-# Étiquetage
-echo "mëbu abôm" | apertium -d . ewo-tagger
+echo "elum" | apertium -d . ewo-morph
 
-# Génération
-echo "^bu<n><cl6><pl>$" | apertium -d . ewo-gener
+^elum/lum<n><cl7><sg>$
 
-# Désambiguïsation
-echo "mëbu abôm" | apertium -d . ewo-disam
 ```
 
-## Structure du projet
+
+### Tagging
+
+
+```bash
+
+echo "mvol" | apertium -d . ewo-tagger
+
+^mvol/mvol<n><cl10><pl>/mvol<n><cl9><sg>$
+
 ```
+
+
+### Generation
+
+
+```bash
+
+echo "^mvol/mvol<n><cl10><pl>/mvol<n><cl9><sg>$" | bash modes/ewo-gener.mode
+
+#mvol\/mvol\/mvol
+
+```
+
+
+### Disambiguation
+
+
+```bash
+
+echo "etun" | apertium -d . ewo-disam
+
+"<etun>"
+
+        "tun" inf
+
+        "tun" n cl7 sg
+
+```
+
+
+---
+
+
+## Project Structure
+
+
+```
+
 apertium-ewo/
-├── apertium-ewo.ewo.lexc        # Lexique
-├── apertium-ewo.ewo.twol        # Règles phonologiques
-├── apertium-ewo.ewo.mor.twol    # Règles morphophonologiques
-├── apertium-ewo.ewo.rlx         # Désambiguïsation (CG3)
-├── apertium-ewo.ewo.spellrelax  # Relaxation orthographique
-├── modes.xml                     # Configuration des modes
-├── rebuild_apertium.sh           # Script de compilation
-├── setup.sh                      # Script d'installation
-└── modes/                        # Fichiers .mode (générés)
+
+├── apertium-ewo.ewo.lexc        # Lexicon
+
+├── apertium-ewo.ewo.twol        # Phonological rules
+
+├── apertium-ewo.ewo.mor.twol    # Morphophonological rules
+
+├── apertium-ewo.ewo.rlx         # Disambiguation (CG3)
+
+├── apertium-ewo.ewo.spellrelax  # Orthographic relaxation
+
+├── modes.xml                    # Mode configuration
+
+├── rebuild_apertium.sh          # Compilation script
+
+├── setup.sh                     # Installation script
+
+└── modes/                       # Generated .mode files
+
 ```
 
-## Développement
 
-### Modifier le lexique
-Éditez `apertium-ewo.ewo.lexc` puis recompilez :
+---
+
+
+## Development
+
+
+### Editing the Lexicon
+
+
+Edit `apertium-ewo.ewo.lexc` and recompile:
+
+
 ```bash
+
 ./rebuild_apertium.sh
+
 ```
 
-### Modifier les règles phonologiques
-Éditez `apertium-ewo.ewo.twol` puis recompilez.
 
-### Modifier la désambiguïsation
-Éditez `apertium-ewo.ewo.rlx` puis recompilez.
-
-## Notes importantes
-
-- Les fichiers `.mode` sont générés automatiquement avec des **chemins relatifs**
-- Ne versionnez pas les fichiers générés (`.hfst`, `.bin`, `.mode`)
-- Utilisez toujours `./rebuild_apertium.sh` pour recompiler
-
-## Problèmes connus
-
-Si `apertium-gen-modes` plante (Segmentation fault), le script `rebuild_apertium.sh` crée les fichiers `.mode` manuellement avec des chemins relatifs.
-
-## Licence
-
-[Votre licence ici]
-
-## Contributeurs
-
-[Vos noms ici]
+### Editing Phonological Rules
 
 
-| Mode       | Statut        | Fonction              | Commande                                            |
-| ---------- | ------------- | --------------------- | --------------------------------------------------- |
-| ewo-morph  | ✅ Parfait     | Analyse morphologique | echo "mëbu" | apertium -d . ewo-morph               |
-| ewo-tagger | ✅ Parfait     | Étiquetage            | echo "mëbu" | apertium -d . ewo-tagger              |
-| ewo-disam  | ✅ Parfait     | Désambiguïsation      | echo "mëbu" | apertium -d . ewo-disam               |
-| ewo-lexc   | ✅ Fonctionne  | Consultation lexique  | echo "mëbu" | apertium -d . ewo-lexc                |
-| ewo-gener  | ⚠️ Workaround | Génération            | echo "^bu<n><cl6><pl>$" | bash modes/ewo-gener.mode |
+Edit `apertium-ewo.ewo.twol` and recompile.
+
+
+### Editing Disambiguation Rules
+
+
+Edit `apertium-ewo.ewo.rlx` and recompile.
+
+
+---
+
+
+## Important Notes
+
+
+* `.mode` files are generated automatically using **relative paths**.
+
+* Do **not** commit generated files (`.hfst`, `.bin`, `.mode`).
+
+* Always use `./rebuild_apertium.sh` for clean and consistent recompilation.
+
+
+---
+
+
+## Known Issues
+
+
+If `apertium-gen-modes` fails with a **segmentation fault**,
+
+the `rebuild_apertium.sh` script automatically creates `.mode` files manually with relative paths.
+
+
+---
+
+
+## ✅ Functional Modes Overview
+
+
+| Mode           | Status        | Function               | Command Example                                                               |
+
+| -------------- | ------------- | ---------------------- | ----------------------------------------------------------------------------- |
+
+| **ewo-morph**  | ✅ Perfect     | Morphological analysis | `echo "elum" \| apertium -d . ewo-morph`                                      |
+
+| **ewo-tagger** | ✅ Perfect     | Tagging                | `echo "mvol" \| apertium -d . ewo-tagger`                                     |
+
+| **ewo-disam**  | ✅ Perfect     | Disambiguation         | `echo "etun" \| apertium -d . ewo-disam`                                      |
+
+| **ewo-lexc**   | ✅ Working     | Lexicon lookup         | `echo "elum" \| apertium -d . ewo-lexc`                                       |
+
+| **ewo-gener**  | ⚠️ Workaround | Generation             | `echo "^mvol/mvol<n><cl10><pl>/mvol<n><cl9><sg>$" \| apertium -d . ewo-gener` |
+
+
+---
