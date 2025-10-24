@@ -1,13 +1,9 @@
 Alphabet 
-
- A B Ç D E Ä F G H I J Ž K L M N Ň O Ö P R S Ş T U Ü W Y Ý Z
- a b ç d e ɛ ə ä f g h i j ž k l m n ň o ö ɔ p r s ş t u ü w y ý z
-
+ A B D DZ E È Ë F G GB H I K KP L M N NY Ṅ P R S T TS U V W Y Z
+ a b d dz e è ë f g gb h i k kp l m n ny ṅ p r s t ts u v w y z
 %>:0 
-
 ; 
 
 Rules
-
 "Remove morpheme boundary"
-%>:0 <=> _ ; 
+%>:0 <=> _ ;

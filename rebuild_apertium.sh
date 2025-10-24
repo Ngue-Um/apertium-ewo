@@ -2,13 +2,16 @@
 # rebuild_apertium.sh - Script de compilation pour Apertium Ewondo
 # Ce script nettoie, compile et génère les fichiers .mode avec chemins relatifs
 
-set -e  # Arrêt en cas d'erreur
+set -e # Arrêt en cas d'erreur
 
-echo "🔹 Nettoyage des fichiers générés..."
+echo "🔹 Nettoyage avec make clean..."
+make clean || echo "⚠️ make clean a échoué (peut-être pas encore configuré)"
 
+echo ""
+echo "🔹 Nettoyage manuel des fichiers générés..."
 # Fichiers HFST générés
 rm -f ewo.automorf.hfst ewo.autogen.hfst ewo.mor.hfst ewo.mor.twol.hfst \
-      ewo.twol.hfst ewo.seg.hfst ewo.autoseg.hfst ewo.gen.hfst ewo.LR.lexc.hfst
+ewo.twol.hfst ewo.seg.hfst ewo.autoseg.hfst ewo.gen.hfst ewo.LR.lexc.hfst
 
 # Fichiers binaires / att.gz
 rm -f ewo.automorf.bin ewo.autogen.bin ewo.autogen.att.gz ewo.autoseg.att.gz ewo.rlx.bin
@@ -38,6 +41,19 @@ touch modes/ewo-morph.mode
 echo ""
 echo "🔹 Compilation avec make..."
 make
+
+echo ""
+echo "🔹 Compilation du lexique brut (pour ewo-lexc)..."
+if command -v hfst-lexc &> /dev/null; then
+    hfst-lexc apertium-ewo.ewo.lexc -o ewo.LR.lexc.hfst 2>&1 | grep -v "Warning: Defaulting to OpenFst"
+    if [ -f "ewo.LR.lexc.hfst" ]; then
+        echo "✅ ewo.LR.lexc.hfst créé"
+    else
+        echo "❌ Échec de création de ewo.LR.lexc.hfst"
+    fi
+else
+    echo "⚠️ hfst-lexc non trouvé, mode ewo-lexc non disponible"
+fi
 
 echo ""
 echo "🔹 Suppression des .mode temporaires et création des vrais fichiers..."
@@ -81,7 +97,7 @@ echo "Chemin réel : $REAL_PATH"
 if [[ "$REAL_PATH" == *"$CURRENT_DIR/modes"* ]]; then
     echo "✅ Les fichiers .mode sont dans le bon dossier !"
 else
-    echo "⚠️  Attention : Vérifiez que vous êtes dans le bon dossier"
+    echo "⚠️ Attention : Vérifiez que vous êtes dans le bon dossier"
     echo "   pwd dit : $(pwd)"
     echo "   realpath dit : $(realpath .)"
 fi
@@ -90,9 +106,9 @@ echo ""
 echo "🔹 Test rapide du transducteur morphologique..."
 if [ -f "ewo.automorf.hfst" ]; then
     echo "Test : 'mëbu'"
-    echo "mëbu" | apertium -d . ewo-morph || echo "⚠️  Test échoué"
+    echo "mëbu" | apertium -d . ewo-morph || echo "⚠️ Test échoué"
 else
-    echo "⚠️  Fichier ewo.automorf.hfst introuvable"
+    echo "⚠️ Fichier ewo.automorf.hfst introuvable"
 fi
 
 echo ""

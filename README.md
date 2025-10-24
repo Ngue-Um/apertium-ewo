@@ -1,1 +1,98 @@
-README
+# Apertium Ewondo (ewo)
+
+Analyseur morphologique et étiqueteur pour la langue Ewondo.
+
+## Prérequis
+
+- HFST (>= 3.15.1)
+- Apertium (>= 3.6.1)
+- CG3 (>= 1.3.1)
+
+Sur Ubuntu/Debian :
+```bash
+sudo apt install apertium hfst cg3
+```
+
+## Installation rapide
+```bash
+git clone <votre-repo>
+cd apertium-ewo
+./setup.sh
+```
+
+## Installation manuelle
+```bash
+git clone <votre-repo>
+cd apertium-ewo
+./rebuild_apertium.sh
+```
+
+## Utilisation
+```bash
+# Analyse morphologique
+echo "mëbu" | apertium -d . ewo-morph
+
+# Étiquetage
+echo "mëbu abôm" | apertium -d . ewo-tagger
+
+# Génération
+echo "^bu<n><cl6><pl>$" | apertium -d . ewo-gener
+
+# Désambiguïsation
+echo "mëbu abôm" | apertium -d . ewo-disam
+```
+
+## Structure du projet
+```
+apertium-ewo/
+├── apertium-ewo.ewo.lexc        # Lexique
+├── apertium-ewo.ewo.twol        # Règles phonologiques
+├── apertium-ewo.ewo.mor.twol    # Règles morphophonologiques
+├── apertium-ewo.ewo.rlx         # Désambiguïsation (CG3)
+├── apertium-ewo.ewo.spellrelax  # Relaxation orthographique
+├── modes.xml                     # Configuration des modes
+├── rebuild_apertium.sh           # Script de compilation
+├── setup.sh                      # Script d'installation
+└── modes/                        # Fichiers .mode (générés)
+```
+
+## Développement
+
+### Modifier le lexique
+Éditez `apertium-ewo.ewo.lexc` puis recompilez :
+```bash
+./rebuild_apertium.sh
+```
+
+### Modifier les règles phonologiques
+Éditez `apertium-ewo.ewo.twol` puis recompilez.
+
+### Modifier la désambiguïsation
+Éditez `apertium-ewo.ewo.rlx` puis recompilez.
+
+## Notes importantes
+
+- Les fichiers `.mode` sont générés automatiquement avec des **chemins relatifs**
+- Ne versionnez pas les fichiers générés (`.hfst`, `.bin`, `.mode`)
+- Utilisez toujours `./rebuild_apertium.sh` pour recompiler
+
+## Problèmes connus
+
+Si `apertium-gen-modes` plante (Segmentation fault), le script `rebuild_apertium.sh` crée les fichiers `.mode` manuellement avec des chemins relatifs.
+
+## Licence
+
+[Votre licence ici]
+
+## Contributeurs
+
+[Vos noms ici]
+
+
+| Mode       | Statut        | Fonction              | Commande                                            |
+| ---------- | ------------- | --------------------- | --------------------------------------------------- |
+| ewo-morph  | ✅ Parfait     | Analyse morphologique | echo "mëbu" | apertium -d . ewo-morph               |
+| ewo-tagger | ✅ Parfait     | Étiquetage            | echo "mëbu" | apertium -d . ewo-tagger              |
+| ewo-disam  | ✅ Parfait     | Désambiguïsation      | echo "mëbu" | apertium -d . ewo-disam               |
+| ewo-lexc   | ✅ Fonctionne  | Consultation lexique  | echo "mëbu" | apertium -d . ewo-lexc                |
+| ewo-gener  | ⚠️ Workaround | Génération            | echo "^bu<n><cl6><pl>$" | bash modes/ewo-gener.mode |

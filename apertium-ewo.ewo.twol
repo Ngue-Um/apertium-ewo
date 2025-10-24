@@ -1,40 +1,26 @@
 Alphabet
- A B Ç D E Ä F G H I J Ž K L M N Ň O Ö P R S Ş T U Ü W Y Ý Z
- a b ç d e ɛ ə ë ä f g h i j ž k l m n ň ñ o ö ò ɔ p r s ş t u ü w y ý z
+A B D DZ E È Ë F G GB H I K KP L M N NY Ṅ P R S T TS U V W Y Z
+a b d dz e è ë f g gb h i k kp l m n ny ṅ p r s t ts u v w y z
+ë ṅ
 
- ¹:́   ! High tone
- ²:̀   ! Low tone
- ³:̂   ! Falling tone (High-Low)
- ⁴:̌   ! Rising tone (Low-High)
- ⁵:̄   ! Mid tone
- 
+
+ %>:0
  %{ë%}:ë %{ë%}:0
-
  %{E%}:e %{I%}:y
-
  %{A%}:a %>:%>  
-
- %{N%}:n %{N%}:m %{N%}:ñ
+ %{N%}:n %{N%}:m %{N%}:ṅ
 ;
 
 Sets
-
-Vowels = A E Ä I O Ö U Ü Y Ý
-        a e ä ɛ ə ë i o ɔ ö ò u ü y ý ;
-
+Vowels = A E È Ë I O Ò U
+        a e è ë i o ò u ;
 FrontVows = e i ;
-
 Labials = b p ;
-
 Alveolars = t d l s z ;
-
 Palatals = y ;
-
 Velars = k g ;
 
-
 Rules
-
 "Remove morpheme boundary"
 %>:0 <=> _ ;
 
@@ -47,12 +33,10 @@ i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
 ! %{E%}:y <=> %>: _ Vows %{VSUF%}:e ;
 
 "{N} to /ng/"
-%{N%}:ñ <=> _ %>: :Velars ;
+%{N%}:ṅ <=> _ %>: :Velars ;
 
-"{N} to /ng/"
+"{N} to /n/"
 %{N%}:n <=> n _ %>: :Alveolars ;
-
-
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
@@ -60,4 +44,3 @@ i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
 ! https://github.com/hfst/
 ! http://wiki.apertium.org/wiki/Twol
 ! http://wiki.apertium.org/wiki/Hfst
-

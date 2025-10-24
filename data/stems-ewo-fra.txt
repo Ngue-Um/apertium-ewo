@@ -1,478 +1,28 @@
-! Morphological Transducer for Ewondo
-
-Multichar_Symbols
-
-! Part of speech categories
-%<abbr%> ! abreviation ; abbreviation
-%<adv%> ! Adverbe ; Adverb
-%<adj%> ! Adjectif ; Adjective
-%<adjind%> ! Adjectif ; Adjective
-%<card%> ! Numeral cardinal ; Cardinal Numeral
-%<cm%> ! Virgule
-%<cnjcoo%> !  conjonction de coordiation ;Co-ordinating conjunction
-%<cnsub%> ! conjonction de subordination ; subordinating conjunction
-%<conn%> ! Connective
-%<cop%> ! Copule
-%<dem%> ! Demonstratif ; Demonstrative
-%<det%> ! Determinant
-%<ij%> ! Interjection
-%<lquot%> ! guillemets ouvrants
-%<loc%> ! Locatif ; locative
-%<lpar%> ! parentheses ouvrantes
-%<mod%> ! particule modale
-%<n%>   ! Nom ; Noun
-%<np%> ! Noun propre
-%<pos%> ! Possessive adjectives
-%<post%> ! Postposition
-%<pr%> ! Preposition
-%<prn%> ! Pronoun
-%<ord%> ! Numeral ordinal ; Ordinal Numeral
-%<rel%> ! Marqueur relatif ! Relative marker
-%<rpar%> ! parentheses fermantes
-%<rquot%> ! guillemets fermants
-%<sent%> ! Ponctuation de fin de phrase (point)
-%<vaux%> ! Verbe auxiliaire
-%<vbhaber%> ! Verbe avoir
-%<vblex%> ! Verbe ; Verb
-%<vbser%> ! Verbe etre
-%<vbmod%> ! Verbe modal
-
-! Number morphology
-%<pl%>  ! Pluriel ; Plural
-%<sg%>  ! Singulier ;Singular
-
-! Noun class morphology
-%<cl0%> ! Noun class 1 ; classe nominale 1
-%<cl1%> ! Noun class 1a ; classe nominale 1a
-%<cl1a%> ! Noun class 1a ; classe nominale 1a
-%<cl2%> ! Noun class 2 ; classe nominale 2
-%<cl3%> ! Noun class 3 ; classe nominale 3
-%<cl4%> ! Noun class 4 ; classe nominale 4
-%<cl5%> ! Noun class 5 ; classe nominale 5
-%<cl5a%> ! Noun class 5a ; classe nominale 5a
-%<cl5b%> ! Noun class 5b ; classe nominale 5b
-%<cl5c%> ! Noun class 5c ; classe nominale 5c
-%<cl5d%> ! Noun class 5a ; classe nominale 5d
-%<cl6%> ! Noun class 6 ; classe nominale 6
-%<cl6a%> ! Noun class 6a ; classe nominale 6a
-%<cl7%> ! Noun class 7 ; classe nominale 7
-%<cl8%> ! Noun class 8 ; classe nominale 8
-%<cl9%> ! Noun class 9 ; classe nominale 9
-%<cl10%> ! Noun class 10 ; classe nominale 10
-%<cl11%> ! Noun class 11 ; classe nominale 11
-
-
-! Verb morphology
-%<inf%> ! Infinitive ; infinitif
-%<imp%> ! Imperatif ; Imperative
-%<ins%> ! Instrumental ; Instrumental
-%<neg%> ! Negation ; Negation
-%<refl%> ! Reflexif ; Reflexive
-%<p1%> ! Immediate past ; passe immediat
-%<p2%> ! Recent past ; passe recent
-%<p3%> ! Remote past ; passe lointain
-%<f1%> ! Immediate future ; futur immediat
-%<f2%> ! Near future ; futur recent
-%<f3%> ! Distant future ; futur lointain
-
-! Other symbols
-%>      ! Morpheme boundary
-%<punct%> ! Ponctuation ; Punctuation
-
-
-%{ë%}
-%{N%}
-
-! Flags for Number
-@P.Number.Sg@
-@P.Number.Pl@
-@R.Number.Sg@
-@R.Number.Pl@
-
-! Flags for Noun classes
-@P.Class.1@
-@P.Class.1a@
-@P.Class.2@
-@P.Class.3@
-@P.Class.4@
-@P.Class.5@
-@P.Class.5a@
-@P.Class.5b@
-@P.Class.5c@
-@P.Class.5d@
-@P.Class.6@
-@P.Class.6a@
-@P.Class.7@
-@P.Class.8@
-@P.Class.9@
-@P.Class.10@
-@P.Class.11@
-@P.Class.16@
-@R.Class.1@
-@R.Class.1a@
-@R.Class.2@
-@R.Class.3@
-@R.Class.4@
-@R.Class.5@
-@R.Class.5a@
-@R.Class.5b@
-@R.Class.5c@
-@R.Class.5d@
-@R.Class.6@
-@R.Class.6a@
-@R.Class.7@
-@R.Class.8@
-@R.Class.9@
-@R.Class.10@
-@R.Class.11@
-@R.Class.16@
-
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!                     	 PREFIXES        	                    !!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-LEXICON Root
-
-ADV ;
-Number ;
-V ;
-PR ;
-CONJ ;
-Pronoms;
-
-LEXICON Pronoms
-
-a%<prn%>%<cl1%>:a # ;
-
-
-LEXICON ADV
-
-%<adv%>: # ;
-
-LEXICON PR
-
-%<pr%>: # ;
-
-LEXICON CONJ
-%<cnjcoo%>: # ;
-
-LEXICON Number
-
-@P.Number.Sg@:@P.Number.Sg@m%> StemsCl1 ;
-@P.Number.Sg@:@P.Number.Sg@%> StemsCl1a ;
-@P.Number.Pl@:@P.Number.Pl@b%{ë%}%> StemsCl2 ;
-@P.Number.Sg@:@P.Number.Sg@%{N%}%> StemsCl3 ;
-@P.Number.Pl@:@P.Number.Pl@min%> StemsCl4 ;
-@P.Number.Sg@:@P.Number.Sg@a%> StemsCl5 ;
-@P.Number.Sg@:@P.Number.Sg@dz%> StemsCl5a ;
-@P.Number.Sg@:@P.Number.Sg@d%> StemsCl5b ;
-@P.Number.Sg@:@P.Number.Sg@l%> StemsCl5c ;
-@P.Number.Sg@:@P.Number.Sg@y%> StemsCl5d ;
-@P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsCl6 ;
-@P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsCl6a ;
-@P.Number.Sg@:@P.Number.Sg@e%> StemsCl7 ;
-@P.Number.Pl@:@P.Number.Pl@bi%> StemsCl8 ;
-@P.Number.Sg@:@P.Number.Sg@ StemsCl9 ;
-@P.Number.Pl@:@P.Number.Pl@ StemsCl10 ;
-@P.Number.Sg@:@P.Number.Sg@o%> StemsCl11 ;
-@P.Number.Sg@:@P.Number.Sg@ StemsCl16 ;
-
-
-LEXICON StemsCl1 !  Stems in Noun class 1
-
-@P.Class.1@:@P.Class.1@ Stems ;
-
-LEXICON StemsCl1a !  Stems in Noun class 1a
-
-@P.Class.1a@:@P.Class.1a@ Stems ;
-
-LEXICON StemsCl2 ! Stems in Noun class 2
-
-@P.Class.2@:@P.Class.2@ Stems ;
-
-LEXICON StemsCl3 ! Stems in Noun class 3
-
-@P.Class.3@:@P.Class.3@ Stems ;
-
-LEXICON StemsCl4 ! Stems in Noun class 4
-
-@P.Class.4@:@P.Class.4@ Stems ;
-
-LEXICON StemsCl5 ! Stems in Noun class 5
-
-@P.Class.5@:@P.Class.5@ Stems ;
-
-LEXICON StemsCl5a ! Stems in Noun class 5a
-
-@P.Class.5a@:@P.Class.5a@ Stems ;
-
-LEXICON StemsCl5b ! Stems in Noun class 5b
-
-@P.Class.5b@:@P.Class.5b@ Stems ;
-
-LEXICON StemsCl5c ! Stems in Noun class 5c
-
-@P.Class.5c@:@P.Class.5c@ Stems ;
-
-LEXICON StemsCl5d ! Stems in Noun class 5d
-
-@P.Class.5d@:@P.Class.5d@ Stems ;
-
-LEXICON StemsCl6 ! Stems in Noun class 6
-
-@P.Class.6@:@P.Class.6@ Stems ;
-
-LEXICON StemsCl6a ! Stems in Noun class 6a
-
-@P.Class.6a@:@P.Class.6a@ Stems ;
-
-LEXICON StemsCl7 ! Stems in Noun class 7
-
-@P.Class.7@:@P.Class.7@ Stems ;
-
-LEXICON StemsCl8 ! Stems in Noun class 8
-
-@P.Class.8@:@P.Class.8@ Stems ;
-
-LEXICON StemsCl9 ! Stems in Noun class 9
-
-@P.Class.9@:@P.Class.9@ Stems ;
-
-LEXICON StemsCl10 ! Stems in Noun class 10
-
-@P.Class.10@:@P.Class.10@ Stems ;
-
-LEXICON StemsCl11 ! Stems in Noun class 11
-
-@P.Class.11@:@P.Class.11@ Stems ;
-
-LEXICON StemsCl16 ! Stems in Noun class 16
-
-@P.Class.16@:@P.Class.16@ Stems ;
-
-
-LEXICON SuffCl1
-
-@R.Class.1@:@R.Class.1@	# ;
-
-LEXICON SuffCl2
-
-@R.Class.2@:@R.Class.2@ # ;
-
-LEXICON SuffCl3
-
-@R.Class.3@:@R.Class.3@ # ;
-
-LEXICON SuffCl4
-
-@R.Class.4@:@R.Class.4@ # ;
-
-LEXICON SuffCl5
-
-@R.Class.5@:@R.Class.5@ # ;
-
-LEXICON SuffCl5b
-
-@R.Class.5b@:@R.Class.5b@ # ;
-
-LEXICON SuffCl6
-
-@R.Class.6@:@R.Class.6@ # ;
-
-LEXICON SuffCl6a
-
-@R.Class.6a@:@R.Class.6a@ # ;
-
-LEXICON SuffCl7
-
-@R.Class.7@:@R.Class.7@ # ;
-
-LEXICON SuffCl8
-
-@R.Class.8@:@R.Class.8@ # ;
-
-LEXICON SuffCl9
-
-@R.Class.9@:@R.Class.9@	# ;
-
-LEXICON SuffCl10
-
-@R.Class.10@:@R.Class.10@ # ;
-
-LEXICON SuffCl11
-
-@R.Class.11@:@R.Class.11@ # ;
-
-
-LEXICON Gender-1 ! cl1-cl2 pairing
-
-@R.Number.Sg@%<n%>%<cl1%>%<sg%>:@R.Number.Sg@ SuffCl1 ;
-@R.Number.Pl@%<n%>%<cl2%>%<pl%>:@R.Number.Pl@ SuffCl2 ;
-
-LEXICON Gender-2 ! cl3-cl4 pairing
-
-@R.Number.Sg@%<n%>%<cl3%>%<sg%>:@R.Number.Sg@ SuffCl3 ;
-@R.Number.Pl@%<n%>%<cl4%>%<pl%>:@R.Number.Pl@ SuffCl4 ;
-
-LEXICON Gender-2b ! one class gender (cl4)
-
-@R.Number.Pl@%<n%>%<cl4%>%<pl%>:@R.Number.Pl@ SuffCl4 ;
-
-LEXICON Gender-3 ! cl5-cl6 pairing
-
-@R.Number.Sg@%<n%>%<cl5%>%<sg%>:@R.Number.Sg@ SuffCl5 ;
-@R.Number.Pl@%<n%>%<cl6%>%<pl%>:@R.Number.Pl@ SuffCl6 ;
-
-LEXICON Gender-3b ! cl5b-cl6 pairing
-
-@R.Number.Sg@%<n%>%<cl5b%>%<sg%>:@R.Number.Sg@ SuffCl5b ;
-@R.Number.Pl@%<n%>%<cl6%>%<pl%>:@R.Number.Pl@ SuffCl6 ;
-
-LEXICON Gender-3f ! cl6a one-class gender
-
-@R.Number.Pl@%<n%>%<cl6a%>%<pl%>:@R.Number.Pl@ SuffCl6a ;
-
-LEXICON Gender-4 ! cl7-cl8 pairing
-
-@R.Number.Sg@%<n%>%<cl7%>%<sg%>:@R.Number.Sg@ SuffCl7 ;
-@R.Number.Pl@%<n%>%<cl8%>%<pl%>:@R.Number.Pl@ SuffCl8 ;
-
-LEXICON Gender-5 ! cl9-cl10 pairing
-
-@R.Number.Sg@%<n%>%<cl9%>%<sg%>:@R.Number.Sg@ SuffCl9 ;
-@R.Number.Pl@%<n%>%<cl10%>%<pl%>:@R.Number.Pl@ SuffCl10 ;
-
-LEXICON Gender-6 ! cl9-cl2 pairing
-
-@R.Number.Sg@%<n%>%<cl9%>%<sg%>:@R.Number.Sg@ SuffCl9 ;
-@R.Number.Pl@%<n%>%<cl2%>%<pl%>:@R.Number.Pl@ SuffCl2 ;
-
-LEXICON Gender-7 ! cl9-cl6 pairing
-
-@R.Number.Sg@%<n%>%<cl9%>%<sg%>:@R.Number.Sg@ SuffCl9 ;
-@R.Number.Pl@%<n%>%<cl6%>%<pl%>:@R.Number.Pl@ SuffCl6 ;
-
-LEXICON Gender-8 ! cl11-cl5 pairing
-@R.Number.Sg@%<n%>%<cl11%>%<sg%>:@R.Number.Sg@ SuffCl11 ;
-@R.Number.Pl@%<n%>%<cl5%>%<pl%>:@R.Number.Pl@ SuffCl5 ;
-
-
-
-LEXICON V ! Lexicon for verb derivation and inflection
-
-%<vblex%>: VERB_INF ;
-%<vblex%>: VERB_REFL ;
-%<vblex%>%<p1%>: # ;
-%<vblex%>%<p2%>: # ;
-%<vblex%>%<p3%>: # ;
-%<vblex%>%<f1%>: # ;
-%<vblex%>%<f2%>: # ;
-%<vblex%>%<f3%>: # ;
-
-LEXICON VERB_REFL ! Lexicon for reflexive verbs
-
-%<refl%>%<inf%>:ban # ;
-
-LEXICON VERB_INF ! Lexicon for infinitive verbs
-
-%<inf%>:0 # ;
-
-
-! Lexiques commentés pour usage futur - à activer quand nécessaire
-
-! LEXICON POS ! Lexicon for possessive adjectives
-! @P.Number.Sg@:@P.Number.Sg@w%> StemsPosCl1 ;
-! @P.Number.Pl@:@P.Number.Pl@b%> StemsPosCl2 ;
-! @P.Number.Sg@:@P.Number.Sg@w%> StemsPosCl3 ;
-! @P.Number.Pl@:@P.Number.Pl@mi%> StemsPosCl4 ;
-! @P.Number.Sg@:@P.Number.Sg@d%> StemsPosCl5 ;
-! @P.Number.Pl@:@P.Number.Pl@m%{ë%}%> StemsPosCl6 ;
-! @P.Number.Sg@:@P.Number.Sg@e%> StemsPosCl7 ;
-! @P.Number.Pl@:@P.Number.Pl@bi%> StemsPosCl8 ;
-! @P.Number.Sg@:@P.Number.Sg@w%> StemsPosCl9 ;
-! @P.Number.Pl@:@P.Number.Pl@ StemsPosCl10 ;
-! @P.Number.Sg@:@P.Number.Sg@o%> StemsPosCl11 ;
-! @P.Number.Sg@:@P.Number.Sg@ StemsPosCl16 ;
-
-! Lexiques commentés pour usage futur
-! Ces lexiques seront activés quand les stems appropriés seront ajoutés
-
-! LEXICON Gender-1a ! cl1a-cl2 pairing
-! @R.Number.Sg@%<n%>%<cl1a%>%<sg%>:@R.Number.Sg@ SuffCl1a ;
-! @R.Number.Pl@%<n%>%<cl2%>%<pl%>:@R.Number.Pl@ SuffCl2 ;
-
-! LEXICON Gender-2a ! one class gender (cl3)
-! @R.Number.Sg@%<n%>%<cl3%>%<sg%>:@R.Number.Sg@ SuffCl3 ;
-
-! LEXICON Gender-3a ! cl5a-cl6 pairing
-! @R.Number.Sg@%<n%>%<cl5a%>%<sg%>:@R.Number.Sg@ SuffCl5a ;
-! @R.Number.Pl@%<n%>%<cl6%>%<pl%>:@R.Number.Pl@ SuffCl6 ;
-
-! LEXICON Gender-3c ! cl5c one-class gender
-! @R.Number.Sg@%<n%>%<cl5c%>%<sg%>:@R.Number.Sg@ SuffCl5c ;
-
-! LEXICON Gender-3d ! cl5d one-class gender
-! @R.Number.Sg@%<n%>%<cl5d%>%<sg%>:@R.Number.Sg@ SuffCl5d ;
-
-! LEXICON Gender-3e ! cl5 one-class gender (class 5)
-! @R.Number.Sg@%<n%>%<cl5%>%<sg%>:@R.Number.Sg@ SuffCl5 ;
-
-! LEXICON Gender-10 ! cl11-cl16 pairing
-! @R.Number.Sg@%<n%>%<cl11%>%<sg%>:@R.Number.Sg@ SuffCl11 ;
-! @R.Number.Pl@%<n%>%<cl16%>%<pl%>:@R.Number.Pl@ SuffCl16 ;
-
-! LEXICON GenderPos-1 ! cl1-cl2 pairing of possessive adjectives
-! @R.Number.Sg@%<adj%>%<pos%>%<cl1%>%<sg%>:@R.Number.Sg@ SuffPosCl1 ;
-! @R.Number.Pl@%<adj%>%<pos%>%<cl2%>%<pl%>:@R.Number.Pl@ SuffPosCl2 ;
-
-! LEXICON GenderPos-2 ! cl3-cl4 pairing of possessive adjectives
-! @R.Number.Sg@%<adj%>%<pos%>%<cl3%>%<sg%>:@R.Number.Sg@ SuffPosCl3 ;
-! @R.Number.Pl@%<adj%>%<pos%>%<cl4%>%<pl%>:@R.Number.Pl@ SuffPosCl4 ;
-
-! LEXICON GenderPos-3 ! cl5-cl6 pairing of possessive adjectives
-! @R.Number.Sg@%<adj%>%<pos%>%<cl5%>%<sg%>:@R.Number.Sg@ SuffPosCl5 ;
-! @R.Number.Pl@%<adj%>%<pos%>%<cl6%>%<pl%>:@R.Number.Pl@ SuffPosCl6 ;
-
-! LEXICON GenderPos-4 ! cl7-cl8 pairing of possessive adjectives
-! @R.Number.Sg@%<adj%>%<pos%>%<cl7%>%<sg%>:@R.Number.Sg@ SuffPosCl7 ;
-! @R.Number.Pl@%<adj%>%<pos%>%<cl8%>%<pl%>:@R.Number.Pl@ SuffPosCl8 ;
-
-! LEXICON GenderPos-5 ! cl9-cl10 pairing of possessive adjectives
-! @R.Number.Sg@%<adj%>%<pos%>%<cl9%>%<sg%>:@R.Number.Sg@ SuffPosCl9 ;
-! @R.Number.Pl@%<adj%>%<pos%>%<cl10%>%<pl%>:@R.Number.Pl@ SuffPosCl10 ;
-
-! LEXICON GenderPos-6 ! cl11-cl16 pairing of possessive adjectives
-! @R.Number.Sg@%<adj%>%<pos%>%<cl11%>%<sg%>:@R.Number.Sg@ SuffPosCl11 ;
-! @R.Number.Pl@%<adj%>%<pos%>%<cl16%>%<pl%>:@R.Number.Pl@ SuffPosCl16 ;
-
-
-
-
-
-
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                           STEMS                                         !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-LEXICON Stems
-
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          NOMS (NOUNS)                                   !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+LEXICON Stems
 
-
+a:aan Gender-3j ; ! "récompense" ; "reward"
 abod:abodo Gender-5 ; ! "vêtement d'occasion" ; "second-hand clothing"
 adog:adoga Gender-5 ; ! "périmé" ; "expired"
+al:al Gender-11 ; ! "canoe" ; "canot"
 al:al Gender-3b ; ! "village" ; "village"
 alag:alag Gender-2b ; ! "zeste" ; "zest"
 am:am Gender-3b ; ! "affaire" ; "matter"
 am:am Gender-3b ; ! "affaires" ; "things"
+an:an Gender-3j ; ! "adieux" ; "farewell"
+an:an Gender-3j ; ! "descendant de" ; "descendant of"
 angond:angondo Gender-5 ; ! "déplorable" ; "deplorable"
 anyam:anyama Gender-7 ; ! "ravage" ; "devastation"
 atobo% nnam:atobo% nnama Gender-5 ; ! "paysan" ; "peasant"
 avod:avodo Gender-5 ; ! "vétéran de la résistance" ; "resistance veteran"
+ba:ba Gender-4a ; ! "rivalité" ; "competition"
+ba:ba Gender-4b ; ! "rancune" ; "resentment"
 ba:ba Gender-4 ; ! "cafadeux" ; "cockroach"
 ba:ba Gender-3 ; ! "nageoire caudale" ; "tail fin"
 ba:ba Gender-5 ; ! "partage" ; "sharing"
@@ -514,11 +64,13 @@ ban:ban Gender-3 ; ! "banlieue" ; "suburb"
 ban:ban Gender-4 ; ! "séculaire" ; "secular"
 band:banda Gender-4 ; ! "pièce de théâtre" ; "theatre play"
 bang:banga Gender-5 ; ! "cannabis" ; "cannabis"
+bang:banga Gender-4b ; ! "détaller" ; "to unpack"
 bas:bas Gender-4 ; ! "pâte" ; "dough"
 bas:bas Gender-4 ; ! "écaille" ; "scale"
 bayag:bayag Gender-4 ; ! "cabochard" ; "stubborn"
 bayag:bayag Gender-4 ; ! "maladroit" ; "clumsy"
 baṅ:baṅan Gender-2 ; ! "reprimande" ; "reprimand"
+be:be Gender-4a ; ! "dépeçage" ; "butchering"
 be:be Gender-3 ; ! "déplorable" ; "deplorable"
 be:be Gender-3 ; ! "désastreux" ; "disastrous"
 bed:bede Gender-4 ; ! "cabestan" ; "capstan"
@@ -561,6 +113,7 @@ bod:bobod Gender-1 ; ! "visionnaire" ; "visionary"
 bod:bodo Gender-3 ; ! "vieux vêtement" ; "old garment"
 bod:bod Gender-4 ; ! "vieux gorille solitaire" ; "Old Lonely Gorilla"
 bod:bobod Gender-2 ; ! "astrologue" ; "astrologer"
+boe:boe Gender-4a ; ! "excitation" ; "excitement"
 boesye:boesye Gender-1 ; ! "ouvrier" ; "worker"
 bog:bog Gender-2 ; ! "detention" ; "detention"
 bog:bog Gender-2 ; ! "inmate" ; "inmate"
@@ -575,6 +128,8 @@ bol:bolo Gender-3 ; ! "splendeur" ; "splendor"
 bom:bom Gender-3 ; ! "butte" ; "mound"
 bom:bom Gender-3 ; ! "capacité" ; "capacity"
 bom:bom Gender-3 ; ! "cairn" ; "cairn"
+bom:bom Gender-8b ; ! "dépouillement" ; "dépouillement"
+bom:bom Gender-8b ; ! "délit" ; "offense"
 bom:bome Gender-2 ; ! "dent-de-loup" ; "wolf's tooth"
 bom:bom Gender-8 ; ! "piteux" ; "pitiful"
 bom:bom Gender-3 ; ! "mesure" ; "measure"
@@ -609,6 +164,7 @@ bud:buda Gender-4 ; ! "cachette" ; "hiding place"
 bud:buduga Gender-3 ; ! "cachoterie" ; "secretiveness"
 bud:buduga Gender-4 ; ! "capuchon" ; "hood"
 bud:budan Gender-2 ; ! "victime" ; "victim"
+bud:bud Gender-8b ; ! "gazon" ; "lawn"
 bug:bugulan Gender-2 ; ! "cadences" ; "clocking"
 bug:bug Gender-3 ; ! "angle" ; "angle"
 bug:bug Gender-4 ; ! "verbe" ; "verb"
@@ -625,6 +181,7 @@ bum:buma Gender-4 ; ! "capsule" ; "capsule"
 bum:buma Gender-4 ; ! "fruit" ; "fruit"
 bum:buma Gender-4 ; ! "cachet" ; "pill"
 bum:bum Gender-3 ; ! "ventre" ; "belly"
+bum:bumulan Gender-4b ; ! "empressement" ; "eagerness"
 bus:bus Gender-4 ; ! "niais" ; "dumb"
 bus:bus Gender-4 ; ! "niais" ; "dumb"
 bus:bus Gender-4 ; ! "idiot" ; "idiot"
@@ -634,6 +191,7 @@ bwee% ngam:bwee% ngam Gender-2 ; ! "prophète" ; "prophet"
 bwi:bwi Gender-4 ; ! "cache-sexe" ; "briefs"
 byag:byag Gender-8 ; ! "grossier" ; "crude"
 byag:byag Gender-8 ; ! "vil" ; "vile"
+byal:byal Gender-4a ; ! "origine" ; "origin"
 byan:byan Gender-5 ; ! "capture des puissances" ; "power capture"
 byandi:byandi Gender-4 ; ! "dépréciation" ; "depreciation"
 byandi:byandi Gender-4 ; ! "rabaissement" ; "belittlement"
@@ -656,6 +214,7 @@ bëg:bëgële Gender-3 ; ! "cafardage" ; "defacing"
 bëg:bëga Gender-2 ; ! "dépendant" ; "dependent"
 bëg:bëgële Gender-3 ; ! "dépliant" ; "flyer"
 bëg:bëgële Gender-8 ; ! "campagne de sensibilisation" ; "awareness campaign"
+bëg:bëgële Gender-8b ; ! "battage" ; "threshing"
 bël:bëlan Gender-4 ; ! "reception" ; "welcoming"
 bël:bëlan Gender-4 ; ! "outil" ; "tool"
 bël:bëlan Gender-3 ; ! "caractère" ; "character"
@@ -691,8 +250,10 @@ bòi:bòi Gender-5 ; ! "page" ; "page"
 bòn:bòn Gender-2 ; ! "huile" ; "oil"
 bòs:bòs Gender-4 ; ! "odeur de pet" ; "fart smelling"
 bòòs:bòòs Gender-2 ; ! "lustré" ; "glossy"
+da:da Gender-4b ; ! "préombre" ; "shadow"
 dab:dabada Gender-4 ; ! "déversement à profusion" ; "spill in profusion"
 dab:dabada Gender-2 ; ! "déversement abondant" ; "large spill"
+dag:dag Gender-8b ; ! "délire" ; "madness"
 dag:dagaba Gender-2 ; ! "castagnette" ; "castanet"
 dam:daman Gender-2 ; ! "étalage" ; "display"
 dam:daman Gender-2 ; ! "dévidage" ; "unwinding"
@@ -704,9 +265,12 @@ dib:dibi Gender-5 ; ! "clotûre" ; "closing"
 did:did Gender-3f ; ! "alourdissant" ; "heavy"
 dig:diga Gender-4 ; ! "legume" ; "vegetable"
 dig:digi Gender-4 ; ! "calcination" ; "calcining"
+dig:didiga Gender-8b ; ! "déluré" ; "quick-witted"
 dig:didiga Gender-8 ; ! "diligence" ; "diligence"
 dil:dili Gender-4 ; ! "capture" ; "capture"
 dim:dimi Gender-3 ; ! "perdition" ; "loss"
+dim:dimin Gender-4b ; ! "cachotterie" ; "mystery"
+dim:dimin Gender-4b ; ! "secret" ; "mystery"
 dim:dim Gender-5 ; ! "cécité" ; "blindness"
 dim:dim Gender-4 ; ! "calamité" ; "calamity"
 dod:dod Gender-2 ; ! "négligeable" ; "negligible"
@@ -753,10 +317,13 @@ dzol:dzole Gender-1 ; ! "bavard" ; "verbose"
 dzol:dzole Gender-4 ; ! "pie" ; "magpie"
 dzom:dzom Gender-1 ; ! "voyageur" ; "traveller"
 dzom:dzom Gender-1 ; ! "visiteur" ; "visitor"
+dzon:dzon Gender-4b ; ! "délire" ; "impaired"
 dzon:dzono Gender-5 ; ! "stupide" ; "delirium"
+dzon:dzonolo Gender-4a ; ! "démagogie" ; "demagoguery"
 dzon:dzon Gender-2b ; ! "démagogue" ; "demagogue"
 dzon:dzon Gender-2 ; ! "route" ; "road"
 dzu:dzu Gender-2 ; ! "dépénalisation" ; "decriminalisation"
+dzu:dzu Gender-4a ; ! "détaxation" ; "detaxation"
 dzu:dzuan Gender-2 ; ! "pardon" ; "forgiveness"
 dzug:dzug Gender-2 ; ! "mécontentement" ; "discontent"
 dzug:dzug Gender-2 ; ! "nuisance" ; "nuisance"
@@ -768,6 +335,8 @@ dzòb:dzobodan Gender-2 ; ! "embrouilles" ; "trouble"
 dëg:dëgëlan Gender-2 ; ! "désagrément" ; "inconvenience"
 dëm:dëm Gender-4 ; ! "absent" ; "absent"
 dën:dënële Gender-2 ; ! "dépourvu" ; "devoid"
+dò:dò Gender-4b ; ! "domination" ; "domination"
+dòd:dòd Gender-8b ; ! "prolixe" ; "wordy"
 dòl:dòli Gender-4 ; ! "grief" ; "grievance"
 esia:esia Gender-5 ; ! "son père" ; "his father"
 eti:etii Gender-5 ; ! "ripage" ; "ripage"
@@ -813,6 +382,7 @@ fo:foi Gender-4 ; ! "carcéral" ; "custodial"
 fob:fob Gender-4 ; ! "Abondant" ; "Abundant"
 fob:fobolo Gender-2 ; ! "promptitude" ; "swiftness"
 fob:fob Gender-1 ; ! "bavard" ; "chatterbox"
+fod:fodog Gender-4b ; ! "grivoiserie" ; "naughtiness"
 fod:foda Gender-6 ; ! "appareil photo" ; "camera"
 foe:foe Gender-5 ; ! "évolution" ; "evolution"
 fog:fog Gender-5 ; ! "capacité" ; "capacity"
@@ -857,6 +427,7 @@ fum:fumulu Gender-4 ; ! "cadavéreux" ; "deadly"
 fum:fumulu Gender-4 ; ! "cadavérique" ; "mortis"
 fum:fumulu Gender-4 ; ! "blancheur" ; "whiteness"
 fum:fuman Gender-2 ; ! "déracinement" ; "uprooting"
+fum:fumi Gender-8b ; ! "recolte" ; "crop"
 fun:fun Gender-4 ; ! "dépopulation" ; "depopulation"
 fun:fun Gender-4 ; ! "déserté" ; "deserted"
 fund:funda Gender-3 ; ! "dépendance" ; "dependence"
@@ -887,6 +458,8 @@ fòb:fòb Gender-2 ; ! "calomnie" ; "slander"
 fòb:fòb Gender-2 ; ! "bavard" ; "chatterbox"
 fòn:fòn Gender-5 ; ! "vétillard" ; "vetillard"
 gòn:gòn Gender-1 ; ! "fille" ; "girl"
+ibi:ibi Gender-3g ; ! "obscurité" ; "darkness"
+in:in Gender-4a ; ! "grandeur" ; "grandeur"
 ka:ka Gender-4 ; ! "action de grâces" ; "support"
 ka:kai Gender-4 ; ! "cadeau" ; "gift"
 ka:kai Gender-4 ; ! "provision" ; "supply"
@@ -911,6 +484,7 @@ kag:kag Gender-4 ; ! "wagon" ; "wagon"
 kag:kag Gender-2 ; ! "mage" ; "magician"
 kal:kali Gender-4 ; ! "carcasse" ; "frame"
 kal:kal Gender-6 ; ! "sa soeur (la soeur d'un frère)" ; "his sister"
+kal:kala Gender-8b ; ! "vigilance" ; "vigilance"
 kal:kalan Gender-3 ; ! "version" ; "version"
 kal:kala Gender-8 ; ! "âge" ; "age"
 kalid:kalid Gender-4 ; ! "caddie" ; "trolley"
@@ -919,6 +493,7 @@ kalid:kalid Gender-4 ; ! "attelage" ; "hitch"
 kam:kam Gender-3 ; ! "bauge" ; "pigsty"
 kamb:kamba Gender-3 ; ! "vraisemblance" ; "plausibility"
 kamb:kamba Gender-5 ; ! "vraisemblable" ; "likely"
+kamb:kamba Gender-4a ; ! "victuailles" ; "provisions"
 kan:kan Gender-4 ; ! "dessiner" ; "draw"
 kan:kan Gender-4 ; ! "calcination" ; "calcining"
 kan:kanga Gender-4 ; ! "caractère graphique" ; "graphic character"
@@ -930,6 +505,7 @@ kang:kanga Gender-4 ; ! "pont" ; "bridge"
 kas:kas Gender-2 ; ! "race" ; "race"
 kaṅ:kaṅkaṅ Gender-5 ; ! "chair fraîche" ; "fresh flesh"
 kaṅ:kaṅ Gender-2 ; ! "racines" ; "roots"
+ked:ked Gender-4a ; ! "certitude" ; "certainty"
 kesin:kesin Gender-7 ; ! "cuisine" ; "kitchen"
 ki:ki Gender-4 ; ! "interdit" ; "ban"
 ki:ki Gender-4 ; ! "privation" ; "deprivation"
@@ -937,6 +513,8 @@ ki:kian Gender-2 ; ! "démunition" ; "destitution"
 ki:ki Gender-3 ; ! "œuf" ; "egg"
 kia:kia Gender-2 ; ! "contre bàs" ; "against"
 kib:kib Gender-2 ; ! "regrettable" ; "regrettable"
+kibilai:kibilai Gender-1b ; ! "zigzag" ; "zigzag"
+kid:kidi Gender-8b ; ! "demain" ; "tomorrow"
 kidi:kidi Gender-5 ; ! "matinée" ; "morning"
 kie:kie Gender-7 ; ! "feuilles" ; "leaves"
 kiki:kiki Gender-5 ; ! "vertige" ; "dizziness"
@@ -974,6 +552,7 @@ kod:kod Gender-2 ; ! "sécheresse" ; "drought"
 kod:kodo Gender-2 ; ! "désert" ; "desert"
 koe:koe Gender-3 ; ! "avarice" ; "greed"
 koe:koe Gender-4 ; ! "câble" ; "wire"
+koe:koe Gender-8b ; ! "tapage" ; "racket"
 kog:kog Gender-4 ; ! "carcasse" ; "frame"
 kog:kogolo Gender-4 ; ! "carapace" ; "shell"
 kog:kogo Gender-3 ; ! "dentée" ; "serrated"
@@ -1006,11 +585,13 @@ kpaa:kpëkpaa Gender-5 ; ! "vorace" ; "voracious"
 kpad:kpad Gender-5 ; ! "détritus" ; "rubbish"
 kpag:kpagada Gender-2 ; ! "microphone" ; "microphone"
 kpatolo:kpatolo Gender-5 ; ! "avalanche" ; "avalanche"
+kpesan:kpe% sana Gender-4a ; ! "vinaigre" ; "vinegar"
 kpè:kpè Gender-1 ; ! "baratineur" ; "smooth talker"
 kpë:kpë Gender-3 ; ! "vipère" ; "viper"
 kpëg:kpëgëde Gender-4 ; ! "futile" ; "useless"
 kpëkpë:kpëkpa Gender-4 ; ! "vide" ; "empty"
 kpël:kpëlë Gender-4 ; ! "dérision" ; "derision"
+kpëṅ:kpëṅ Gender-8b ; ! "prolixe" ; "wordy"
 ku:ku Gender-2b ; ! "sel" ; "salt"
 ku:kuan Gender-1 ; ! "vendeur" ; "seller"
 kua:kukua Gender-4 ; ! "dégringolade" ; "tumble"
@@ -1021,6 +602,8 @@ kub:kuban Gender-2 ; ! "décharge" ; "discharge"
 kub:kuban Gender-2 ; ! "dépotoir" ; "dump"
 kud:kud Gender-3 ; ! "folie" ; "stupid"
 kud:kuda Gender-5 ; ! "vérole" ; "pox"
+kud:kukud Gender-8b ; ! "déséquilibré" ; "unbalanced"
+kud:kukud Gender-8b ; ! "déséquilibré" ; "unbalanced"
 kud:kud Gender-2 ; ! "percissionniste" ; "percussionist"
 kug:kug Gender-3 ; ! "extrémité" ; "end"
 kug:kug Gender-3 ; ! "extremité" ; "extremity"
@@ -1045,6 +628,7 @@ kunuṅ:kunuṅa Gender-4 ; ! "paille" ; "straw"
 kus:kus Gender-2 ; ! "dépens" ; "expenses"
 kus:kus Gender-3f ; ! "veuvage" ; "widowhood"
 kus:kus Gender-2 ; ! "veuf ou veuve" ; "widow or widower"
+kès:kès Gender-4a ; ! "fragile" ; "fragile"
 kë:kë Gender-3 ; ! "départ" ; "starting"
 kë:këan Gender-2 ; ! "envol" ; "flight"
 këd:këdan Gender-4 ; ! "action de viser" ; "aiming"
@@ -1055,6 +639,8 @@ këg:këgëbë Gender-4 ; ! "bègue" ; "stutterer"
 këg:këgëbë Gender-4 ; ! "caquetage" ; "cackling"
 këg:këgëde Gender-8 ; ! "verve" ; "verve"
 këg:këgëde Gender-1 ; ! "loquace" ; "talkative"
+këg:këgëde Gender-8b ; ! "bonimenteur" ; "huckster"
+këg:këgëde Gender-8b ; ! "bonimenteur" ; "trickster"
 këg:këgëbë Gender-4 ; ! "bégaillement" ; "stammering"
 kël:këla Gender-4 ; ! "cabri" ; "goat"
 kël:këlëg Gender-4 ; ! "caillot" ; "clot"
@@ -1087,13 +673,17 @@ lad:lad Gender-3 ; ! "proximité" ; "proximity"
 lad:lad Gender-4 ; ! "union" ; "union"
 lag:lag Gender-2 ; ! "déplantage" ; "uprooting"
 lag:lalaga Gender-5 ; ! "inquiétude" ; "anxiety"
+lag:lëlag Gender-4b ; ! "batailleur" ; "brawler"
 lag:lag Gender-2 ; ! "volubile" ; "voluble"
 lag:lag Gender-1 ; ! "verbeux" ; "verbose"
+lag:lag Gender-8b ; ! "bluffeur" ; "bluffer"
 lal:lali Gender-3 ; ! "dépossession" ; "dispossession"
 lal:lali Gender-4 ; ! "confiscation" ; "confiscation"
 lal:lalala Gender-3 ; ! "dépôt de bilan" ; "bankruptcy"
 lal:lali Gender-3f ; ! "perte de dentitioon" ; "loss of dentitioon"
 lala:lala Gender-5 ; ! "désarçonné" ; "bewildered"
+lam:lam Gender-4b ; ! "boisson alcoolisée" ; "alcoholic beverage"
+lam:lam Gender-4b ; ! "vin capiteux" ; "Heady wine"
 lam:lamanda Gender-4 ; ! "vieux et mal fait" ; "old and poorly made"
 lamvoma:lamvoma Gender-3 ; ! "catastrophe" ; "catastrophe"
 lamvoma:lamvoma Gender-4 ; ! "déliquescence" ; "package"
@@ -1120,6 +710,7 @@ lin:linan Gender-2 ; ! "insatisfaction" ; "dissatisfaction"
 lis:lis Gender-5 ; ! "dentelle" ; "lace"
 lod:lod Gender-1 ; ! "passant" ; "passer-by"
 log:log Gender-3f ; ! "pêche au barrage" ; "dam fishing"
+log:log Gender-8b ; ! "maniaque" ; "maniac"
 log:loga Gender-2 ; ! "agressif" ; "aggressive"
 log:log Gender-2 ; ! "provocateur" ; "provocative"
 lom:lom Gender-1 ; ! "commissionnaire" ; "commissionaire"
@@ -1133,6 +724,7 @@ lu:lui Gender-2 ; ! "affliction" ; "affliction"
 lub:lub Gender-3 ; ! "dépit" ; "spite"
 lub:lubi Gender-2 ; ! "délitage" ; "spalling"
 lub:lubi Gender-2 ; ! "décadence" ; "decadence"
+lug:lugu Gender-8b ; ! "dignité" ; "dignity"
 lug:lugusu Gender-8 ; ! "vulgarisation" ; "outreach"
 lug:lugan Gender-2 ; ! "avancement" ; "advancement"
 lui:luian Gender-2 ; ! "dégradation" ; "degradation"
@@ -1147,6 +739,8 @@ lumb:lumbu Gender-3 ; ! "pente" ; "slope"
 lumb:lumbu Gender-2 ; ! "pente" ; "slope"
 lun:lun Gender-5 ; ! "irritation" ; "irritation"
 lun:lun Gender-8 ; ! "colère" ; "angry"
+lun:lun Gender-8b ; ! "colère" ; "anger"
+lun:lun Gender-8b ; ! "désarroi" ; "disarray"
 lè:lè Gender-1 ; ! "conteur" ; "storyteller"
 lëd:lëde Gender-4 ; ! "déploiement" ; "rool-out"
 lëg:lëg Gender-3 ; ! "verrue" ; "wart"
@@ -1210,6 +804,7 @@ mvu:mvu Gender-5 ; ! "beagle" ; "beagle"
 mvus:mvus Gender-7 ; ! "erreur" ; "error"
 mvya:mvya Gender-5 ; ! "bonté" ; "goodness"
 mvyëṅ:mvyëṅ Gender-4 ; ! "beau langage" ; "eloquent speech"
+mvëg:mvëg Gender-8b ; ! "causant" ; "talkative"
 mvën:mvën Gender-7 ; ! "pluie" ; "rain"
 mvën:mvën Gender-3 ; ! "blessure" ; "wound"
 mvënd:mvënde Gender-5 ; ! "scandaleux" ; "scandalous"
@@ -1219,12 +814,14 @@ mvòd:mvòd Gender-7 ; ! "or" ; "gold"
 mvòi:mvòi Gender-5 ; ! "paix" ; "peace"
 mvòṅ:mvòṅ Gender-7 ; ! "postérité" ; "posterity"
 mya:mimya Gender-3f ; ! "commerce au détails" ; "retail"
+myas:myas Gender-4b ; ! "désordre" ; "disorder"
 myas:myas Gender-4 ; ! "capharnaüm" ; "capernaum"
 mëg:mëmëgë Gender-8 ; ! "désabusé" ; "disillusioned"
 mëtua:mëtua Gender-6 ; ! "engin" ; "machine"
 na:nana Gender-6 ; ! "ma mère" ; "my mother"
 nab:nab Gender-4 ; ! "pagaie" ; "paddel"
 nad:nadi Gender-4 ; ! "malingre" ; "sickly"
+nal:nal Gender-2c ; ! "mensonge" ; "lye"
 nda% bod:nda% bod Gender-7 ; ! "semence" ; "seed"
 ndab% anyu:ndab% anyu Gender-5 ; ! "voûte palatale" ; "palatal vault"
 ndam:ndam Gender-7 ; ! "largeur" ; "width"
@@ -1259,7 +856,10 @@ ndëg:ndëg Gender-5 ; ! "boîte" ; "box"
 ndòlòm:ndòlòm Gender-5 ; ! "verticalement" ; "vertically"
 ndòṅ:ndòṅ Gender-7 ; ! "description" ; "description"
 ngab:ngab Gender-5 ; ! "zone" ; "zone"
+ngad:ngad Gender-4b ; ! "mesquinerie" ; "meanness"
+ngad:ngad Gender-4b ; ! "mesquin" ; "petty"
 ngad:ngadan Gender-7 ; ! "pépinière" ; "nursery"
+ngad:ngad Gender-4b ; ! "véreux" ; "crooked"
 ngag:ngaga Gender-5 ; ! "vœu" ; "vow"
 ngakum:ngakum Gender-4 ; ! "chenille" ; "caterpillar"
 ngam:ngam Gender-7 ; ! "partie (parti pris)" ; "prejudice"
@@ -1342,6 +942,7 @@ nyuṅ:nyuṅ Gender-2 ; ! "dissémination" ; "dissemination"
 nywal:nywalag Gender-7 ; ! "urine" ; "urine"
 nyëg:nyëgë Gender-5 ; ! "bouderie" ; "sulk"
 nyën:nyënga Gender-4 ; ! "jouissance" ; "enjoyment"
+nyëny:nyënyag Gender-4b ; ! "accessoires" ; "accessories"
 nyòd:nyòd Gender-4 ; ! "vice" ; "vice"
 nyòd:nyòdi Gender-4 ; ! "ennuyeux" ; "boring"
 nyòl:nyòl Gender-6 ; ! "serpent" ; "snake"
@@ -1349,18 +950,30 @@ nëm:nëman Gender-2 ; ! "exagération" ; "exaggeration"
 nën:nën Gender-1 ; ! "invité" ; "guest"
 nën:nën Gender-1 ; ! "étranger" ; "foreigner"
 nòn:nòn Gender-8 ; ! "oiseau" ; "bird"
+o:o Gender-8a ; ! "bras" ; "arm"
+o:o Gender-8a ; ! "main" ; "arm"
+o:o Gender-8a ; ! "bras" ; "hand"
+o:o Gender-8a ; ! "main" ; "hand"
+od:od Gender-1b ; ! "démographie" ; "demographics"
+om:om Gender-4a ; ! "chose" ; "thing"
 ondò:ondòndò Gender-6 ; ! "aiguille" ; "needle"
+ong:ongo Gender-2c ; ! "vitiligo" ; "vitiligo"
 ozël:ozële Gender-5 ; ! "baudet" ; "donkey"
 ozël:ozële Gender-5 ; ! "âne" ; "donkey"
 sa:sasa Gender-4 ; ! "capture" ; "catch"
+sa:sa Gender-8b ; ! "dégarni" ; "bald"
+sa:sa Gender-4b ; ! "denrée" ; "food"
 sa:sa Gender-8 ; ! "infime" ; "tiny"
+sa:sa Gender-8b ; ! "pillage" ; "looting"
 saal:saala Gender-3 ; ! "distorsion" ; "distortion"
+sab:sabaga Gender-4b ; ! "broutilles" ; "trifles"
 sal:sala Gender-3f ; ! "veto" ; "veto"
 sal:sala Gender-4 ; ! "crochet" ; "hook"
 sal:salan Gender-2 ; ! "passement" ; "trimming"
 sam:sam% sëgële Gender-4 ; ! "capharnaüm" ; "capernaum"
 sam:sama Gender-5 ; ! "rabaissement" ; "downgrading"
 sam:sam Gender-2 ; ! "présentoir" ; "display"
+sam:sama Gender-8b ; ! "honte" ; "shame"
 sam:sama Gender-1 ; ! "dénigreur" ; "denigrating"
 sam:sama Gender-1 ; ! "effronté" ; "brazen"
 san:sana Gender-4 ; ! "cachet final" ; "final stamp"
@@ -1371,6 +984,7 @@ san:sasan Gender-2 ; ! "reniement" ; "disavowal"
 sas:sas Gender-4 ; ! "epoussetage" ; "dusting"
 sas:sas Gender-4 ; ! "déroulement" ; "unwinding"
 sas:sas Gender-3 ; ! "véranda" ; "porch"
+sas:sas Gender-8b ; ! "rejet" ; "rejection"
 sas:sas Gender-4 ; ! "bavardage effronté" ; "impudent chatter"
 saṅ:saṅa Gender-5 ; ! "morcelage" ; "dissection"
 saṅ:saṅala Gender-4 ; ! "morcellement" ; "breaking up"
@@ -1408,13 +1022,17 @@ siṅ:siṅan Gender-2 ; ! "échauffourée" ; "skirmish"
 siṅ:siṅ Gender-1 ; ! "haineux" ; "hateful"
 so:soi Gender-4 ; ! "action de picorer" ; "pecking"
 so:so Gender-2 ; ! "dépouillé" ; "stripped"
+so:so Gender-4b ; ! "contestation" ; "protest"
 so:soan Gender-2 ; ! "renversé" ; "overturned"
 so:soe Gender-4 ; ! "vidange" ; "emptying"
 so:soan Gender-2 ; ! "vidoir" ; "dump"
 so:soe Gender-2 ; ! "décharge" ; "landfill"
 so:so Gender-2 ; ! "nudité" ; "nudity"
 so:soan Gender-2 ; ! "dévisagé" ; "stared"
+sob:sob Gender-8b ; ! "lessive" ; "laundry"
 sob:sob Gender-3 ; ! "partance" ; "departure"
+sob:sob Gender-8b ; ! "laundry" ; "laundry"
+sob:sobo Gender-8b ; ! "detergent" ; "detergent"
 sob:sobolo Gender-3 ; ! "brouhaha" ; "hubbub"
 sob:sobolo Gender-3 ; ! "détriment" ; "detriment"
 sod:sosoda Gender-4 ; ! "privation" ; "deprivation"
@@ -1425,8 +1043,10 @@ soe:soe Gender-4 ; ! "versement" ; "payment"
 soe:soe Gender-5 ; ! "solde" ; "balance"
 soe:soe Gender-4 ; ! "déversement d'un liquide" ; "spill of a liquid"
 soe:soe Gender-4 ; ! "désaliénation" ; "disalienation"
+sog:sog Gender-4b ; ! "dépravation" ; "depravation"
 sog:sog Gender-4 ; ! "déportement" ; "deportment"
 sog:sog Gender-3 ; ! "vrombissement" ; "whirring"
+sog:sog Gender-4b ; ! "libido" ; "libido"
 sog:sosog Gender-2 ; ! "libertin" ; "libertine"
 sol:soli Gender-4 ; ! "cache" ; "cover"
 sol:sola Gender-4 ; ! "enigme" ; "riddle"
@@ -1444,6 +1064,7 @@ son:son Gender-2 ; ! "muscle" ; "muscle"
 soo:sosoo Gender-6 ; ! "vérité" ; "uprightness"
 soo:sosoo Gender-6 ; ! "droiture" ; "uprightness"
 soo:soo Gender-3 ; ! "reproche" ; "reproach"
+sos:sos Gender-4a ; ! "Bonne humeur" ; "Good mood"
 sosoo:sosoo Gender-5 ; ! "justesse" ; "right"
 su:sui Gender-4 ; ! "action de faire descendre" ; "act of getting down"
 su:suli Gender-4 ; ! "action de repousser" ; "act of rejetting rejet"
@@ -1462,6 +1083,7 @@ sug:suguzu Gender-4 ; ! "cahot" ; "bump"
 sug:suga Gender-5 ; ! "délimitation" ; "demarcation"
 sug:sugan Gender-2 ; ! "déchargement" ; "unloading"
 sug:suga Gender-4 ; ! "bau" ; "beam"
+sui:sui Gender-8b ; ! "dépotage" ; "stripping"
 sui:sui Gender-3 ; ! "déclivité" ; "declivity"
 sul:suli Gender-2 ; ! "interversion" ; "reversal"
 sul:sul Gender-2 ; ! "poison" ; "poison"
@@ -1474,6 +1096,7 @@ sum:suma Gender-4 ; ! "fondation" ; "foundation"
 sum:suma Gender-4 ; ! "cariatide" ; "caryatid"
 sum:sum Gender-3f ; ! "saccage" ; "pillage"
 sum:sumu Gender-2 ; ! "vertu" ; "virtue"
+sum:suma Gender-4b ; ! "vermine" ; "vermin"
 sung:sunga Gender-2 ; ! "viscère" ; "viscera"
 sus:susu Gender-3 ; ! "dénivellation" ; "vertical drop"
 sus:sus Gender-5 ; ! "descente" ; "descent"
@@ -1509,10 +1132,14 @@ sòm:sòm Gender-5 ; ! "lassitude" ; "lassitude"
 sòm:sòman Gender-2 ; ! "vue" ; "sight"
 sòṅ:sòṅ Gender-2 ; ! "bec" ; "beak"
 sòṅ:sòṅ Gender-2 ; ! "bec" ; "beak"
+ta:ta Gender-4b ; ! "guerre" ; "war"
 ta:ta Gender-2 ; ! "vitrine" ; "showcase"
+ta:ta Gender-4b ; ! "guerre" ; "war"
 tad:tadi Gender-3 ; ! "commencement" ; "beginning"
 tada:tada Gender-6 ; ! "père" ; "father"
+tag:tag Gender-2c ; ! "joie" ; "happiness"
 tag:ntag Gender-2 ; ! "joie" ; "hapiness"
+tag:tag Gender-2c ; ! "joie" ; "joy"
 tal:talaba Gender-5 ; ! "désorientation" ; "disorientation"
 tal:talan Gender-2 ; ! "récitation" ; "recitation"
 tam:tamba Gender-5 ; ! "plume (à écrire)" ; "feather"
@@ -1565,6 +1192,7 @@ tob:toban Gender-2 ; ! "choix" ; "choice"
 tob:tobogo Gender-4 ; ! "résidence" ; "residence"
 tob:tob Gender-2 ; ! "vésicule" ; "vesicle"
 tod:tod Gender-4 ; ! "critique" ; "criticism"
+tod:tod Gender-4b ; ! "désavoué" ; "disavowed"
 tog:togodo Gender-4 ; ! "action de mitonner" ; "simmer"
 tog:totog Gender-4 ; ! "polémique" ; "controversy"
 tol:tolo Gender-2 ; ! "impôt" ; "tax"
@@ -1593,6 +1221,7 @@ tsam:tsam Gender-4 ; ! "démolissement" ; "smashing"
 tsam:tsama Gender-2 ; ! "démolition" ; "demotion"
 tsam:tsaman Gender-2 ; ! "démantèlement" ; "dismantling"
 tse:tse Gender-5 ; ! "matinée" ; "morning"
+tsid:tsidan Gender-4a ; ! "déguerpissement" ; "evict"
 tsid:tsid Gender-5 ; ! "zoologie" ; "zoology"
 tsid:tsid Gender-5 ; ! "animal" ; "animal"
 tsid:tsid Gender-5 ; ! "animal" ; "animal"
@@ -1652,16 +1281,22 @@ tëlë:tëtëlë Gender-5 ; ! "vertical" ; "vertical"
 tëm:tëm Gender-2 ; ! "branche" ; "branchs"
 tòb:tòbògò Gender-4 ; ! "addresse" ; "address"
 tòn:tòn Gender-3 ; ! "bavure" ; "blunder"
+ul:ulu Gender-3h ; ! "déplacement" ; "displacement"
 vad:vadan Gender-3 ; ! "désillusion" ; "disillusion"
 vad:vadan Gender-3 ; ! "anxiété" ; "anxiety"
 vag:vag Gender-4 ; ! "cabochard" ; "stubborn"
 vag:vag Gender-3 ; ! "voluptueux" ; "voluptuous"
 vag:vag Gender-3 ; ! "béatitude" ; "bliss"
+van:van Gender-8b ; ! "ambition" ; "breath"
+van:van Gender-8b ; ! "ardeur" ; "ardour"
 van:van Gender-8 ; ! "aspiration" ; "aspiration"
+van:van Gender-8b ; ! "determination" ; "determination"
 vand:vanda Gender-3 ; ! "exposition" ; "exhibition"
 ves:ves Gender-4 ; ! "carcasse" ; "shell"
 ves:ves Gender-4 ; ! "os" ; "bone"
 vi:vie Gender-4 ; ! "nervure" ; "rib"
+vie:vie Gender-4b ; ! "témérité" ; "temerity"
+vie:vie Gender-4b ; ! "canule" ; "needle"
 vie:vie Gender-5 ; ! "éjaculation" ; "ejaculation"
 vie:vie Gender-3 ; ! "décalage" ; "shift"
 vin:vindi Gender-4 ; ! "noirceur" ; "blackness"
@@ -1671,6 +1306,7 @@ vod:vodo Gender-4 ; ! "capitulard" ; "capitulator"
 vod:vodo Gender-4 ; ! "immorale" ; "Immoral"
 voe:voe Gender-1 ; ! "joueur" ; "player"
 voe:voe Gender-4 ; ! "débourrage" ; "deburring"
+voe:vuvoe Gender-4a ; ! "apaisement" ; "appease"
 voe:vuvoe Gender-4 ; ! "ombrage" ; "shading"
 vog:vog Gender-4 ; ! "ouïe" ; "hearing"
 vol:volan Gender-4 ; ! "captivant" ; "exciting"
@@ -1704,6 +1340,7 @@ vus:vus Gender-4 ; ! "faute" ; "mistake"
 vuvu:vuvu Gender-6 ; ! "couscous" ; "fufu"
 vwe:vwe Gender-4 ; ! "vacant" ; "vacant"
 vyam:vyam Gender-5 ; ! "rapidité" ; "quickly"
+vyaṅ:vyaṅ Gender-8b ; ! "gibier" ; "game"
 vye:vye Gender-4 ; ! "urinoir" ; "urinal"
 vès:vès Gender-8 ; ! "diffamation" ; "defamation"
 vès:vès Gender-4 ; ! "os" ; "bone"
@@ -1723,11 +1360,13 @@ vëng:vënge Gender-5 ; ! "contour" ; "contour"
 vënge:vënge Gender-3 ; ! "dévié" ; "deviated"
 vëṅ:vëṅ Gender-4 ; ! "plaisir" ; "pleasure"
 vòl:vòlan Gender-4 ; ! "impureté" ; "impurity"
+was:was Gender-7a ; ! "montre" ; "watch"
 we:we Gender-4 ; ! "tuerie" ; "killings"
 we:we Gender-3b ; ! "nom" ; "name"
 we:we Gender-4 ; ! "inconfort" ; "discomfort"
 wo:woi Gender-4 ; ! "frustration" ; "frustration"
 wob:wob Gender-4 ; ! "contrarié" ; "annoyed"
+wob:wob Gender-8b ; ! "désagrément" ; "unpleasantness"
 wob:wob Gender-3 ; ! "effroyable" ; "appalling"
 wob:wob Gender-2 ; ! "embêtement" ; "annoyance"
 wob:wob Gender-2 ; ! "désappointé" ; "disappointed"
@@ -1737,20 +1376,26 @@ woe:woe Gender-5 ; ! "miel" ; "honey"
 wog:woge Gender-2 ; ! "interdépendance" ; "interdependence"
 wog:wogan Gender-4 ; ! "correlation" ; "correlation"
 wol:woli Gender-4 ; ! "valise" ; "suitcase"
+wol:wole Gender-8b ; ! "dépouillement" ; "stripping"
+wol:wole Gender-8b ; ! "accaparement" ; "grabbing"
 wol:wolo Gender-4 ; ! "battant" ; "striker"
 wom:woman Gender-4 ; ! "cape" ; "cloak"
 wom:womona Gender-4 ; ! "cape" ; "mantle"
 wom:woman Gender-2 ; ! "querelle" ; "quarrel"
 won:won Gender-4 ; ! "raccord" ; "fitting"
 won:won Gender-5 ; ! "vin rouge" ; "red wine"
+won:won Gender-8b ; ! "déserté" ; "deserted"
 wond:wondi Gender-4 ; ! "action de filer à l'anglaise" ; "get away"
 wong:wonga Gender-4 ; ! "vautour" ; "vulture"
 woong:woonga Gender-4 ; ! "câblage" ; "wiring"
 wosëtig:wosëtig Gender-5 ; ! "bâton" ; "stick"
 wu:wu Gender-4 ; ! "inoccupé" ; "unoccupied"
+wu% dis:wu% dis Gender-4a ; ! "Pudeur" ; "modesty"
 wub:wub Gender-5 ; ! "vol" ; "theft"
+wub:wub Gender-8b ; ! "déphasage" ; "phase shift"
 wul:wulu Gender-1 ; ! "voyageur" ; "traveller"
 wum:wumulu Gender-1 ; ! "vulgarisateur" ; "populariser"
+wum:wumi Gender-8b ; ! "pillonage" ; "pounding"
 wun:wunulu Gender-2 ; ! "dépradation" ; "degradation"
 wuṅ:wuṅulu Gender-2 ; ! "dépradation" ; "depradation"
 wòb:wobo Gender-4 ; ! "salle de bain" ; "bathroom"
@@ -1779,12 +1424,14 @@ yand:yanda Gender-2 ; ! "reclamation" ; "request"
 ye:ye Gender-4 ; ! "habit" ; "dress"
 ye:ye Gender-4 ; ! "habit" ; "garment"
 yed:yed Gender-4 ; ! "vitre" ; "glass"
+yed:yed Gender-4b ; ! "lunettes" ; "glasses"
 yed:yed Gender-4 ; ! "vitre" ; "glass"
 yen:yen Gender-5 ; ! "vue" ; "view"
 yen:yen Gender-3 ; ! "opinion" ; "opinion"
 yen:yene Gender-3 ; ! "esplanade" ; "esplanade"
 yen:yen Gender-4 ; ! "mirroir" ; "mirror"
 yi:yian Gender-2 ; ! "volonté" ; "will"
+yi:yi Gender-8b ; ! "vouloir" ; "want"
 yid:yidi Gender-4 ; ! "dépotage" ; "unloading"
 yid:yidan Gender-5 ; ! "rixe" ; "brawl"
 yid:yidan Gender-2 ; ! "affrontement" ; "confrontation"
@@ -1811,6 +1458,8 @@ yoṅ:yoṅ Gender-4 ; ! "ancien" ; "old"
 yëb:yëb Gender-3 ; ! "viduité" ; "empty"
 yëb:yëbë Gender-2 ; ! "dogme" ; "dogma"
 yëb:yëbëga Gender-4 ; ! "affres" ; "anguish"
+yëb:yëb Gender-8b ; ! "tracas" ; "trouble"
+yëbë:yëbëga Gender-4b ; ! "désespoir" ; "despair"
 yëg:yëgan Gender-2 ; ! "voie" ; "track"
 yëg:yëgan Gender-2 ; ! "étonnement" ; "astonishing"
 yëga:yëga Gender-4 ; ! "déprécation" ; "deprecation"
@@ -1829,6 +1478,7 @@ za:za Gender-5 ; ! "risque" ; "risk"
 zab:zaba Gender-5 ; ! "insolence" ; "disrespect"
 zab:zabi Gender-4 ; ! "capricieux" ; "capricious"
 zab:dzëdzab Gender-8 ; ! "vulgaire" ; "vulgar"
+zam:zamanda Gender-4b ; ! "cafouillage" ; "scramble"
 zam:zam Gender-5 ; ! "saveur" ; "flavour"
 zan:zan Gender-5 ; ! "centre" ; "center"
 zan:zan Gender-3 ; ! "dentelé" ; "toothed"
@@ -1839,6 +1489,7 @@ zie:zie Gender-5 ; ! "faim" ; "hungry"
 zilingan:zilingan Gender-4 ; ! "barbare" ; "uncivilised"
 zimb:zimbi Gender-4 ; ! "cantine" ; "canteen"
 zimb:zimbi Gender-4 ; ! "cercueil" ; "coffin"
+zimbi:zimbi Gender-1b ; ! "bataillon" ; "battalion"
 zin:zin Gender-5 ; ! "haine" ; "hatred"
 zing:zingi Gender-5 ; ! "victorieux" ; "victorious"
 zitia:zitia Gender-5 ; ! "volant" ; "stealing"
@@ -1857,6 +1508,7 @@ zëzë:zëzë Gender-5 ; ! "zéro" ; "zero"
 zëzë:zëzë Gender-5 ; ! "nulité" ; "void"
 zòg:zòg Gender-3 ; ! "vilenie" ; "vileness"
 zòg:zòg Gender-3 ; ! "dévalorisation" ; "devaluation"
+ëg:ëg Gender-4a ; ! "cric" ; "jack"
 ën:ënële Gender-3f ; ! "renoncement" ; "renunciation"
 ëte:tëtëte Gender-5 ; ! "vigilant" ; "alert"
 
@@ -1865,6 +1517,7 @@ zòg:zòg Gender-3 ; ! "dévalorisation" ; "devaluation"
 !!!                  VERBES INFINITIFS (INFINITIVE VERBS)                  !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+ 
 
 ba:baii VERB_INF ; ! "dépecer" ; "butcher"
 ba:bai VERB_INF ; ! "cramponner" ; "clamp"
@@ -2835,20 +2488,3 @@ ziṅ:ziṅi VERB_INF ; ! "créer la zizanie" ; "to create dissension"
 zog:zog VERB_INF ; ! "déprécier" ; "epreciate"
 zol:zole VERB_INF ; ! "déteindre" ; "detect"
 zu:zu VERB_INF ; ! "venir" ; "come"
-
-
-
-
-
-
-
-
-
-! Resources:
-! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon
-! http://wiki.apertium.org/wiki/Lttoolbox_and_lexc
-! http://wiki.apertium.org/wiki/Apertium-specific_conventions_for_lexc
-! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
-! https://github.com/hfst/
-! http://www.cis.upenn.edu/~cis639/docs/lexc.html
-! http://wiki.apertium.org/wiki/Hfst

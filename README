@@ -87,3 +87,12 @@ Si `apertium-gen-modes` plante (Segmentation fault), le script `rebuild_apertium
 ## Contributeurs
 
 [Vos noms ici]
+
+
+| Mode       | Statut        | Fonction              | Commande                                            |
+| ---------- | ------------- | --------------------- | --------------------------------------------------- |
+| ewo-morph  | ✅ Parfait     | Analyse morphologique | echo "mëbu" | apertium -d . ewo-morph               |
+| ewo-tagger | ✅ Parfait     | Étiquetage            | echo "mëbu" | apertium -d . ewo-tagger              |
+| ewo-disam  | ✅ Parfait     | Désambiguïsation      | echo "mëbu" | apertium -d . ewo-disam               |
+| ewo-lexc   | ✅ Fonctionne  | Consultation lexique  | echo "mëbu" | apertium -d . ewo-lexc                |
+| ewo-gener  | ⚠️ Workaround | Génération            | echo "^bu<n><cl6><pl>$" | bash modes/ewo-gener.mode |
