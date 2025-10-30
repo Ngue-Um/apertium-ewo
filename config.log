@@ -36,7 +36,6 @@ PATH: /bin/
 PATH: /usr/games/
 PATH: /usr/local/games/
 PATH: /usr/lib/wsl/lib/
-PATH: /mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu_2404.1.68.0_x64__79rhkp1fndgsc/
 PATH: /mnt/c/Program Files/SIL/FieldWorks 9/
 PATH: /mnt/c/WINDOWS/system32/
 PATH: /mnt/c/WINDOWS/
@@ -48,6 +47,7 @@ PATH: /mnt/c/Users/HP USER/AppData/Local/Programs/Python/Python313/
 PATH: /mnt/c/Users/HP USER/AppData/Local/Programs/Python/Launcher/
 PATH: /mnt/c/Users/HP USER/AppData/Local/Microsoft/WindowsApps/
 PATH: /mnt/c/Users/HP USER/AppData/Local/Programs/EmEditor/
+PATH: /mnt/c/Users/HP USER/AppData/Local/Programs/Microsoft VS Code/bin/
 PATH: /snap/bin/
 PATH: /usr/local/bin/
 
@@ -169,7 +169,7 @@ pkg_cv_HFST_LIBS='-lhfst '
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} '\''/mnt/c/Users/HP USER/Desktop/apertium-ewo/apertium-ewo/missing'\'' aclocal-1.16'
+ACLOCAL='${SHELL} '\''/mnt/c/Users/HP USER/Desktop/apertium-ewo/missing'\'' aclocal-1.16'
 AMTAR='$${TAR-tar}'
 AM_BACKSLASH='\'
 AM_DEFAULT_V='$(AM_DEFAULT_VERBOSITY)'
@@ -177,9 +177,9 @@ AM_DEFAULT_VERBOSITY='1'
 AM_V='$(V)'
 APERTIUM_CFLAGS=''
 APERTIUM_LIBS='-lapertium '
-AUTOCONF='${SHELL} '\''/mnt/c/Users/HP USER/Desktop/apertium-ewo/apertium-ewo/missing'\'' autoconf'
-AUTOHEADER='${SHELL} '\''/mnt/c/Users/HP USER/Desktop/apertium-ewo/apertium-ewo/missing'\'' autoheader'
-AUTOMAKE='${SHELL} '\''/mnt/c/Users/HP USER/Desktop/apertium-ewo/apertium-ewo/missing'\'' automake-1.16'
+AUTOCONF='${SHELL} '\''/mnt/c/Users/HP USER/Desktop/apertium-ewo/missing'\'' autoconf'
+AUTOHEADER='${SHELL} '\''/mnt/c/Users/HP USER/Desktop/apertium-ewo/missing'\'' autoheader'
+AUTOMAKE='${SHELL} '\''/mnt/c/Users/HP USER/Desktop/apertium-ewo/missing'\'' automake-1.16'
 AWK='gawk'
 CG3_CFLAGS='-I/usr/include/ '
 CG3_LIBS='-lcg3 '
@@ -204,7 +204,7 @@ INSTALL_STRIP_PROGRAM='$(install_sh) -c -s'
 LIBOBJS=''
 LIBS=''
 LTLIBOBJS=''
-MAKEINFO='${SHELL} '\''/mnt/c/Users/HP USER/Desktop/apertium-ewo/apertium-ewo/missing'\'' makeinfo'
+MAKEINFO='${SHELL} '\''/mnt/c/Users/HP USER/Desktop/apertium-ewo/missing'\'' makeinfo'
 MKDIR_P='/usr/bin/mkdir -p'
 PACKAGE='apertium-ewo'
 PACKAGE_BUGREPORT='ngueum@gmail.com'
@@ -236,7 +236,7 @@ host_alias=''
 htmldir='${docdir}'
 includedir='${prefix}/include'
 infodir='${datarootdir}/info'
-install_sh='${SHELL} '\''/mnt/c/Users/HP USER/Desktop/apertium-ewo/apertium-ewo/install-sh'\'''
+install_sh='${SHELL} '\''/mnt/c/Users/HP USER/Desktop/apertium-ewo/install-sh'\'''
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localedir='${datarootdir}/locale'

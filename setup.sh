@@ -24,6 +24,7 @@ else
     echo "❌ Erreur : rebuild_apertium.sh introuvable !"
     exit 1
 fi
+chmod +x test_ewo.sh
 
 echo ""
 echo "🔹 Compilation du projet..."
